@@ -25,10 +25,10 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `CTRL`+`6`        | N        | Toggle between previous file with                                        | Vim                         |
 | `ALT` +`l`        | N        | Go to beginning of the line                                              | Vim                         |
 | `ALT` +`h`        | N        | Go to end of the line                                                    | Vim                         |
+| `CTRL`+`q`        | N        | Exit terminal mode                                                       | Vim                         |
 ### Unused keybindings
 | Key | Mode |
 | ---- | ---- |
-| `CTRL` + `q` | Normal |
 | `CTRL` + `s` | Normal |
 | `CTRL` + `@` | Normal |
 | `CTRL` + `n` | Normal |
@@ -55,7 +55,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 ### BUGS
 - project is jumping dir for nonsense
 - dadboard ui close should also close dbout and sql query
-- Shortcut of exit terminal mode conflict with lazygit cancel
 
 ### Plugins to explore
 | Section | Plugins |

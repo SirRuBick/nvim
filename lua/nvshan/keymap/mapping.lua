@@ -19,7 +19,7 @@ mappings.n["<leader>q"] = map():desc(wk_icons.q)
 mappings.n["<leader>c"] = map():desc(wk_icons.c)
 
 -- Operations
-mappings.t["<ESC>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
+mappings.t["<C-q>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
 mappings.i["jk"] = map("<C-\\><C-n>"):desc("Exit insert mode")
 mappings.i["<C-s>"] = map("<cmd>w<CR>"):desc("Save file")
 mappings.v["<C-s>"] = map("cmd>w<CR>"):desc("Save file")
