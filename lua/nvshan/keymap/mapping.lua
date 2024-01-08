@@ -146,7 +146,7 @@ end
 mappings.n["<A-g>"] = map(custom_functions.go_to_stack_trace):desc("Go to stack trace")
 mappings.n["<F4>"] = map(custom_functions.compile_run):desc("Compile and run")
 mappings.n["<leader>pg"] = map(custom_functions.toggle_glow):desc("Glow")
-mappings.n["<C-g>"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
+-- mappings.n["<C-g>"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
 mappings.n["<leader>gg"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
 
 return mappings
