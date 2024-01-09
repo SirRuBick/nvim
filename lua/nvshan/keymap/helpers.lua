@@ -1,5 +1,7 @@
 local M = {}
 
+local settings = require("settings")
+
 local function bool2str(bool)
 	return bool and "on" or "off"
 end
@@ -21,10 +23,9 @@ function M.toggle_autopairs()
 end
 
 --- Toggle diagnostics
-local virtual_text = true
 function M.toggle_diagnostics()
-	virtual_text = not virtual_text
-	vim.diagnostic.config({ virtual_text = virtual_text })
+  settings.diagnostic_virtual_text = not settings.diagnostic_virtual_text
+	vim.diagnostic.config({ virtual_text = settings.diagnostic_virtual_text })
 	vim.notify(string.format("diagnostics virtual text %s", bool2str(virtual_text)))
 end
 

@@ -4,6 +4,8 @@ local join_path = require("utils").join_path
 
 -- leader key
 settings.leader = " "
+-- diagnositc virtual text
+settings.diagnostic_virtual_text = false
 -- colorscheme, choose from random or
 -- tokyonight/catppuccin/kanagawa/onedark/gruvbox
 settings.colorscheme = "catppuccin"
