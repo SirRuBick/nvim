@@ -78,6 +78,15 @@ mappings.n["<C-Down>"] = map("<cmd>resize +2<CR>"):desc("Resize split down")
 mappings.n["<C-Left>"] = map("<cmd>vertical resize -2<CR>"):desc("Resize split left")
 mappings.n["<C-Right>"] = map("<cmd>vertical resize +2<CR>"):desc("Resize split right")
 
+mappings.n["<C-s>j"] = map("<cmd>set nosplitbelow<CR><CMD>split<CR><CMD>set splitbelow<CR>"):desc("Split above")
+mappings.n["<C-s>k"] = map("<cmd>set splitbelow<CR><CMD>split<CR>"):desc("Split below")
+mappings.n["<C-s>h"] = map("<cmd>set nosplitright<CR><CMD>vsplit<CR><CMD>set splitright<CR>"):desc("Split left")
+mappings.n["<C-s>l"] = map("<cmd>set splitright<CR><CMD>vsplit<CR>"):desc("Split right")
+mappings.n["<C-s>t"] = map("<cmd>tabe<CR>"):desc("New Tab")
+mappings.n["<C-s>T"] = map("<cmd>tab split<CR>"):desc("Split tab")
+mappings.n["[t"] = map("<cmd>tabprevious<CR>"):desc("Prev tab")
+mappings.n["]t"] = map("<cmd>tabnext<CR>"):desc("Next tab")
+
 -- Improved Terminal Navigation
 mappings.n["<C-h>"] = map(":wincmd h<CR>"):desc("Move to left split")
 mappings.n["<C-j>"] = map(":wincmd j<CR>"):desc("Move to below split")

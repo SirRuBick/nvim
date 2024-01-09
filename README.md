@@ -43,7 +43,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 ## TODO
 - check keymaps and document down
-- tab/split keymaps?
 - python setup, jupyter keymap?
 - change or delete do not replace register
 - learn to use vim fuigitive
