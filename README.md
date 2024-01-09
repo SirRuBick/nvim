@@ -49,12 +49,12 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - python setup, jupyter keymap?
 - change or delete do not replace register
 - learn to use vim fuigitive
-- use copilot.vim instead?
 - new terminal should activate vitual environment if source is
 
 ### BUGS
 - project is jumping dir for nonsense
 - dadboard ui close should also close dbout and sql query
+- split resizing is lost after open nvim-tree
 
 ### Plugins to explore
 | Section | Plugins |

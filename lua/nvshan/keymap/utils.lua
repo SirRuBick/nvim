@@ -16,6 +16,7 @@ function keymap:new()
       nowait = false,
       desc = "",
       buffer = nil,
+      replace_keycodes = false,
     },
   }
   setmetatable(instance, self)
@@ -63,6 +64,12 @@ end
 --- set buffer to do the keymap
 function keymap:buffer(buf)
   self.options.buffer = buf
+  return self
+end
+
+--- set keymap option replace_keycodes
+function keymap:rk()
+  self.options.replace_keycodes = true
   return self
 end
 
