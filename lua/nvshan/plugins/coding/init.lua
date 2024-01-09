@@ -95,13 +95,6 @@ return {
     },
   },
   {
-    "mfussenegger/nvim-lint",
-    event = { "BufNewFile", "BufReadPost" },
-    config = function()
-      require("nvshan.plugins.coding.lint")
-    end
-  },
-  {
     "kevinhwang91/nvim-ufo",
     cmds = {
       "UfoEnable",

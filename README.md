@@ -43,8 +43,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 ## TODO
 - check keymaps and document down
-- nvim-lint autocmd or not
-- use "WhoIsSethDaniel/mason-tool-installer.nvim" to manage linter and other dependencies?
 - tab/split keymaps?
 - python setup, jupyter keymap?
 - change or delete do not replace register
@@ -55,6 +53,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - project is jumping dir for nonsense
 - dadboard ui close should also close dbout and sql query
 - split resizing is lost after open nvim-tree
+- lsp format modifications is not configured or not key mapped
 
 ### Plugins to explore
 | Section | Plugins |
