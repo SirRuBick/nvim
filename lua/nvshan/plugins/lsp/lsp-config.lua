@@ -111,7 +111,7 @@ Config.on_attach = function(client, bufnr)
 			lsp_mappings.v["<leader>la"].rhs = "<CMD>Lspsaga code_action<CR>"
 		end
 		if lsp_mappings.n["gd"] then
-			lsp_mappings.n["gd"].rhs = "<CMD>Lspsaga go_to_definition<CR>"
+			lsp_mappings.n["gd"].rhs = "<CMD>Lspsaga goto_definition<CR>"
 		end
 		if lsp_mappings.n["gT"] then
 			lsp_mappings.n["gT"].rhs = "<CMD>Lspsaga goto_type_definition<CR>"
@@ -120,7 +120,7 @@ Config.on_attach = function(client, bufnr)
 
 	if is_available("telescope.nvim") then -- setup telescope mappings if available
 		if lsp_mappings.n["<leader>ls"] then
-			lsp_mappings.n["<leader>ls"].rhs = "<CMD>Telescope document_symbol<CR>"
+			lsp_mappings.n["<leader>ls"].rhs = "<CMD>Telescope lsp_document_symbols<CR>"
 		end
 		if lsp_mappings.n["<leader>lc"] then
 			lsp_mappings.n["<leader>lc"].rhs = "<CMD>Telescope lsp_incoming_calls<CR>"

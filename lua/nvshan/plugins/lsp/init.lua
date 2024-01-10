@@ -31,6 +31,8 @@ return {
 			},
 			{
 				"nvimdev/lspsaga.nvim",
+        -- NOTE: LSPSAGA disabled
+        cond = false,
 				dependencies = {
 					"nvim-tree/nvim-web-devicons",
 				},
