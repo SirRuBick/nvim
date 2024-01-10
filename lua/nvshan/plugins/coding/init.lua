@@ -5,10 +5,6 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = true,
-    keys = {
-      { "<leader>fd", "<cmd>TodoTelescope<CR>", desc = "Find TODOs" },
-      { "<leader>xd", "<cmd>TodoTrouble<CR>",   desc = "Trouble TODOs" },
-    },
   },
   {
     "numToStr/Comment.nvim",
@@ -28,14 +24,6 @@ return {
   {
     "folke/trouble.nvim",
     cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
-    keys = {
-      { "<leader>xx", "<cmd>TroubleToggle<CR>",                     desc = "Trouble Toggle" },
-      { "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<CR>", desc = "Trouble Workspace Diagnostics" },
-      { "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<CR>",  desc = "Trouble Document Diagnostics" },
-      { "<leader>xl", "<cmd>Trouble loclist<CR>",                   desc = "Trouble Location List" },
-      { "<leader>xq", "<cmd>Trouble quickfix<CR>",                  desc = "Trouble Quickfix" },
-      { "<leader>xr", "<cmd>Trouble lsp_references<CR>",            desc = "Trouble References" },
-    },
     config = function()
       require("nvshan.plugins.coding.trouble")
     end,
