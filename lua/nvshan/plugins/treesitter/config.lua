@@ -144,13 +144,14 @@ configs.setup({
 		-- text object swap
 		swap = {
 			enable = true,
+      -- TODO: Are there better keybindings?
 			swap_next = {
-				["]v"] = "@parameter.inner", -- swap parameter/arument with next
-				["]k"] = "@function.outer", -- swap method/function with next
+				["<leader>na"] = "@parameter.inner", -- swap parameter/argument with next
+				["<leader>nm"] = "@function.outer", -- swap method/function with next
 			},
 			swap_previous = {
-				["[v"] = "@parameter.inner", -- swap parameter/arument with previous
-				["[k"] = "@function.outer", -- swap method/function with previous
+				["<leader>pa"] = "@parameter.inner", -- swap parameter/argument with previous
+				["<leader>pm"] = "@function.outer", -- swap method/function with previous
 			},
 		},
 		-- text object move
@@ -189,15 +190,6 @@ configs.setup({
 				["[I"] = { query = "@conditional.outer", desc = "Prev conditional end" },
 				["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
 			},
-			-- Below will go to either the start or the end, whichever is closer.
-			-- Use if you want more granular movements
-			-- Make it even more gradual by adding multiple queries and regex.
-			-- goto_next = {
-			--   ["]d"] = "@conditional.outer",
-			-- },
-			-- goto_previous = {
-			--   ["[d"] = "@conditional.outer",
-			-- }
 		},
 	},
 	rainbow = {
