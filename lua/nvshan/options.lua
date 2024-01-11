@@ -17,7 +17,7 @@ option.termguicolors = true
 option.showmode = false
 option.number = true
 option.relativenumber = true
-option.cursorline = false
+option.cursorline = true
 option.cmdheight = 2 -- more space in command line
 option.signcolumn = "yes"
 option.scrolloff = 5
@@ -27,6 +27,7 @@ option.winblend = 10 -- transparent window
 -- search
 option.hlsearch = true
 option.ignorecase = true
+option.smartcase = true
 -- tabs
 option.expandtab = true
 option.shiftwidth = 2
@@ -58,15 +59,16 @@ option.foldmethod = "expr"
 option.foldexpr = "nvim_treesitter#foldexpr()"
 end
 option.foldlevel = 99
-
--- buffer
-buffer.fileencoding = "utf-8"
+-- swapfile
+option.swapfile = false
 
 -- global
 global.mapleader = settings.leader
 global.maplocalleader = ""
 global.highlighturl_enabled = true
 global.icons_enabled = true
+global.loaded_netrw = 1
+global.loaded_netrwPlugin = 1
 
 if global_settings.is_wsl then
   global.clipboard = {
