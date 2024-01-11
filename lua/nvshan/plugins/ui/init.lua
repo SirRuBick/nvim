@@ -68,6 +68,8 @@ local plugins = {
   },
   {
     "petertriho/nvim-scrollbar",
+    -- NOTE: this plugin is disabled
+    cond = false,
     event = { "BufNewFile", "BufReadPost" },
     dependencies = {
       "lewis6991/gitsigns.nvim",
