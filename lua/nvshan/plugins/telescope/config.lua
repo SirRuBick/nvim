@@ -23,13 +23,15 @@ local mappings = {
 	},
 	n = { q = actions.close },
 }
-if is_available("trouble.nvim") then
-	local trouble = require("trouble.providers.telescope")
-	mappings = vim.tbl_extend("force", mappings, {
-		i = { ["<c-t>"] = trouble.open_with_trouble },
-		n = { ["<c-t>"] = trouble.open_with_trouble },
-	})
-end
+
+-- NOTE: This would cause a bug in telescope that you won't be able to exit with q
+-- if is_available("trouble.nvim") then
+-- 	local trouble = require("trouble.providers.telescope")
+-- 	mappings = vim.tbl_extend("force", mappings, {
+-- 		i = { ["<c-t>"] = trouble.open_with_trouble },
+-- 		n = { ["<c-t>"] = trouble.open_with_trouble },
+-- 	})
+-- end
 
 telescope.setup({
 	defaults = {
@@ -50,11 +52,6 @@ telescope.setup({
 		-- builtin picker
 	},
 	extensions = {
-		-- Your extension configuration goes here:
-		-- extension_name = {
-		--   extension_config_key = value,
-		-- }
-		-- please take a look at the readme of the extension you want to configure
 		media_files = {
 			-- filetypes whitelist
 			-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
