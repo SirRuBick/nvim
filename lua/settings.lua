@@ -7,8 +7,8 @@ settings.leader = " "
 -- diagnositc virtual text
 settings.diagnostic_virtual_text = false
 -- colorscheme, choose from random or
--- tokyonight/catppuccin/kanagawa/onedark/gruvbox
-settings.colorscheme = "catppuccin"
+-- catppuccin/kanagawa/onedark/gruvbox
+settings.colorscheme = "random"
 -- background clolor, "dark" or "light"
 settings.background = "dark"
 -- trasparent
@@ -21,7 +21,7 @@ settings.use_copilot = true
 settings.use_chatgpt = true
 -- nvim-tree
 settings.float = {
-  enable = not settings.transparent,
+  enable = true,
   height_ratio = 0.8,
   width_ratio = 0.4,
 }
