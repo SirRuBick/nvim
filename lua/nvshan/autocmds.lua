@@ -40,9 +40,9 @@ vim.api.nvim_create_autocmd("WinEnter", {
 	pattern = "*",
 	callback = function()
 		vim.api.nvim_command([[setlocal cursorline]])
-		vim.api.nvim_command([[setlocal number]])
-		vim.api.nvim_command([[setlocal relativenumber]])
-		-- 			vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
+		-- vim.api.nvim_command([[setlocal number]])
+		-- vim.api.nvim_command([[setlocal relativenumber]])
+		-- vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
 	end,
 })
 vim.api.nvim_create_autocmd("WinLeave", {
@@ -50,8 +50,8 @@ vim.api.nvim_create_autocmd("WinLeave", {
 	pattern = "*",
 	callback = function()
 		vim.api.nvim_command([[setlocal nocursorline]])
-		vim.api.nvim_command([[setlocal nonumber]])
-		vim.api.nvim_command([[setlocal norelativenumber]])
-		-- 			vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
+		-- vim.api.nvim_command([[setlocal nonumber]])
+		-- vim.api.nvim_command([[setlocal norelativenumber]])
+		-- vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
 	end,
 })
