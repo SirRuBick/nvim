@@ -67,8 +67,6 @@ global.mapleader = settings.leader
 global.maplocalleader = ""
 global.highlighturl_enabled = true
 global.icons_enabled = true
-global.loaded_netrw = 1
-global.loaded_netrwPlugin = 1
 
 if global_settings.is_wsl then
   global.clipboard = {

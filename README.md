@@ -34,7 +34,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `CTRL` + `n` | Normal |
 | `CTRL` + `[` | Normal |
 | `CTRL` + `_` | Normal |
-| `+` | Normal |
 | `S` | Normal |
 | `Y` | Normal |
 | `_` | Normal |
@@ -42,6 +41,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 
 ## TODO
+- mac setup
 - nvim-bqf with telescope
 - get rid of lspsaga and use symbols-outline
 - "nvim-navbuddy and from https://github.com/Elteoremadebeethoven/nvim-config/blob/master/lua/plugins-config.lua
@@ -52,7 +52,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - new terminal should activate vitual environment if source is
 - there are quite some duplicate features over trouble, telescope and lspsaga
 - keymaps for splits more: c-w _ and c-w | to maximaz split, and shorcuts to move splits around
-- highlight which split you are in, either cursor blink or dim background
 - can have a keybindings to switch toggle scheme style, like one dark
 - autocmd for automatically comment file with header?
 

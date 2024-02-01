@@ -1,3 +1,5 @@
+local wk_icons = require("icons").whichkey
+
 local plugins = {
   {
     "folke/which-key.nvim",
@@ -58,9 +60,9 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle" },
-    -- keys = {
-    --   { "<leader>e", "<cmd>NvimTreeToggle<CR>", silent = true, noremap = true, desc = " Explorer" },
-    -- },
+    keys = {
+      { "<leader>e", "<cmd>NvimTreeToggle<CR>", silent = true, noremap = true, desc = wk_icons.e },
+    },
     config = function()
       require("nvshan.plugins.editor.nvim-tree")
     end,
