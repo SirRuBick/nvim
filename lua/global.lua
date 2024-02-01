@@ -1,6 +1,6 @@
 -- TODO: make this real global?
 local global = {}
-local os_name = vim.loop.os_uname()
+local os_name = vim.loop.os_uname().sysname
 
 global.is_mac = os_name == "Darwin"
 global.is_linux = os_name == "Linux"
