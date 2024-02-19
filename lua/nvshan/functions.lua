@@ -7,8 +7,7 @@ local function split()
 	vim.cmd("res -5")
 end
 
--- TODO: integrate with toggleterm and merge with markdown preview
-function M.cimpileRun()
+function M.compile_run()
 	local ft = vim.bo.filetype
 	if ft == "markdown" then
 		vim.cmd("MarkdownPreview")
@@ -18,6 +17,7 @@ function M.cimpileRun()
 	elseif ft == "lua" then
 		split()
 		vim.cmd("term luajit %")
+  -- TODO: add more filetypes
 	end
 end
 

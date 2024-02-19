@@ -1,4 +1,3 @@
--- TODO: make this real global?
 local global = {}
 local os_name = vim.loop.os_uname().sysname
 

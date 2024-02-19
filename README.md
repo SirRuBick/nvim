@@ -23,9 +23,9 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `CTRL`+`o`        | N        | Cursor moves back to previous position                                   | Vim                         |
 | `CTRL`+`i`        | N        | Cursor moves back to next position                                       | Vim                         |
 | `CTRL`+`6`        | N        | Toggle between previous file with                                        | Vim                         |
-| `ALT` +`l`        | N        | Go to beginning of the line                                              | Vim                         |
-| `ALT` +`h`        | N        | Go to end of the line                                                    | Vim                         |
-| `CTRL`+`q`        | N        | Exit terminal mode                                                       | Vim                         |
+| `ALT` +`l`        | N        | Go to beginning of the line                                              | Custom                      |
+| `ALT` +`h`        | N        | Go to end of the line                                                    | Custom                      |
+| `CTRL`+`q`        | N        | Exit terminal mode                                                       | Custom                      |
 ### Unused keybindings
 | Key | Mode |
 | ---- | ---- |
@@ -34,25 +34,21 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `CTRL` + `n` | Normal |
 | `CTRL` + `[` | Normal |
 | `CTRL` + `_` | Normal |
-| `S` | Normal |
 | `Y` | Normal |
 | `_` | Normal |
-| `s` | Normal |
 
 
 ## TODO
 - mac setup
 - nvim-bqf with telescope
-- get rid of lspsaga and use symbols-outline
 - "nvim-navbuddy and from https://github.com/Elteoremadebeethoven/nvim-config/blob/master/lua/plugins-config.lua
 - check keymaps and document down
 - vim-unimpaired has some nice key bindings to reference
 - change or delete do not replace register
 - learn to use vim fuigitive
 - new terminal should activate vitual environment if source is
-- there are quite some duplicate features over trouble, telescope and lspsaga
+- there are quite some duplicate features over trouble, quickfix, telescope and lspsaga
 - keymaps for splits more: c-w _ and c-w | to maximaz split, and shorcuts to move splits around
-- can have a keybindings to switch toggle scheme style, like one dark
 - autocmd for automatically comment file with header?
 
 ### BUGS
@@ -66,9 +62,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 |---------|---------|
 | coding | "ThePrimeagen/harpoon" |
 | coding | "chentoast/marks.nvim" |
-| coding | "rmagatti/alternate-toggler" |
-| coding | "skywind3000/asyncrun.vim" |
-| coding | "AckslD/swenv.nvim" |
 | test | "nvim-neotest/neotest" |
 | git | "ThePrimeagen/git-worktree.nvim"|
 | bookmark | "MattesGroeger/vim-bookmarks" |
