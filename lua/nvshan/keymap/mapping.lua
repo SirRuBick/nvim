@@ -19,11 +19,19 @@ mappings.n["<leader>q"] = map():desc(wk_icons.q)
 mappings.n["<leader>c"] = map():desc(wk_icons.c)
 
 -- Operations
-mappings.t["<C-q>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
+mappings.t["<C-x>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
 mappings.i["jk"] = map("<C-\\><C-n>"):desc("Exit insert mode")
 mappings.i["<C-s>"] = map("<cmd>w<CR>"):desc("Save file")
 mappings.v["<C-s>"] = map("cmd>w<CR>"):desc("Save file")
 mappings.i["<C-v>"] = map("<C-R>+"):desc("Paste from system clipboard")
+
+-- navigate in insert mode
+mappings.i["<C-h>"] = map("<Left>"):desc("Move left")
+mappings.i["<C-l>"] = map("<Right>"):desc("Move right")
+mappings.i["<C-j>"] = map("<Down>"):desc("Move down")
+mappings.i["<C-k>"] = map("<Up>"):desc("Move up")
+mappings.i["<C-b>"] = map("<Home>"):desc("Move to line begin")
+mappings.i["<C-e>"] = map("<End>"):desc("Move to line end")
 
 -- Operations
 mappings.n["<ESC>"] = map("<Esc><CMD>noh<CR>"):desc("Clear Highlights")
@@ -54,7 +62,7 @@ mappings.n["]a"] = map("<cmd>lnext<CR>"):silent():desc("Next location")
 mappings.n["[A"] = map("<cmd>lfirst<CR>"):silent():desc("Prev location")
 mappings.n["]A"] = map("<cmd>llast<CR>"):silent():desc("Next location")
 -- close qf or ll if they are present, see https://superuser.com/questions/355325/close-all-locations-list-or-quick-fix-windows-in-vim
-mappings.n["QC"] = map(':ccl <bar> lcl<CR>'):desc("Quick close quickfix or locationlist")
+mappings.n["QC"] = map(":ccl <bar> lcl<CR>"):desc("Quick close quickfix or locationlist")
 
 -- Folding
 mappings.n["zc"] = map("zc"):desc("zMzv"):desc("Focus on Fold")
@@ -98,6 +106,7 @@ mappings.n["[b"] = map("<cmd>bprevious<CR>"):desc("Prev buffer")
 mappings.n["]b"] = map("<cmd>bnext<CR>"):desc("Next buffer")
 mappings.n["<leader>bb"] = map(":buffers<CR>:buffer<Space>"):desc("Switch to buffer by name")
 mappings.n["<leader>bd"] = map(":bd<CR>"):desc("Delete buffer")
+mappings.n["<leader>bn"] = map(":enew<CR>"):desc("New buffer")
 mappings.n["<leader>bs"] = map("<cmd>w<CR>"):desc("Save buffer")
 mappings.n["<leader>bS"] = map("<cmd>wa<CR>"):desc("Save all buffer")
 mappings.n["<leader>bq"] = map("<cmd>q<CR>"):desc("Quit buffer")
@@ -133,7 +142,7 @@ mappings.n["<leader>uc"] = map(ui.toggle_cmp):desc("Toggle auto completion")
 mappings.n["<leader>uC"] = map(ui.toggle_conceal):desc("Toggle conceal")
 mappings.n["<leader>ud"] = map(ui.toggle_diagnostics):desc("Toggle diagnostics virtual text")
 if is_available("gitsigns.nvim") then
-  mappings.n["<leader>ug"] = map(ui.toggle_git_blame):desc("Toggle git signs")
+	mappings.n["<leader>ug"] = map(ui.toggle_git_blame):desc("Toggle git signs")
 end
 mappings.n["<leader>uL"] = map(ui.toggle_codelens):desc("Toggle code lens")
 mappings.n["<leader>uw"] = map(ui.toggle_wrap):desc("toggle wrap")
@@ -150,7 +159,7 @@ mappings.n["<leader>sp"] = map("<CMD>ProjectRoot<CR>"):desc("Change project root
 
 -- Others
 if global.is_mac then
-  mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
+	mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
 end
 mappings.n["<A-g>"] = map(custom_functions.go_to_stack_trace):desc("Go to stack trace")
 mappings.n["<F4>"] = map(custom_functions.compile_run):desc("Compile and run")
