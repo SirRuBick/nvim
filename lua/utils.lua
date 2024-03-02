@@ -8,17 +8,19 @@
 local Utils = {}
 local os_sep = require("global").os_path_sep
 
+--- Get filename without extension
+---@param path string
+---@return string
+function Utils.get_filename(path)
+  return path:match "^(.+)%.lua$"
+end
+
 --- Concat strings with os separator
 ---@return string
 function Utils.join_path(...)
   local args = { ... }
   local path = table.concat(args, os_sep)
   return path
-end
-
---- Convert a path to a module name
-function Utils.path_to_module(path)
-  return path.gsub(os_sep, ".")
 end
 
 --- Checks whether a given path exists and is a file.
@@ -48,7 +50,9 @@ function Utils.register_which_key(mode, keymap, opts)
   local registration = {}
   registration[keymap] = opts
   local status_ok, which_key = pcall(require, "which-key")
-  if not status_ok then vim.api.nvim_err_writeln("which is not ready to register key bindings") end
+  if not status_ok then
+    vim.api.nvim_err_writeln "which is not ready to register key bindings"
+  end
   which_key.register(registration, { mode = mode })
 end
 
@@ -72,12 +76,37 @@ function Utils.set_mappings(map_table, base)
         end
         if not cmd or keymap_opts.name then -- if which-key mapping, queue it
           Utils.register_which_key(mode, keymap, keymap_opts)
-        else                                -- if not which-key mapping, set it
+        else -- if not which-key mapping, set it
           vim.keymap.set(mode, keymap, cmd, keymap_opts)
         end
       end
     end
   end
+end
+
+--- load lua file returning tables from a directory,
+--- and return the tables in a single table by file name
+---@param absolute_path string
+---@return table
+function Utils.load_table_from_dir(absolute_path)
+  local merged_table = {}
+  local handle = vim.loop.fs_scandir(absolute_path)
+  while handle do
+    local name, t = vim.loop.fs_scandir_next(handle)
+    if not name then
+      break
+    end
+    if name:match ".lua$" then
+      local filetype = Utils.get_filename(name)
+      local status_ok, loaded_snippets = pcall(dofile, Utils.join_path(absolute_path, name))
+      if status_ok then
+        merged_table[filetype] = loaded_snippets
+      else
+        vim.notify("Failed to load module for " .. filetype, "error")
+      end
+    end
+  end
+  return merged_table
 end
 
 return Utils

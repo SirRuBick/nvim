@@ -6,8 +6,16 @@ local icons = {
 	type = require("icons")["type"],
 	cmp = require("icons")["cmp"],
 }
+local load_table_from_dir = require("utils").load_table_from_dir
+local snippets_directory = require("settings").snippets_directory
 
-require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
+
+for filetype, file_snippets in pairs(load_table_from_dir(snippets_directory)) do
+	for _, snippet in ipairs(file_snippets) do
+		luasnip.add_snippets(filetype, snippet)
+	end
+end
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1

@@ -27,5 +27,7 @@ settings.float = {
 }
 -- DB: dadbod
 settings.db_ui_save_location = join_path(global.data_dir, "dadbod")
+-- Snippet path
+settings.snippets_directory = join_path(global.vim_path ,"snippets")
 
 return settings
