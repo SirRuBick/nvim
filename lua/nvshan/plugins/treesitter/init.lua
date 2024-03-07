@@ -4,7 +4,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = { "BufRead", "BufNewFile" },
-    commands = {
+    cmd = {
       "TSInstall",
       "TSInstallSync",
       "TSUpdate",
@@ -13,7 +13,6 @@ return {
       "TSUninstallSync",
     },
     dependencies = {
-      -- "nvim-treesitter/nvim-treesitter-refactor", -- seems bit duplicate with lsp
       "nvim-treesitter/nvim-treesitter-textobjects",
       "nvim-treesitter/nvim-treesitter-context",
       "HiPhish/nvim-ts-rainbow2",
