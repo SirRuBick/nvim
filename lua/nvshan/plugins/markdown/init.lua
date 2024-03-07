@@ -25,6 +25,7 @@ return {
   },
   {
     "epwalsh/obsidian.nvim",
+    cond = settings.obsidian.enable,
     version = "*",
     ft = { "markdown" },
     dependencies = { "nvim-lua/plenary.nvim" },

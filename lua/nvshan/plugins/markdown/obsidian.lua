@@ -1,7 +1,7 @@
-local obsidian = require "obsidian"
-local vault_path = require("settings").vault_path
+local obsidian = require("obsidian")
+local vault_path = require("settings").obsidian.vault_path
 
-obsidian.setup {
+obsidian.setup({
   dir = vault_path,
 
   daily_notes = {
@@ -61,7 +61,7 @@ obsidian.setup {
   ---@param url string
   follow_url_func = function(url)
     -- Open the URL in the default web browser.
-    vim.fn.jobstart { "open", url } -- Mac OS
+    vim.fn.jobstart({ "open", url }) -- Mac OS
     -- vim.fn.jobstart({"xdg-open", url})  -- linux
   end,
 
@@ -77,4 +77,4 @@ obsidian.setup {
       insert_link = "<C-l>",
     },
   },
-}
+})
