@@ -40,27 +40,29 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 
 ## TODO
-- mac setup
-- nvim-bqf with telescope
-- "nvim-navbuddy and from https://github.com/Elteoremadebeethoven/nvim-config/blob/master/lua/plugins-config.lua
 - check keymaps and document down
+- mac setup
 - vim-unimpaired has some nice key bindings to reference
 - change or delete do not replace register
-- learn to use vim fuigitive
 - new terminal should activate vitual environment if source is
-- there are quite some duplicate features over trouble, quickfix, telescope and lspsaga
+
+## Learn Neovim
+- vim fuigitive
+- quickfix
+- daddboard
 
 ### BUGS
 - project is jumping dir for nonsense
 - dadboard ui close should also close dbout and sql query
 - lsp format modifications is not configured or not key mapped
-- markdown still get client exit with code 0 sometimes
 
 ### Plugins to explore
 | Section | Plugins |
 |---------|---------|
 | coding | "ThePrimeagen/harpoon" |
 | coding | "chentoast/marks.nvim" |
+| coding | "SmiteshP/nvim-navbuddy" |
+| coding | "kevinhwang91/nvim-bqf" |
 | test | "nvim-neotest/neotest" |
 | git | "ThePrimeagen/git-worktree.nvim"|
 | bookmark | "MattesGroeger/vim-bookmarks" |
