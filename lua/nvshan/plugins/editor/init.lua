@@ -20,22 +20,45 @@ local plugins = {
       require("nvshan.plugins.editor.flash")
     end,
     keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
-      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o",               function() require("flash").remote() end,     desc = "Remote Flash" },
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
       {
         "R",
         mode = { "o", "x" },
-        function() require("flash").treesitter_search() end,
-        desc =
-        "Treesitter Search"
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Treesitter Search",
       },
       {
         "<c-s>",
         mode = { "c" },
-        function() require("flash").toggle() end,
-        desc =
-        "Toggle Flash Search"
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
       },
     },
   },
@@ -47,7 +70,7 @@ local plugins = {
       vim.g.tmux_navigator_save_on_switch = 2
       vim.g.tmux_navigator_disable_when_zoomed = 1
     end,
-    commands = {
+    cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
       "TmuxNavigateUp",
@@ -75,7 +98,7 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       require("nvshan.plugins.editor.project")
-    end
+    end,
   },
   {
     "folke/persistence.nvim",
@@ -94,18 +117,24 @@ local plugins = {
       context = 15, -- amount of lines we will try to show around the current line
     },
     keys = {
-      { "<leader>ut", "<cmd>Twilight<CR>", desc = "Toggle twilight" }
+      { "<leader>ut", "<cmd>Twilight<CR>", desc = "Toggle twilight" },
     },
   },
   {
     "folke/zen-mode.nvim",
     opts = {
       window = {
-        width = .85,
+        width = 0.85,
       },
     },
     keys = {
-      { "<leader>uz", function() require("zen-mode").toggle() end, desc = "Toggle zen mode" },
+      {
+        "<leader>uz",
+        function()
+          require("zen-mode").toggle()
+        end,
+        desc = "Toggle zen mode",
+      },
     },
   },
   {
@@ -114,16 +143,24 @@ local plugins = {
     keys = {
       {
         "<C-f>s",
-        function() require("spectre").toggle() end,
-        desc =
-        "Toggle Find and Replace"
+        function()
+          require("spectre").toggle()
+        end,
+        desc = "Toggle Find and Replace",
       },
-      { "<C-f>w", function() require("spectre").open_visual({ select_word = true }) end, desc = "Search Current Word" },
+      {
+        "<C-f>w",
+        function()
+          require("spectre").open_visual({ select_word = true })
+        end,
+        desc = "Search Current Word",
+      },
       {
         "<C-f>f",
-        function() require("spectre").open_file_search({ select_word = true }) end,
-        desc =
-        "Search word in current file"
+        function()
+          require("spectre").open_file_search({ select_word = true })
+        end,
+        desc = "Search word in current file",
       },
     },
   },
@@ -133,21 +170,21 @@ local plugins = {
     init = function()
       -- vim.g.VM_default_mappings = 0
       vim.g.VM_maps = {
-        ['Select All']         = '\\a',
-        ['Find Under']         = '\\c',
-        ['Find Subword Under'] = '\\c',
-        ['Add Cursor Down']    = '\\j',
-        ['Add Cursor Up']      = '\\k',
-        ['Add Cursor At Pos']  = '\\m',
-        ['Start Regex Search'] = '\\/',
-        ['Switch Mode']        = '<Tab>',
-        ["Visual Regex"]       = '\\/',
-        ["Visual All"]         = '\\a',
-        ["Visual Add"]         = '\\n',
-        ["Visual Find"]        = '\\f',
-        ["Visual Cursors"]     = '\\c',
+        ["Select All"] = "\\a",
+        ["Find Under"] = "\\c",
+        ["Find Subword Under"] = "\\c",
+        ["Add Cursor Down"] = "\\j",
+        ["Add Cursor Up"] = "\\k",
+        ["Add Cursor At Pos"] = "\\m",
+        ["Start Regex Search"] = "\\/",
+        ["Switch Mode"] = "<Tab>",
+        ["Visual Regex"] = "\\/",
+        ["Visual All"] = "\\a",
+        ["Visual Add"] = "\\n",
+        ["Visual Find"] = "\\f",
+        ["Visual Cursors"] = "\\c",
       }
-    end
+    end,
   },
   {
     "akinsho/toggleterm.nvim",
@@ -160,7 +197,7 @@ local plugins = {
       "ToggleTermSetName",
       "ToggleTermSendCurrentLine",
       "ToggleTermSendVisualLines",
-      "ToggleTermSendVisualSelection"
+      "ToggleTermSendVisualSelection",
     },
     opts = {
       open_mapping = [[<c-\>]],

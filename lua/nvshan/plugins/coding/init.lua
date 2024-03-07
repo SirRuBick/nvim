@@ -33,12 +33,12 @@ return {
     event = { "CursorHold", "CursorHoldI" },
     config = function()
       require("nvshan.plugins.coding.illuminate")
-    end
+    end,
   },
   {
     "SUSTech-data/wildfire.nvim",
     event = { "BufRead", "BufNewFile" },
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    -- dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {
       surrounds = {
         { "(", ")" },
@@ -72,29 +72,29 @@ return {
         change = "cs",
         change_line = "cS",
       },
-    },
-    aliases = {
-      ["a"] = ">",
-      ["b"] = ")",
-      ["B"] = "}",
-      ["r"] = "]",
-      ["q"] = { '"', "'", "`" },
-      ["s"] = { "}", "]", ")", ">", '"', "'", "`" },
+      aliases = {
+        ["a"] = ">",
+        ["b"] = ")",
+        ["B"] = "}",
+        ["r"] = "]",
+        ["q"] = { '"', "'", "`" },
+        ["s"] = { "}", "]", ")", ">", '"', "'", "`" },
+      },
     },
   },
   {
     "kevinhwang91/nvim-ufo",
-    cmds = {
+    cmd = {
       "UfoEnable",
       "UfoDisable",
       "UfoInspect",
       "UfoAttach",
       "UfoDetach",
       "UfoEnableFold",
-      "UfoDisableFold"
+      "UfoDisableFold",
     },
     dependencies = {
-      "kevinhwang91/promise-async"
+      "kevinhwang91/promise-async",
     },
     opts = {
       open_fold_hl_timeout = 200,
@@ -103,20 +103,44 @@ return {
       -- end
     },
     keys = {
-      { "zR", function() require("ufo").openAllFolds() end,  desc = "Open all folds" },
-      { "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
+      {
+        "zR",
+        function()
+          require("ufo").openAllFolds()
+        end,
+        desc = "Open all folds",
+      },
+      {
+        "zM",
+        function()
+          require("ufo").closeAllFolds()
+        end,
+        desc = "Close all folds",
+      },
     },
   },
   {
     "Wansmer/treesj",
     cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
-    dependencies = { "nvim-tressitter/nvim-treesitter" },
+    -- dependencies = { "nvim-tressitter/nvim-treesitter" },
     config = function()
       require("nvshan.plugins.coding.treesj")
     end,
     keys = {
-      { "<leader>cs", function() require("treesj").toggle() end,                              desc = "Split/Join Toggle" },
-      { "<leader>cS", function() require("treesj").toggle({ split = { recursive = true } }) end, desc = "Split/Join Toggle Recursively" },
+      {
+        "<leader>cs",
+        function()
+          require("treesj").toggle()
+        end,
+        desc = "Split/Join Toggle",
+      },
+      {
+        "<leader>cS",
+        function()
+          require("treesj").toggle({ split = { recursive = true } })
+        end,
+        desc = "Split/Join Toggle Recursively",
+      },
     },
   },
 }

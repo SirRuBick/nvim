@@ -6,15 +6,14 @@ local plugins = {
     version = "*",
     event = { "BufReadPost", "BufAdd", "BufNewFile" },
     dependencies = "nvim-tree/nvim-web-devicons",
-    config = {}
+    opts = {},
   },
   {
     "nvim-lualine/lualine.nvim",
     event = { "BufReadPost", "BufAdd", "BufNewFile" },
-    command = "LualineToggle",
-
+    cmd = "LualineToggle",
     dependencies = {
-      "nvim-tree/nvim-web-devicons"
+      "nvim-tree/nvim-web-devicons",
     },
     config = function()
       require("nvshan.plugins.ui.lualine")
@@ -56,7 +55,7 @@ local plugins = {
     event = "CursorMoved",
     config = function()
       require("nvshan.plugins.ui.specs")
-    end
+    end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -77,7 +76,7 @@ local plugins = {
         "kevinhwang91/nvim-hlslens",
         config = function()
           require("scrollbar.handlers.search").setup({})
-        end
+        end,
       },
     },
     opts = {},
