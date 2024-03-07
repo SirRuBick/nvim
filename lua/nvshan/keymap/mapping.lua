@@ -142,7 +142,7 @@ mappings.n["<leader>uc"] = map(ui.toggle_cmp):desc("Toggle auto completion")
 mappings.n["<leader>uC"] = map(ui.toggle_conceal):desc("Toggle conceal")
 mappings.n["<leader>ud"] = map(ui.toggle_diagnostics):desc("Toggle diagnostics virtual text")
 if is_available("gitsigns.nvim") then
-	mappings.n["<leader>ug"] = map(ui.toggle_git_blame):desc("Toggle git signs")
+  mappings.n["<leader>ug"] = map(ui.toggle_git_blame):desc("Toggle git signs")
 end
 mappings.n["<leader>uL"] = map(ui.toggle_codelens):desc("Toggle code lens")
 mappings.n["<leader>uw"] = map(ui.toggle_wrap):desc("toggle wrap")
@@ -159,7 +159,7 @@ mappings.n["<leader>sp"] = map("<CMD>ProjectRoot<CR>"):desc("Change project root
 
 -- Others
 if global.is_mac then
-	mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
+  mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
 end
 mappings.n["<A-g>"] = map(custom_functions.go_to_stack_trace):desc("Go to stack trace")
 mappings.n["<F4>"] = map(custom_functions.compile_run):desc("Compile and run")
