@@ -12,7 +12,8 @@ I am still adding things in as I lean more about nvim.<br>
 + [ripgrep](https://github.com/BurntSushi/ripgrep)
 + [glow](https://github.com/charmbracelet/glow): required by Glow
 + [nodejs](https://github.com/nodejs): required by github Copliot
-+ icu4c: required by lspsaga since it uses markdown
+- codespell: required by conform.nvim
+- wget: required by mason.nvim
 
 ## Keymaps
 Some of the shortcuts I use frequently are listed here. <br>
@@ -48,8 +49,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - learn to use vim fuigitive
 - new terminal should activate vitual environment if source is
 - there are quite some duplicate features over trouble, quickfix, telescope and lspsaga
-- keymaps for splits more: c-w _ and c-w | to maximaz split, and shorcuts to move splits around
-- autocmd for automatically comment file with header?
 
 ### BUGS
 - project is jumping dir for nonsense
@@ -70,5 +69,9 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | note taking | "epwalsh/obsidian.nvim" |
 | note taking | "mickael-menu/zk-nvim" |
 | note taking | "renerocksai/telekasten.nvim" |
+| note taking | "vimwiki" |
+| markdown | "ekickx/clipboard-image.nvim" |
 | AI | "David-Kunz/gen.nvim"|
 | AI | "Exafunction/codeium.nvim"|
+| Others | "vim-calendar" |
+| Others | "epwalsh/pomo.nvim" |
