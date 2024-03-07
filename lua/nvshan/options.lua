@@ -24,6 +24,7 @@ option.scrolloff = 5
 option.laststatus = 3
 option.title = true
 option.winblend = 10 -- transparent window
+option.conceallevel = 1
 -- search
 option.hlsearch = true
 option.ignorecase = true
