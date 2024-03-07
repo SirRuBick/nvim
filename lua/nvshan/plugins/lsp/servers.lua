@@ -48,15 +48,11 @@ return {
         workspace = { checkThirdParty = false },
         telemetry = { enable = false },
         completion = {
-          callSnippet = "Replace"
-        }
-      }
-    }
+          callSnippet = "Replace",
+        },
+      },
+    },
   },
-
-
-  -- MARKDOWN
-  marksman = {},
 
   -- PYTHON
   pyright = {
@@ -67,9 +63,9 @@ return {
         analysis = {
           autoSearchPaths = true,
           diagnosticMode = "openFilesOnly",
-          useLibraryCodeForTypes = true
-        }
-      }
+          useLibraryCodeForTypes = true,
+        },
+      },
     },
     single_file_support = true,
   },
