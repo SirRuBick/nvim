@@ -12,13 +12,13 @@ settings.colorscheme = "random"
 -- background clolor, "dark" or "light"
 settings.background = "dark"
 -- trasparent
-settings.transparent = true
+settings.transparent = false
 -- plugin file
 settings.pluginmodule = "nvshan.plugins"
 -- use copilot
-settings.use_copilot = true
+settings.use_copilot = false
 -- use chatgpt
-settings.use_chatgpt = true
+settings.use_chatgpt = false
 -- nvim-tree
 settings.float = {
   enable = true,
