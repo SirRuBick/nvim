@@ -144,12 +144,12 @@ configs.setup({
 			enable = true,
       -- TODO: Are there better keybindings?
 			swap_next = {
-				["<leader>na"] = "@parameter.inner", -- swap parameter/argument with next
-				["<leader>nm"] = "@function.outer", -- swap method/function with next
+				["<C-m>a"] = "@parameter.inner", -- swap parameter/argument with next
+				["<C-m>A"] = "@function.outer", -- swap method/function with next
 			},
 			swap_previous = {
-				["<leader>pa"] = "@parameter.inner", -- swap parameter/argument with previous
-				["<leader>pm"] = "@function.outer", -- swap method/function with previous
+				["<C-m>m"] = "@parameter.inner", -- swap parameter/argument with previous
+				["<C-m>M"] = "@function.outer", -- swap method/function with previous
 			},
 		},
 		-- text object move

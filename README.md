@@ -27,6 +27,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `ALT` +`l`        | N        | Go to beginning of the line                                              | Custom                      |
 | `ALT` +`h`        | N        | Go to end of the line                                                    | Custom                      |
 | `CTRL`+`q`        | N        | Exit terminal mode                                                       | Custom                      |
+| `CTRL`+`m`        | N        | Move argument/function                                                   | Treesitter                  |
 ### Unused keybindings
 | Key | Mode |
 | ---- | ---- |
