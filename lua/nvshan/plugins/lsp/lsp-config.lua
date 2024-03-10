@@ -49,7 +49,7 @@ Config.on_attach = function(client, bufnr)
 		lsp_mappings.n["<leader>lr"] = map(vim.lsp.buf.rename):buffer(bufnr):desc("Rename current symbol")
 	end
 	if capabilities.hoverProvider then
-		lsp_mappings.n["<leader>p"] = map(vim.lsp.buf.hover):buffer(bufnr):desc("Peek symbol definition")
+		lsp_mappings.n["<leader>lp"] = map(vim.lsp.buf.hover):buffer(bufnr):desc("Peek symbol definition")
 	end
 	if capabilities.codeActionProvider then
 		lsp_mappings.n["<leader>la"] = map(vim.lsp.buf.code_action):buffer(bufnr):desc("LSP code action")
@@ -121,8 +121,8 @@ Config.on_attach = function(client, bufnr)
 		if lsp_mappings.n["<leader>lr"] then
 			lsp_mappings.n["<leader>lr"].rhs = "<CMD>Lspsaga rename<CR>"
 		end
-		if lsp_mappings.n["<leader>p"] then
-			lsp_mappings.n["<leader>p"].rhs = "<CMD>Lspsaga peek_definition<CR>"
+		if lsp_mappings.n["<leader>lp"] then
+			lsp_mappings.n["<leader>lp"].rhs = "<CMD>Lspsaga peek_definition<CR>"
 		end
 		if lsp_mappings.n["<leader>la"] then
 			lsp_mappings.n["<leader>la"].rhs = "<CMD>Lspsaga code_action<CR>"

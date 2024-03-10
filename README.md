@@ -130,18 +130,19 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - new terminal should activate vitual environment if source is
 - write some snippets
 - set up markdown note taking system
+- optional: autocmd for linter
 
 ### Learn Neovim
 - vim fuigitive
 - quickfix
 - daddboard
 - DAP
+- nvim-surround and wildfire
 
 ### BUGS
 - project is jumping dir for nonsense
 - dadboard ui close should also close dbout and sql query
 - lsp format modifications is not configured or not key mapped
-- za won't fold context in nvim-ufo style
 
 ### Plugins to explore
 | Section | Plugins |
