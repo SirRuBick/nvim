@@ -25,8 +25,8 @@ Config.on_attach = function(client, bufnr)
 	lsp_mappings.n["<leader>l"] = map():buffer(bufnr):desc(wk_icons.l)
 
 	if is_available("mason-lspconfig.nvim") then
-		lsp_mappings.n["<leader>lI"] = map("<cmd>LspInfo<CR>"):buffer(bufnr):desc("LSP information")
-		lsp_mappings.n["<leader>lS"] = map("<cmd>LspRestart<CR>"):buffer(bufnr):desc("LSP Restart")
+		lsp_mappings.n["<leader>lz"] = map("<cmd>LspInfo<CR>"):buffer(bufnr):desc("LSP information")
+		lsp_mappings.n["<leader>lZ"] = map("<cmd>LspRestart<CR>"):buffer(bufnr):desc("LSP Restart")
 	end
 
 	if is_available("nvim-lint") then
@@ -59,7 +59,7 @@ Config.on_attach = function(client, bufnr)
 		lsp_mappings.n["gd"] = map(vim.lsp.buf.definition):buffer(bufnr):desc("Show the definition of current symbol")
 	end
 	if capabilities.typeDefinitionProvider then
-		lsp_mappings.n["gT"] = map(vim.lsp.buf.type_definition):buffer(bufnr):desc("Definition of current type")
+		lsp_mappings.n["gt"] = map(vim.lsp.buf.type_definition):buffer(bufnr):desc("Definition of current type")
 	end
 
 	if capabilities.declarationProvider then
@@ -71,10 +71,17 @@ Config.on_attach = function(client, bufnr)
 	if capabilities.documentFormattingProvider then
 		lsp_mappings.n["<leader>lf"] = map(vim.lsp.buf.format):buffer(bufnr):desc("Format buffer with lsp")
 		lsp_mappings.v["<leader>lf"] = map(vim.lsp.buf.format):buffer(bufnr):desc("Format buffer with lsp")
-		lsp_mappings.n["<leader>lm"] =
-			map("<CMD>FormatModifications<CR>"):buffer(bufnr):desc("Format modifications only")
-		lsp_mappings.v["<leader>lm"] =
-			map("<CMD>FormatModifications<CR>"):buffer(bufnr):desc("Format modifications only")
+    local status_ok, lsp_fm = pcall(require, "lsp-format-modifications")
+    if status_ok then
+      lsp_mappings.n["<leader>lF"] =
+        map(function() lsp_fm.format_modifications(client, bufnr) end):buffer(bufnr):desc("Format modifications only")
+      lsp_mappings.v["<leader>lF"] =
+        map(function() lsp_fm.format_modifications(client, bufnr) end):buffer(bufnr):desc("Format modifications only")
+    end
+		-- lsp_mappings.n["<leader>lF"] =
+		-- 	map("<CMD>FormatModifications<CR>"):buffer(bufnr):desc("Format modifications only")
+		-- lsp_mappings.v["<leader>lF"] =
+		-- 	map("<CMD>FormatModifications<CR>"):buffer(bufnr):desc("Format modifications only")
 	end
 	if capabilities.implementationProvider then
 		lsp_mappings.n["gI"] = map(vim.lsp.buf.implementation):buffer(bufnr):desc("Implementation of current symbol")
@@ -82,13 +89,26 @@ Config.on_attach = function(client, bufnr)
 	if capabilities.referencesProvider then
 		lsp_mappings.n["<leader>r"] = map(vim.lsp.buf.references):buffer(bufnr):desc("References of current symbol")
 	end
+  if capabilities.callHierarchyProvider then
+    lsp_mappings.n["<leader>lc"] = map(vim.lsp.buf.incoming_calls):buffer(bufnr):desc("Show incoming calls")
+    lsp_mappings.n["<leader>lC"] = map(vim.lsp.buf.outgoing_calls):buffer(bufnr):desc("Show outgoing calls")
+  end
+  if capabilities.workspaceSymbolProvider then
+    lsp_mappings.n["<leader>lS"] = map(vim.lsp.buf.workspace_symbol):buffer(bufnr):desc("List all workspace symbols")
+  end
+  lsp_mappings.n["<leader>w"] = map(vim.lsp.buf.add_workspace_folder):buffer(bufnr):desc("Add workspace folder")
+  lsp_mappings.n["<leader>W"] = map(vim.lsp.buf.list_workspace_folders):buffer(bufnr):desc("List workspace folder")
 
 	if is_available("lspsaga.nvim") then
 		-- lsp saga specific keymaps
 		lsp_mappings.n["<leader>lo"] = map("<CMD>Lspsaga outline<CR>"):buffer(bufnr):desc("Show outline")
-		lsp_mappings.n["<leader>lc"] = map("<CMD>Lspsaga incoming_calls<CR>"):buffer(bufnr):desc("Show incoming calls")
-		lsp_mappings.n["<leader>lC"] = map("<CMD>Lspsaga outgoing_calls<CR>"):buffer(bufnr):desc("Show outgoing calls")
 		-- other keymaps
+		if lsp_mappings.n["<leader>lc"] then
+		  lsp_mappings.n["<leader>lc"] = map("<CMD>Lspsaga incoming_calls<CR>"):buffer(bufnr):desc("Show incoming calls")
+    end
+		if lsp_mappings.n["<leader>lC"] then
+		  lsp_mappings.n["<leader>lC"] = map("<CMD>Lspsaga outgoing_calls<CR>"):buffer(bufnr):desc("Show outgoing calls")
+    end
 		if lsp_mappings.n["[d"] then
 			lsp_mappings.n["[d"].rhs = "<CMD>Lspsaga diagnostic_jump_prev<CR>"
 		end

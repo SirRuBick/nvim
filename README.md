@@ -43,23 +43,31 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `gD`     | N    | Go to symbol declaration | LSP |
 | `gI`     | N    | Go to symbol implementation | LSP |
 | `gT`     | N    | Go to type definition | LSP |
-| `leader`+`d` | N    | Hover diagnostics | LSP |
-| `leader`+`D` | N    | Search diagnostics | Telescope |
-| `leader`+`s` | N    | Document symbols | LSP |
-| `leader`+`r` | N    | Rename current symbol | LSP |
-| `leader`+`p` | N    | Peek symbol definition | LSP |
-| `leader`+`a` | N    | Code action | LSP |
-| `leader`+`h` | N    | Signature help | LSP |
-| `leader`+`f` | N    | Format buffer | conform.nvim |
-| `leader`+`m` | N    | Format modifications | conform.nvim |
-| `leader`+`o` | N    | Symbol outlines | lspsaga |
-| `leader`+`c` | N    | Incoming calls | lspsaga/telescope |
-| `leader`+`C` | N    | Outgoing calls | lspsaga/telescope |
+| `leader`+`ld` | N    | Hover diagnostics | LSP |
+| `leader`+`lD` | N    | Search diagnostics | Telescope |
+| `leader`+`ls` | N    | Document symbols | LSP |
+| `leader`+`lS` | N    | Document workspace symbols | LSP |
+| `leader`+`lr` | N    | Rename current symbol | LSP |
+| `leader`+`lp` | N    | Peek symbol definition | LSP |
+| `leader`+`la` | N    | Code action | LSP |
+| `leader`+`lh` | N    | Signature help | LSP |
+| `leader`+`lf` | N    | Format buffer | conform.nvim |
+| `leader`+`lF` | N    | Format modifications only | LSP |
+| `leader`+`lm` | N    | Format modifications | conform.nvim |
+| `leader`+`lo` | N    | Symbol outlines | lspsaga |
+| `leader`+`lc` | N    | Incoming calls | lspsaga/telescope |
+| `leader`+`lC` | N    | Outgoing calls | lspsaga/telescope |
+| `leader`+`lw` | N    | Add folder to workplace | LSP |
+| `leader`+`lW` | N    | List folder to workplace | LSP |
+| `leader`+`lz` | N    | Lsp info | LSP |
+| `leader`+`lZ` | N    | Lsp restart | LSP |
 </details>
+
 <details open><summary>Jumping</summary>
 
 | Shortcut | Mode | Description | Plugin |
 |----------|------|-------------|--------|
+| `[[`     | N    | Jump to treesitter conext | Vim |
 | `[b`     | N    | Jump to previous buffer | Vim |
 | `]b`     | N    | Jump to next buffer | Vim |
 | `[t`     | N    | Jump to previous tab | Vim |
@@ -101,6 +109,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `[r`     | N    | Jump to previous reference| vim-illuminate |
 | `]r`     | N    | Jump to next reference| vim-illuminate |
 </details>
+
 <details open><summary>Unused</summary>
 
 | Key | Mode |
@@ -126,11 +135,13 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - vim fuigitive
 - quickfix
 - daddboard
+- DAP
 
 ### BUGS
 - project is jumping dir for nonsense
 - dadboard ui close should also close dbout and sql query
 - lsp format modifications is not configured or not key mapped
+- za won't fold context in nvim-ufo style
 
 ### Plugins to explore
 | Section | Plugins |
