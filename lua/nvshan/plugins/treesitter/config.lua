@@ -1,6 +1,7 @@
 local is_wsl = require("global").is_wsl
 local is_available = require("utils").is_available
 local configs = require("nvim-treesitter.configs")
+local lspsaga_loaded, _ = pcall(require, "lspsaga")
 
 ---@diagnostic disable-next-line: missing-fields
 configs.setup({
@@ -142,7 +143,6 @@ configs.setup({
 		-- text object swap
 		swap = {
 			enable = true,
-      -- TODO: Are there better keybindings?
 			swap_next = {
 				["<C-m>a"] = "@parameter.inner", -- swap parameter/argument with next
 				["<C-m>A"] = "@function.outer", -- swap method/function with next
@@ -162,10 +162,6 @@ configs.setup({
 				["]c"] = { query = "@class.outer", desc = "Next class start" },
 				["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
 				["]l"] = { query = "@loop.outer", desc = "Next loop start" },
-				-- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
-				-- Below example nvim-treesitter"s `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
-				["]p"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-				["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
 			},
 			goto_next_end = {
 				["]F"] = { query = "@call.outer", desc = "Next function call end" },
@@ -189,6 +185,16 @@ configs.setup({
 				["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
 			},
 		},
+    lsp_interop = {
+      enable = not lspsaga_loaded,
+      border = 'none',
+      floating_preview_opts = {},
+      -- TODO: is it possible to map both to "K"?
+      peek_definition_code = {
+        ["<leader>lp"] = { query="@function.outer", desc = "Peek function definition" },
+        ["<leader>lP"] = { query="@class.outer", desc = "Peek class definition" },
+      },
+    },
 	},
 	rainbow = {
 		enable = true,
@@ -212,6 +218,14 @@ vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
 vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
 vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
 vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
+
+-- Optionally, make gitsigns.nvim movement repeatable with ; and ,
+local status_ok, gs = pcall(require, "gitsigns")
+-- make sure forward function comes first
+local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+-- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
+vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
+vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
 
 -- nvim-treesitter-context
 local status_ok, ts_context = pcall(require, "treesitter-context")

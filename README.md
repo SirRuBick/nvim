@@ -19,10 +19,7 @@ I am still adding things in as I lean more about nvim.<br>
 Some of the shortcuts I use frequently are listed here. <br>
 In the following shortcuts, `<leader>` represents `space`.<br>
 
-<details>
-    <h3><summary>
-            Core
-    </summary></h3>
+<details open><summary>Core</summary>
 
 | Shortcut          | Mode     | Description                                                              | plugin                      |
 |-------------------|----------|--------------------------------------------------------------------------|-----------------------------|

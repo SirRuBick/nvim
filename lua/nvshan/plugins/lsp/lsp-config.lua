@@ -49,7 +49,7 @@ Config.on_attach = function(client, bufnr)
 		lsp_mappings.n["<leader>lr"] = map(vim.lsp.buf.rename):buffer(bufnr):desc("Rename current symbol")
 	end
 	if capabilities.hoverProvider then
-		lsp_mappings.n["K"] = map(vim.lsp.buf.hover):buffer(bufnr):desc("Hover symbol details")
+		lsp_mappings.n["<leader>p"] = map(vim.lsp.buf.hover):buffer(bufnr):desc("Peek symbol definition")
 	end
 	if capabilities.codeActionProvider then
 		lsp_mappings.n["<leader>la"] = map(vim.lsp.buf.code_action):buffer(bufnr):desc("LSP code action")
@@ -80,7 +80,7 @@ Config.on_attach = function(client, bufnr)
 		lsp_mappings.n["gI"] = map(vim.lsp.buf.implementation):buffer(bufnr):desc("Implementation of current symbol")
 	end
 	if capabilities.referencesProvider then
-		lsp_mappings.n["gr"] = map(vim.lsp.buf.references):buffer(bufnr):desc("References of current symbol")
+		lsp_mappings.n["<leader>r"] = map(vim.lsp.buf.references):buffer(bufnr):desc("References of current symbol")
 	end
 
 	if is_available("lspsaga.nvim") then
@@ -101,8 +101,8 @@ Config.on_attach = function(client, bufnr)
 		if lsp_mappings.n["<leader>lr"] then
 			lsp_mappings.n["<leader>lr"].rhs = "<CMD>Lspsaga rename<CR>"
 		end
-		if lsp_mappings.n["K"] then
-			lsp_mappings.n["K"].rhs = "<CMD>Lspsaga hover_doc<CR>"
+		if lsp_mappings.n["<leader>p"] then
+			lsp_mappings.n["<leader>p"].rhs = "<CMD>Lspsaga peek_definition<CR>"
 		end
 		if lsp_mappings.n["<leader>la"] then
 			lsp_mappings.n["<leader>la"].rhs = "<CMD>Lspsaga code_action<CR>"
@@ -134,10 +134,8 @@ Config.on_attach = function(client, bufnr)
 		if lsp_mappings.n["gI"] then
 			lsp_mappings.n["gI"].rhs = "<CMD>Telescope lsp_implementations<CR>"
 		end
-		if lsp_mappings.n["gr"] then
-			lsp_mappings.n["gr"].rhs = "<CMD>Telescope lsp_references<CR>"
-		else
-			vim.notify("no gr map")
+		if lsp_mappings.n["<leader>r"] then
+			lsp_mappings.n["<leader>r"].rhs = "<CMD>Telescope lsp_references<CR>"
 		end
 		if lsp_mappings.n["gT"] then
 			lsp_mappings.n["gT"].rhs = "<CMD>Telescope lsp_type_definitions<CR>"

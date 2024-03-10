@@ -22,4 +22,12 @@ if is_available("trouble.nvim") then
 	mappings.n["<leader>xt"] = map("<CMD>TroubleToggle lsp_type_definitions<CR>"):desc("Trouble LSP Type Definitions")
 end
 
+if is_available("vim-illuminate") then
+  local illuminate = require("illuminate")
+  mappings.n["<leader>ui"] = map(illuminate.toggle_buf):desc("Illuminate Toggle in local buffer")
+  mappings.n["<leader>uI"] = map(illuminate.toggle):desc("Illuminate Toggle globally")
+  mappings.n["[r"] = map(illuminate.goto_prev_reference):desc("Jump to previous reference")
+  mappings.n["]r"] = map(illuminate.goto_next_reference):desc("Jump to next reference")
+end
+
 return mappings
