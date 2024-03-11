@@ -110,6 +110,15 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `]r`     | N    | Jump to next reference| vim-illuminate |
 </details>
 
+<details open><summary>Others</summary>
+
+| Shortcut | Mode | Description | Plugin |
+|----------|------|-------------|--------|
+| `leader` + `qs` | N | Restore session from current directory | persistence.nvim |
+| `leader` + `ql` | N | Restore last session                   | persistence.nvim |
+| `leader` + `qd` | N | Stop Persistence                       | persistence.nvim |
+</details>
+
 <details open><summary>Unused</summary>
 
 | Key | Mode |
@@ -130,6 +139,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - new terminal should activate vitual environment if source is
 - write some snippets
 - set up markdown note taking system
+- linter configs
 - optional: autocmd for linter
 
 ### Learn Neovim
