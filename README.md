@@ -114,9 +114,9 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 | Shortcut | Mode | Description | Plugin |
 |----------|------|-------------|--------|
-| `leader` + `qs` | N | Restore session from current directory | persistence.nvim |
-| `leader` + `ql` | N | Restore last session                   | persistence.nvim |
-| `leader` + `qd` | N | Stop Persistence                       | persistence.nvim |
+| `leader` + `ps` | N | Restore session from current directory | persistence.nvim |
+| `leader` + `pl` | N | Restore last session                   | persistence.nvim |
+| `leader` + `pd` | N | Stop Persistence                       | persistence.nvim |
 </details>
 
 <details open><summary>Unused</summary>

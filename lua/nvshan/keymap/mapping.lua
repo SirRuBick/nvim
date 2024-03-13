@@ -8,15 +8,15 @@ local is_available = require("utils").is_available
 
 -- which key descriptions
 local wk_icons = require("icons").whichkey
-mappings.n["<leader>f"] = map():desc(wk_icons.f)
-mappings.n["<leader>u"] = map():desc(wk_icons.u)
 mappings.n["<leader>b"] = map():desc(wk_icons.b)
-mappings.n["<leader>g"] = map():desc(wk_icons.g)
-mappings.n["<leader>t"] = map():desc(wk_icons.t)
-mappings.n["<leader>s"] = map():desc(wk_icons.s)
-mappings.n["<leader>x"] = map():desc(wk_icons.x)
-mappings.n["<leader>q"] = map():desc(wk_icons.q)
 mappings.n["<leader>c"] = map():desc(wk_icons.c)
+mappings.n["<leader>f"] = map():desc(wk_icons.f)
+mappings.n["<leader>g"] = map():desc(wk_icons.g)
+mappings.n["<leader>p"] = map():desc(wk_icons.p)
+mappings.n["<leader>q"] = map():desc(wk_icons.q)
+mappings.n["<leader>t"] = map():desc(wk_icons.t)
+mappings.n["<leader>u"] = map():desc(wk_icons.u)
+mappings.n["<leader>x"] = map():desc(wk_icons.x)
 
 -- Operations
 mappings.t["<C-x>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
@@ -108,7 +108,7 @@ mappings.n["[B"] = map("<cmd>bfirst<CR>"):desc("First buffer")
 mappings.n["]B"] = map("<cmd>blast<CR>"):desc("Last buffer")
 mappings.n["<leader>bb"] = map(":buffers<CR>:buffer<Space>"):desc("Switch to buffer by name")
 mappings.n["<leader>bd"] = map(":bd<CR>"):desc("Delete buffer")
-mappings.n["<leader>bn"] = map(":enew<CR>"):desc("New buffer")
+mappings.n["<leader>bn"] = map(":new<CR>"):desc("New buffer")
 mappings.n["<leader>bs"] = map("<cmd>w<CR>"):desc("Save buffer")
 mappings.n["<leader>bS"] = map("<cmd>wa<CR>"):desc("Save all buffer")
 mappings.n["<leader>bq"] = map("<cmd>q<CR>"):desc("Quit buffer")
@@ -156,8 +156,10 @@ mappings.n["<leader>uT"] = map(ui.toggle_treesitter_context):desc("Toggle treesi
 mappings.n["<leader>h"] = map():desc(wk_icons.h)
 mappings.n["<leader>hm"] = map("<CMD>MarkdownPreview<CR>"):desc("Preview Markdown with browser")
 
--- Sessions and Project
-mappings.n["<leader>sp"] = map("<CMD>ProjectRoot<CR>"):desc("Change project root directory")
+-- nvim-ufo
+if is_available("nvim-ufo") then
+  mappings.n["zp"] = map(require("ufo").peekFoldedLinesUnderCursor):desc("Peek folded lines under cursor")
+end
 
 -- Others
 if global.is_mac then
