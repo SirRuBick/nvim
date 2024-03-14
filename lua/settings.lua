@@ -15,6 +15,8 @@ settings.background = "dark"
 settings.transparent = false
 -- plugin file
 settings.pluginmodule = "nvshan.plugins"
+-- auto lint
+settings.auto_lint = false
 -- use copilot
 settings.use_copilot = false
 -- use chatgpt

@@ -7,7 +7,7 @@
 --
 
 local is_available = require("utils").is_available
-local is_transparent = require("settings").transparent
+local settings = require("settings")
 
 -- Auto close NvimTree
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -55,3 +55,20 @@ vim.api.nvim_create_autocmd("WinLeave", {
 		-- vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
 	end,
 })
+
+
+-- Auto Lint
+if settings.auto_lint then
+  vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    group = vim.api.nvim_create_augroup("AutoLint", { clear = true }),
+    pattern = "*",
+    callback = function()
+      local status_ok, lint = pcall(require, "lint")
+      if status_ok then
+        lint.try_lint()
+      else
+        vim.notify("Lint is not available", "warn", { title = "AutoLint" })
+      end
+    end,
+  })
+end

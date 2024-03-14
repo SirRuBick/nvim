@@ -139,8 +139,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - new terminal should activate vitual environment if source is
 - write some snippets
 - set up markdown note taking system
-- linter configs
-- optional: autocmd for linter
+- use ruff for python linter?
 
 ### Learn Neovim
 - vim fuigitive
@@ -150,7 +149,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - nvim-surround and wildfire
 
 ### BUGS
-- project is jumping dir for nonsense
 - dadboard ui close should also close dbout and sql query
 - lsp format modifications is not configured or not key mapped
 
