@@ -144,12 +144,12 @@ configs.setup({
 		swap = {
 			enable = true,
 			swap_next = {
-				["<C-m>a"] = "@parameter.inner", -- swap parameter/argument with next
-				["<C-m>A"] = "@function.outer", -- swap method/function with next
+				["]p"] = "@parameter.inner", -- swap parameter/argument with next
+				["]o"] = "@function.outer", -- swap method/function with next
 			},
 			swap_previous = {
-				["<C-m>m"] = "@parameter.inner", -- swap parameter/argument with previous
-				["<C-m>M"] = "@function.outer", -- swap method/function with previous
+				["[p"] = "@parameter.inner", -- swap parameter/argument with previous
+				["[o"] = "@function.outer", -- swap method/function with previous
 			},
 		},
 		-- text object move

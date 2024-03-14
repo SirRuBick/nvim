@@ -107,10 +107,21 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `[s`     | N    | Jump to previous misspelled word | Vim |
 | `]s`     | N    | Jump to next missspelled word | Vim |
 | `[r`     | N    | Jump to previous reference| vim-illuminate |
-| `]r`     | N    | Jump to next reference| vim-illuminate |
+| `]r`     | N    | Jump to next reference | vim-illuminate |
+| `]p`     | N    | Swap with next parameter | Treesitter |
+| `[p`     | N    | Swap with previous parameter | Treesitter |
+| `]o`     | N    | Swap with next function | Treesitter |
+| `[o`     | N    | Swap with previous function | Treesitter |
 </details>
 
 <details open><summary>Editing</summary>
+| Shortcut | Mode | Description | Plugin |
+|----------|------|-------------|--------|
+| `ys`     | N    | Surround word | vim-surround |
+| `cs`     | N    | Change surround | vim-surround |
+| `ds`     | N    | Delete surround | vim-surround |
+| `s`      | V    | Surround selection | vim-surround |
+| `S`      | V    | Surround line | vim-surround |
 
 #### Telescope
 | Mappings       | Action                                                    |
@@ -174,11 +185,12 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - quickfix
 - dadbod
 - DAP
-- nvim-surround and wildfire
 - vim-visual-multi
+- git worktree
+- nvim-spectre
 
 ### BUGS
-- dadboard ui close should also close dbout and sql query
+- dadbob ui close should also close dbout and sql query
 
 ### Plugins to explore
 | Section | Plugins |
