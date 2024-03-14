@@ -165,24 +165,20 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 </details>
 
 ## TODO
-- doc keymaps
-- change or delete do not replace register
-- new terminal should activate vitual environment if source is
 - write some snippets
 - set up markdown note taking system
 - use ruff for python linter?
 
 ### Learn Neovim
-- vim fuigitive
+- vim fugitive
 - quickfix
-- daddboard
+- dadbod
 - DAP
 - nvim-surround and wildfire
 - vim-visual-multi
 
 ### BUGS
 - dadboard ui close should also close dbout and sql query
-- lsp format modifications is not configured or not key mapped
 
 ### Plugins to explore
 | Section | Plugins |

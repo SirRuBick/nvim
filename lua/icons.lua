@@ -217,6 +217,7 @@ local data = {
     q = "󰆼 SQL",
     t = " Terminal",
     u = " UI",
+    w = " Window",
     x = "󰼇 Trouble",
     z = "󰏖 Lazy",
   },
