@@ -40,6 +40,10 @@ Config.on_attach = function(client, bufnr)
 		end):buffer(bufnr):desc("Lint with options")
 	end
 
+  if is_available("nvim-navbuddy") then
+    lsp_mappings.n["<leader>ln"] = map("<cmd>Navbuddy<CR>"):buffer(bufnr):desc("Navbuddy")
+  end
+
 	-- default lsp keymaps
 	lsp_mappings.n["[d"] = map(vim.diagnostic.goto_prev):buffer(bufnr):desc("Previous diagnostic")
 	lsp_mappings.n["]d"] = map(vim.diagnostic.goto_next):buffer(bufnr):desc("Next diagnostic")

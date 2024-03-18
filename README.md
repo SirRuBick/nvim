@@ -151,6 +151,31 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `<C-r><C-w>`   | Insert cword in original window into prompt (insert mode) |
 | `<C-t>`        | Open in Trouble                                           |
 | `<C-s>`        | Toggle Flash search                                       |
+
+#### Telescope
+| Mappings       | Action                                                    |
+| -------------- | --------------------------------------------------------- |
+| `<Esc>`        | Close and cusor to original location                      |
+| `q`            | Quit                                                      |
+| `j/k`          | Move Up or Down                                           |
+| `h/l`          | Move to left/right panel                                  |
+| `0`            | Move to first panel                                       |
+| `r`            | Rename current focused symbol                             |
+| `v/V`          | Visual selection of name/scope                            |
+| `y/Y`          | Yank name/scope to system clipboard "+                    |
+| `i/I`          | Insert at start of name/scope                             |
+| `a/A`          | Insert at end of name/scope                               |
+| `d`            | Delete scope                                              |
+| `f/F`          | Create/Delete fold of current scope                       |
+| `c`            | Comment out current scope                                 |
+| `<Enter>/o`    | Go to selected symbol                                     |
+| `J/K`          | Move focused node down/up                                 |
+| `s`            | Show preview of current node                              |
+| `<C-v>`        | Open selected node in a vertical split                    |
+| `<C-s>`        | Open selected node in a horizontal split                  |
+| `t`            | Open telescope                                            |
+| `?`            | Open mappings help window                                 |
+
 </details>
 
 <details open><summary>Others</summary>
@@ -185,7 +210,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - quickfix
 - dadbod
 - DAP
-- vim-visual-multi
+- vim-visual-multi, there are some key conflicts
 - git worktree
 - nvim-spectre
 
@@ -197,15 +222,11 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 |---------|---------|
 | coding | "ThePrimeagen/harpoon" |
 | coding | "chentoast/marks.nvim" |
-| coding | "SmiteshP/nvim-navbuddy" |
 | coding | "kevinhwang91/nvim-bqf" |
 | test | "nvim-neotest/neotest" |
 | git | "ThePrimeagen/git-worktree.nvim"|
-| bookmark | "MattesGroeger/vim-bookmarks" |
-| bookmark | "tom-anders/telescope-vim-bookmarks.nvim" |
 | file explorer | "stevearc/oil.nvim" |
 | note taking | "epwalsh/obsidian.nvim" |
-| note taking | "mickael-menu/zk-nvim" |
 | note taking | "renerocksai/telekasten.nvim" |
 | note taking | "vimwiki" |
 | markdown | "ekickx/clipboard-image.nvim" |
