@@ -15,6 +15,38 @@ I am still adding things in as I lean more about nvim.<br>
 - [codespell](https://github.com/codespell-project/codespell): required by conform.nvim
 - [wget](https://www.gnu.org/software/wget/): required by mason.nvim
 
+## TODO
+- write some snippets
+- set up markdown note taking system
+- use ruff for python linter?
+
+### Learn Neovim
+- quickfix
+- dadbod
+- DAP
+- vim-visual-multi, there are some key conflicts
+- git worktree
+- nvim-spectre
+
+### BUGS
+- dadbob ui close should also close dbout and sql query
+
+### Plugins to explore
+| Section  | Plugins |
+|----------|---------|
+| coding   | "ThePrimeagen/harpoon" |
+| coding   | "chentoast/marks.nvim" |
+| coding   | "kevinhwang91/nvim-bqf" |
+| test     | "nvim-neotest/neotest" |
+| note     | "epwalsh/obsidian.nvim" |
+| note     | "renerocksai/telekasten.nvim" |
+| note     | "vimwiki" |
+| markdown | "ekickx/clipboard-image.nvim" |
+| AI       | "David-Kunz/gen.nvim"|
+| AI       | "Exafunction/codeium.nvim"|
+| Others   | "vim-calendar" |
+| Others   | "epwalsh/pomo.nvim" |
+
 ## Keymaps
 Some of the shortcuts I use frequently are listed here. <br>
 In the following shortcuts, `<leader>` represents `space`.<br>
@@ -124,6 +156,16 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `s`      | V    | Surround selection | vim-surround |
 | `S`      | V    | Surround line | vim-surround |
 
+</details>
+
+<details open><summary>Plugins</summary>
+
+#### Persistence
+| Shortcut | Mode | Description | Plugin |
+|----------|------|-------------|--------|
+| `leader` + `ps` | N | Restore session from current directory | persistence.nvim |
+| `leader` + `pl` | N | Restore last session                   | persistence.nvim |
+| `leader` + `pd` | N | Stop Persistence                       | persistence.nvim |
 #### Telescope
 | Mappings     | Action                                                    |
 | ------------ | --------------------------------------------------------- |
@@ -179,15 +221,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 </details>
 
-<details open><summary>Others</summary>
-
-| Shortcut | Mode | Description | Plugin |
-|----------|------|-------------|--------|
-| `leader` + `ps` | N | Restore session from current directory | persistence.nvim |
-| `leader` + `pl` | N | Restore last session                   | persistence.nvim |
-| `leader` + `pd` | N | Stop Persistence                       | persistence.nvim |
-</details>
-
 <details open><summary>Unused</summary>
 
 | Key | Mode |
@@ -200,38 +233,3 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `Y` | Normal |
 | `_` | Normal |
 </details>
-
-## TODO
-- write some snippets
-- set up markdown note taking system
-- use ruff for python linter?
-
-### Learn Neovim
-- quickfix
-- dadbod
-- DAP
-- vim-visual-multi, there are some key conflicts
-- git worktree
-- nvim-spectre
-
-### BUGS
-- dadbob ui close should also close dbout and sql query
-
-### Plugins to explore
-| Section  | Plugins |
-|----------|---------|
-| coding   | "ThePrimeagen/harpoon" |
-| coding   | "chentoast/marks.nvim" |
-| coding   | "kevinhwang91/nvim-bqf" |
-| test     | "nvim-neotest/neotest" |
-| git      | "ThePrimeagen/git-worktree.nvim"|
-| git      | "sindrets/diffview.nvim"|
-| git      | "NeogitOrg/neogit"|
-| note     | "epwalsh/obsidian.nvim" |
-| note     | "renerocksai/telekasten.nvim" |
-| note     | "vimwiki" |
-| markdown | "ekickx/clipboard-image.nvim" |
-| AI       | "David-Kunz/gen.nvim"|
-| AI       | "Exafunction/codeium.nvim"|
-| Others   | "vim-calendar" |
-| Others   | "epwalsh/pomo.nvim" |
