@@ -19,14 +19,16 @@ I am still adding things in as I lean more about nvim.<br>
 - write some snippets
 - set up markdown note taking system
 - use ruff for python linter?
+- looks like there are a lot more to be configured for bufferline
 
 ### Learn Neovim
 - quickfix
 - dadbod
 - DAP
 - vim-visual-multi, there are some key conflicts
-- git worktree
 - nvim-spectre
+- neogit usages
+- git worktree
 
 ### BUGS
 - dadbob ui close should also close dbout and sql query
@@ -34,18 +36,25 @@ I am still adding things in as I lean more about nvim.<br>
 ### Plugins to explore
 | Section  | Plugins |
 |----------|---------|
-| coding   | "ThePrimeagen/harpoon" |
-| coding   | "chentoast/marks.nvim" |
-| coding   | "kevinhwang91/nvim-bqf" |
+| editing  | "ThePrimeagen/harpoon" |
+| editing  | "chentoast/marks.nvim" |
+| editing  | "kevinhwang91/nvim-bqf" |
+| editing  | "danymat/neogen" |
+| editing  | "mbbill/undotree" |
+| editing  | "echasnovski/mini.align" |
 | test     | "nvim-neotest/neotest" |
 | note     | "epwalsh/obsidian.nvim" |
 | note     | "renerocksai/telekasten.nvim" |
 | note     | "vimwiki" |
 | markdown | "ekickx/clipboard-image.nvim" |
+| ui       | "s1n7ax/nvim-window-picker" |
+| ui       | "kosayoda/nvim-lightbulb" |
 | AI       | "David-Kunz/gen.nvim"|
 | AI       | "Exafunction/codeium.nvim"|
-| Others   | "vim-calendar" |
-| Others   | "epwalsh/pomo.nvim" |
+| Others   | "itchyny/calendar.vim" |
+| Others   | "folke/neoconf.nvim" |
+| Others   | "rest-nvim/rest.nvim" |
+| Color    | "EdenEast/nightfox.nvim" |
 
 ## Keymaps
 Some of the shortcuts I use frequently are listed here. <br>
@@ -99,51 +108,57 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 | Shortcut | Mode | Description | Plugin |
 |----------|------|-------------|--------|
-| `[[`     | N    | Jump to treesitter conext | Vim |
-| `[b`     | N    | Jump to previous buffer | Vim |
+| `{`     | N    | Jump to prev paragraph | Vim |
+| `}`     | N    | Jump to next paragraph | Vim |
+| `[[`     | N    | Jump to prev section | Vim |
+| `]]`     | N    | Jump to next section | Vim |
+| `['`     | N    | Jump to treesitter context | Treesitter |
+| `[a`     | N    | Jump to prev parameter/argument | Treesitter |
+| `]a`     | N    | Jump to next parameter/argument | Treesitter |
+| `[b`     | N    | Jump to prev buffer | Vim |
 | `]b`     | N    | Jump to next buffer | Vim |
-| `[t`     | N    | Jump to previous tab | Vim |
+| `[t`     | N    | Jump to prev tab | Vim |
 | `]t`     | N    | Jump to next tab | Vim |
-| `[c`     | N    | Jump to previous class start | Treesitter |
+| `[c`     | N    | Jump to prev class start | Treesitter |
 | `]c`     | N    | Jump to next class start | Treesitter |
-| `[C`     | N    | Jump to previous class end | Treesitter |
+| `[C`     | N    | Jump to prev class end | Treesitter |
 | `]C`     | N    | Jump to next class end | Treesitter |
-| `[f`     | N    | Jump to previous function call start | Treesitter |
+| `[f`     | N    | Jump to prev function call start | Treesitter |
 | `]f`     | N    | Jump to next function call start | Treesitter |
-| `[F`     | N    | Jump to previous function call end | Treesitter |
+| `[F`     | N    | Jump to prev function call end | Treesitter |
 | `]F`     | N    | Jump to next function call end | Treesitter |
-| `[i`     | N    | Jump to previous condition start | Treesitter |
+| `[i`     | N    | Jump to prev condition start | Treesitter |
 | `]i`     | N    | Jump to next condition start | Treesitter |
-| `[I`     | N    | Jump to previous condition end | Treesitter |
+| `[I`     | N    | Jump to prev condition end | Treesitter |
 | `]I`     | N    | Jump to next condition end | Treesitter |
-| `[l`     | N    | Jump to previous loop start | Treesitter |
+| `[l`     | N    | Jump to prev loop start | Treesitter |
 | `]l`     | N    | Jump to next loop start | Treesitter |
-| `[L`     | N    | Jump to previous loop end | Treesitter |
+| `[L`     | N    | Jump to prev loop end | Treesitter |
 | `]L`     | N    | Jump to next loop end | Treesitter |
-| `[m`     | N    | Jump to previous method start | Treesitter |
+| `[m`     | N    | Jump to prev method start | Treesitter |
 | `]m`     | N    | Jump to next method start | Treesitter |
-| `[M`     | N    | Jump to previous method end | Treesitter |
+| `[M`     | N    | Jump to prev method end | Treesitter |
 | `]M`     | N    | Jump to next method end | Treesitter |
-| `[d`     | N    | Jump to previous diagnostic  | LSP |
+| `[d`     | N    | Jump to prev diagnostic  | LSP |
 | `]d`     | N    | Jump to next diagnostic | LSP |
-| `[h`     | N    | Jump to previous git hunk | Gitsigns |
+| `[h`     | N    | Jump to prev git hunk | Gitsigns |
 | `]h`     | N    | Jump to next git hunk | Gitsigns |
-| `[a`     | N    | Jump to previous location | Vim |
-| `]a`     | N    | Jump to next location | Vim |
-| `[A`     | N    | Jump to first location | Vim |
-| `]A`     | N    | Jump to last location | Vim |
-| `[q`     | N    | Jump to previous quickfix | Vim |
+| `[o`     | N    | Jump to prev location | Vim |
+| `]o`     | N    | Jump to next location | Vim |
+| `[O`     | N    | Jump to first location | Vim |
+| `]O`     | N    | Jump to last location | Vim |
+| `[q`     | N    | Jump to prev quickfix | Vim |
 | `]q`     | N    | Jump to next quickfix | Vim |
 | `[Q`     | N    | Jump to first quickfix | Vim |
 | `]Q`     | N    | Jump to last quickfix | Vim |
-| `[s`     | N    | Jump to previous misspelled word | Vim |
+| `[s`     | N    | Jump to prev misspelled word | Vim |
 | `]s`     | N    | Jump to next missspelled word | Vim |
-| `[r`     | N    | Jump to previous reference| vim-illuminate |
+| `[r`     | N    | Jump to prev reference| vim-illuminate |
 | `]r`     | N    | Jump to next reference | vim-illuminate |
-| `]p`     | N    | Swap with next parameter | Treesitter |
-| `[p`     | N    | Swap with previous parameter | Treesitter |
-| `]o`     | N    | Swap with next function | Treesitter |
-| `[o`     | N    | Swap with previous function | Treesitter |
+| `].`     | N    | Swap with next parameter | Treesitter |
+| `[.`     | N    | Swap with prev parameter | Treesitter |
+| `],`     | N    | Swap with next function | Treesitter |
+| `[,`     | N    | Swap with prev function | Treesitter |
 </details>
 
 <details open><summary>Editing</summary>

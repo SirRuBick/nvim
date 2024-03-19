@@ -144,12 +144,12 @@ configs.setup({
 		swap = {
 			enable = true,
 			swap_next = {
-				["]p"] = "@parameter.inner", -- swap parameter/argument with next
-				["]o"] = "@function.outer", -- swap method/function with next
+				["]."] = "@parameter.inner", -- swap parameter/argument with next
+				["],"] = "@function.outer", -- swap method/function with next
 			},
 			swap_previous = {
-				["[p"] = "@parameter.inner", -- swap parameter/argument with previous
-				["[o"] = "@function.outer", -- swap method/function with previous
+				["[."] = "@parameter.inner", -- swap parameter/argument with previous
+				["[,"] = "@function.outer", -- swap method/function with previous
 			},
 		},
 		-- text object move
@@ -162,6 +162,7 @@ configs.setup({
 				["]c"] = { query = "@class.outer", desc = "Next class start" },
 				["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
 				["]l"] = { query = "@loop.outer", desc = "Next loop start" },
+				["]a"] = { query = "@parameter.inner", desc = "Next parameter start" },
 			},
 			goto_next_end = {
 				["]F"] = { query = "@call.outer", desc = "Next function call end" },
@@ -176,6 +177,7 @@ configs.setup({
 				["[c"] = { query = "@class.outer", desc = "Prev class start" },
 				["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
 				["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
+				["[a"] = { query = "@parameter.inner", desc = "Prev parameter start" },
 			},
 			goto_previous_end = {
 				["[F"] = { query = "@call.outer", desc = "Prev function call end" },
@@ -189,7 +191,6 @@ configs.setup({
       enable = not lspsaga_loaded,
       border = 'none',
       floating_preview_opts = {},
-      -- TODO: is it possible to map both to "K"?
       peek_definition_code = {
         ["<leader>lp"] = { query="@function.outer", desc = "Peek function definition" },
         ["<leader>lP"] = { query="@class.outer", desc = "Peek class definition" },
