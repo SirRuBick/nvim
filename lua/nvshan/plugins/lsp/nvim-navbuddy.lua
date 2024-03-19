@@ -108,7 +108,7 @@ navbuddy.setup({
     ["s"] = actions.toggle_preview(), -- Show preview of current node
 
     ["<C-v>"] = actions.vsplit(), -- Open selected node in a vertical split
-    ["<C-s>"] = actions.hsplit(), -- Open selected node in a horizontal split
+    ["<C-h>"] = actions.hsplit(), -- Open selected node in a horizontal split
 
     ["t"] = actions.telescope({ -- Fuzzy finder at current level.
       layout_config = { -- All options that can be

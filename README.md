@@ -21,46 +21,46 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 
 <details open><summary>Core</summary>
 
-| Shortcut          | Mode     | Description                                                              | plugin                      |
-|-------------------|----------|--------------------------------------------------------------------------|-----------------------------|
-| `CTRL`+`o`        | N        | Cursor moves back to previous position                                   | Vim                         |
-| `CTRL`+`i`        | N        | Cursor moves back to next position                                       | Vim                         |
-| `CTRL`+`6`        | N        | Toggle between previous file with                                        | Vim                         |
-| `ALT`+`l`        | N        | Go to beginning of the line                                              | Custom                      |
-| `ALT`+`h`        | N        | Go to end of the line                                                    | Custom                      |
-| `CTRL`+`q`        | N        | Exit terminal mode                                                       | Custom                      |
-| `CTRL`+`m`        | N        | Move argument/function                                                   | Treesitter                  |
-| `leader`+`e` | N    | Toggle file explorer | nvim-tree |
-| `leader`+`k` | N    | Keep only current split | Vim |
-| `leader`+`z` | N    | Open plugin manager | lazy.nvim |
+| Shortcut          | Mode   | Description                                              | plugin             |
+|-------------------|--------|----------------------------------------------------------|--------------------|
+| `CTRL`+`o`        | N      | Cursor moves back to previous position                   | Vim                |
+| `CTRL`+`i`        | N      | Cursor moves back to next position                       | Vim                |
+| `CTRL`+`6`        | N      | Toggle between previous file with                        | Vim                |
+| `ALT`+`l`         | N      | Go to beginning of the line                              | Custom             |
+| `ALT`+`h`         | N      | Go to end of the line                                    | Custom             |
+| `CTRL`+`q`        | N      | Exit terminal mode                                       | Custom             |
+| `CTRL`+`m`        | N      | Move argument/function                                   | Treesitter         |
+| `leader`+`e`      | N      | Toggle file explorer                                     | nvim-tree          |
+| `leader`+`k`      | N      | Keep only current split                                  | Vim                |
+| `leader`+`z`      | N      | Open plugin manager                                      | lazy.nvim          |
 </details>
 
 <details open><summary>LSP</summary>
 
-| Shortcut | Mode | Description | Plugin |
-|----------|------|-------------|--------|
-| `gd`     | N    | Go to symbol definition | LSP |
-| `gD`     | N    | Go to symbol declaration | LSP |
-| `gI`     | N    | Go to symbol implementation | LSP |
-| `gT`     | N    | Go to type definition | LSP |
-| `leader`+`ld` | N    | Hover diagnostics | LSP |
-| `leader`+`lD` | N    | Search diagnostics | Telescope |
-| `leader`+`ls` | N    | Document symbols | LSP |
-| `leader`+`lS` | N    | Document workspace symbols | LSP |
-| `leader`+`lr` | N    | Rename current symbol | LSP |
-| `leader`+`lp` | N    | Peek symbol definition | LSP |
-| `leader`+`la` | N    | Code action | LSP |
-| `leader`+`lh` | N    | Signature help | LSP |
-| `leader`+`lf` | N    | Format buffer | conform.nvim |
-| `leader`+`lF` | N    | Format modifications only | LSP |
-| `leader`+`lm` | N    | Format modifications | conform.nvim |
-| `leader`+`lo` | N    | Symbol outlines | lspsaga |
-| `leader`+`lc` | N    | Incoming calls | lspsaga/telescope |
-| `leader`+`lC` | N    | Outgoing calls | lspsaga/telescope |
-| `leader`+`lw` | N    | Add folder to workplace | LSP |
-| `leader`+`lW` | N    | List folder to workplace | LSP |
-| `leader`+`lz` | N    | Lsp info | LSP |
-| `leader`+`lZ` | N    | Lsp restart | LSP |
+| Shortcut      | Mode | Description                     | Plugin        |
+|---------------|------|---------------------------------|---------------|
+| `gd`          | N    | Go to symbol definition         | LSP           |
+| `gD`          | N    | Go to symbol declaration        | LSP           |
+| `gI`          | N    | Go to symbol implementation     | LSP           |
+| `gT`          | N    | Go to type definition           | LSP           |
+| `leader`+`ld` | N    | Hover diagnostics               | LSP           |
+| `leader`+`lD` | N    | Search diagnostics              | Telescope     |
+| `leader`+`ls` | N    | Document symbols                | LSP           |
+| `leader`+`lS` | N    | Document workspace symbols      | LSP           |
+| `leader`+`lr` | N    | Rename current symbol           | LSP           |
+| `leader`+`lp` | N    | Peek symbol definition          | LSP           |
+| `leader`+`la` | N    | Code action                     | LSP           |
+| `leader`+`lh` | N    | Signature help                  | LSP           |
+| `leader`+`lf` | N    | Format buffer                   | conform.nvim  |
+| `leader`+`lF` | N    | Format modifications only       | LSP           |
+| `leader`+`lm` | N    | Format modifications            | conform.nvim  |
+| `leader`+`lo` | N    | Symbol outlines                 | lspsaga       |
+| `leader`+`lc` | N    | Incoming calls                  | telescope     |
+| `leader`+`lC` | N    | Outgoing calls                  | telescope     |
+| `leader`+`lw` | N    | Add folder to workplace         | LSP           |
+| `leader`+`lW` | N    | List folder to workplace        | LSP           |
+| `leader`+`lz` | N    | Lsp info                        | LSP           |
+| `leader`+`lZ` | N    | Lsp restart                     | LSP           |
 </details>
 
 <details open><summary>Jumping</summary>
@@ -115,6 +115,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 </details>
 
 <details open><summary>Editing</summary>
+
 | Shortcut | Mode | Description | Plugin |
 |----------|------|-------------|--------|
 | `ys`     | N    | Surround word | vim-surround |
@@ -124,15 +125,15 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `S`      | V    | Surround line | vim-surround |
 
 #### Telescope
-| Mappings       | Action                                                    |
-| -------------- | --------------------------------------------------------- |
+| Mappings     | Action                                                    |
+| ------------ | --------------------------------------------------------- |
 | `<C-n>/<Down>` | Next item                                                 |
 | `<C-p>/<Up>`   | Previous item                                             |
 | `j/k`          | Next/previous (in normal mode)                            |
 | `H/M/L`        | Select High/Middle/Low (in normal mode)                   |
 | `gg/G`         | Select the first/last item (in normal mode)               |
 | `<CR>`         | Confirm selection                                         |
-| `<C-x>`        | Go to file selection as a split                           |
+| `<C-h>`        | Go to file selection as a split                           |
 | `<C-v>`        | Go to file selection as a vsplit                          |
 | `<C-u>`        | Scroll up in preview window                               |
 | `<C-d>`        | Scroll down in preview window                             |
@@ -153,8 +154,8 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `<C-s>`        | Toggle Flash search                                       |
 
 #### Telescope
-| Mappings       | Action                                                    |
-| -------------- | --------------------------------------------------------- |
+| Mappings     | Action                                                    |
+| ------------ | --------------------------------------------------------- |
 | `<Esc>`        | Close and cusor to original location                      |
 | `q`            | Quit                                                      |
 | `j/k`          | Move Up or Down                                           |
@@ -172,7 +173,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `J/K`          | Move focused node down/up                                 |
 | `s`            | Show preview of current node                              |
 | `<C-v>`        | Open selected node in a vertical split                    |
-| `<C-s>`        | Open selected node in a horizontal split                  |
+| `<C-h>`        | Open selected node in a horizontal split                  |
 | `t`            | Open telescope                                            |
 | `?`            | Open mappings help window                                 |
 
@@ -206,7 +207,6 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - use ruff for python linter?
 
 ### Learn Neovim
-- vim fugitive
 - quickfix
 - dadbod
 - DAP
@@ -218,19 +218,20 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 - dadbob ui close should also close dbout and sql query
 
 ### Plugins to explore
-| Section | Plugins |
-|---------|---------|
-| coding | "ThePrimeagen/harpoon" |
-| coding | "chentoast/marks.nvim" |
-| coding | "kevinhwang91/nvim-bqf" |
-| test | "nvim-neotest/neotest" |
-| git | "ThePrimeagen/git-worktree.nvim"|
-| file explorer | "stevearc/oil.nvim" |
-| note taking | "epwalsh/obsidian.nvim" |
-| note taking | "renerocksai/telekasten.nvim" |
-| note taking | "vimwiki" |
+| Section  | Plugins |
+|----------|---------|
+| coding   | "ThePrimeagen/harpoon" |
+| coding   | "chentoast/marks.nvim" |
+| coding   | "kevinhwang91/nvim-bqf" |
+| test     | "nvim-neotest/neotest" |
+| git      | "ThePrimeagen/git-worktree.nvim"|
+| git      | "sindrets/diffview.nvim"|
+| git      | "NeogitOrg/neogit"|
+| note     | "epwalsh/obsidian.nvim" |
+| note     | "renerocksai/telekasten.nvim" |
+| note     | "vimwiki" |
 | markdown | "ekickx/clipboard-image.nvim" |
-| AI | "David-Kunz/gen.nvim"|
-| AI | "Exafunction/codeium.nvim"|
-| Others | "vim-calendar" |
-| Others | "epwalsh/pomo.nvim" |
+| AI       | "David-Kunz/gen.nvim"|
+| AI       | "Exafunction/codeium.nvim"|
+| Others   | "vim-calendar" |
+| Others   | "epwalsh/pomo.nvim" |
