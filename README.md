@@ -190,7 +190,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `H/M/L`        | Select High/Middle/Low (in normal mode)                   |
 | `gg/G`         | Select the first/last item (in normal mode)               |
 | `<CR>`         | Confirm selection                                         |
-| `<C-h>`        | Go to file selection as a split                           |
+| `<C-x>`        | Go to file selection as a split                           |
 | `<C-v>`        | Go to file selection as a vsplit                          |
 | `<C-u>`        | Scroll up in preview window                               |
 | `<C-d>`        | Scroll down in preview window                             |
@@ -210,7 +210,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `<C-t>`        | Open in Trouble                                           |
 | `<C-s>`        | Toggle Flash search                                       |
 
-#### Telescope
+#### NavBuddy
 | Mappings     | Action                                                    |
 | ------------ | --------------------------------------------------------- |
 | `<Esc>`        | Close and cusor to original location                      |
@@ -230,7 +230,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `J/K`          | Move focused node down/up                                 |
 | `s`            | Show preview of current node                              |
 | `<C-v>`        | Open selected node in a vertical split                    |
-| `<C-h>`        | Open selected node in a horizontal split                  |
+| `<C-x>`        | Open selected node in a horizontal split                  |
 | `t`            | Open telescope                                            |
 | `?`            | Open mappings help window                                 |
 

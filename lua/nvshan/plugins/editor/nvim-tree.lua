@@ -17,7 +17,7 @@ local function my_on_attach(bufnr)
 	api.config.mappings.default_on_attach(bufnr)
 
 	-- custom mappings
-	vim.keymap.set("n", "<C-h>", api.node.open.horizontal, opts("Open: Horizontal Split"))
+	vim.keymap.set("n", "<C-x>", api.node.open.horizontal, opts("Open: Horizontal Split"))
 	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
 end
 
