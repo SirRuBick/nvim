@@ -11,7 +11,7 @@ end
 mappings.n["<leader>f'"] = map(function() require("telescope.builtin").grep_string() end):silent():desc("Find for word under cursor")
 mappings.n["<leader>fa"] = map(function() require("telescope.builtin").autocommands() end):silent():desc("Find autocommands")
 mappings.n["<leader>fb"] = map(function() require("telescope.builtin").buffers() end):silent():desc("Find buffers")
-mappings.n["<leader>fc"] = map(function() require("telescope.builtin").current_buffer_fuzzy_find() end):silent():desc("Find in current buffer")
+mappings.n["<leader>fc"] = map(function() require("telescope.builtin").current_buffer_fuzzy_find() end):silent():desc("Fuzzy find in current buffer")
 mappings.n["<leader>fC"] = map(function() require("telescope.builtin").commands() end):silent():desc("Find commands")
 mappings.n["<leader>fe"] = map(function() require("telescope.builtin").treesitter() end):silent():desc("Find treesitter")
 mappings.n["<leader>ff"] = map(function() require("telescope.builtin").find_files() end):silent():desc("Find files")

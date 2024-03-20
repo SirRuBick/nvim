@@ -32,6 +32,7 @@ I am still adding things in as I lean more about nvim.<br>
 
 ### BUGS
 - dadbob ui close should also close dbout and sql query
+- cannot find a LSP server that works for markdown
 
 ### Plugins to explore
 | Section  | Plugins |

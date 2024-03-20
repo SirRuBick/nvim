@@ -65,7 +65,7 @@ return {
     "SmiteshP/nvim-navbuddy",
     cmd = { "Navbuddy" },
     dependencies = {
-      "Smitesh/nvim-navic",
+      "SmiteshP/nvim-navic",
       "MunifTanjim/nui.nvim",
     },
     config = function()

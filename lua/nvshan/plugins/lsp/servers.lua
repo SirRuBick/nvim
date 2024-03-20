@@ -30,16 +30,6 @@ return {
   -- JSON
   jsonls = {},
 
-  -- lATEX; MARKDOWN
-  ltex = {
-    cmd = { "ltex-ls" },
-    filetypes = { "bib", "gitcommit", "org", "plaintex", "rst", "rnoweb", "tex", "pandoc", "quarto", "rmd" },
-    single_file_support = true,
-    settings = {
-      ltex = { language = "en" },
-    },
-  },
-
   -- LUA
   lua_ls = {
     settings = {
