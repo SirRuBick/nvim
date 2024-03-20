@@ -1,4 +1,4 @@
-local use_copilot = require("settings").use_copilot
+local settings = require("settings")
 
 return {
 	{
@@ -28,11 +28,19 @@ return {
 	},
 	{
 		"github/copilot.vim",
-    cond = use_copilot,
+    cond = settings.use_copilot,
 		cmd = "Copilot",
 		event = "VeryLazy",
 		init = function()
 			vim.g.copilot_no_tab_map = true
 		end,
 	},
+  {
+    "Exafunction/codeium.vim",
+    cond = settings.use_codium,
+    event = "VeryLazy",
+    init = function()
+      vim.g.codeium_disable_bindings = 1
+    end,
+  }
 }

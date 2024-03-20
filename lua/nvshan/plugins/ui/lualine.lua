@@ -9,9 +9,14 @@ end
 local lint_progress = function()
   local linters = require("lint").get_running()
   if #linters == 0 then
-      return "󰦕"
+    return "󰦕"
   end
   return "󱉶 " .. table.concat(linters, ", ")
+end
+
+-- Codium
+local codeium_status = function()
+  return "" .. vim.api.nvim_call_function("codeium#GetStatusString", {})
 end
 
 lualine.setup({
@@ -40,9 +45,9 @@ lualine.setup({
     lualine_a = { "mode" },
     lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = { "hostname", "filename" },
-    lualine_x = { "encoding", "fileformat", "filetype" },
-    lualine_y = { lint_progress },
-    lualine_z = { "location", "progress"  },
+    lualine_x = { codeium_status, lint_progress },
+    lualine_y = { "encoding", "fileformat", "filetype" },
+    lualine_z = { "location", "progress" },
   },
   inactive_sections = {
     lualine_a = {},

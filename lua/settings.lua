@@ -6,7 +6,7 @@ local join_path = require("utils").join_path
 settings.leader = " "
 -- diagnositc virtual text
 settings.diagnostic_virtual_text = false
--- colorscheme, choose from random or
+-- colorscheme, choose from "random" or
 -- catppuccin/kanagawa/onedark/gruvbox
 settings.colorscheme = "random"
 -- background clolor, "dark" or "light"
@@ -19,6 +19,8 @@ settings.pluginmodule = "nvshan.plugins"
 settings.auto_lint = false
 -- use copilot
 settings.use_copilot = false
+-- use codeium
+settings.use_codeium = true
 -- use chatgpt
 settings.use_chatgpt = false
 -- nvim-tree
