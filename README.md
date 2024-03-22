@@ -19,8 +19,7 @@ I am still adding things in as I lean more about nvim.<br>
 - write some snippets
 - set up markdown note taking system
 - use ruff for python linter?
-- looks like there are a lot more to be configured for bufferline
-- set up codeium status line
+- improve UI by configuring statusline and bufferline
 
 ### Learn Neovim
 - quickfix
@@ -46,7 +45,6 @@ I am still adding things in as I lean more about nvim.<br>
 | editing  | "echasnovski/mini.align" |
 | test     | "nvim-neotest/neotest" |
 | markdown | "ekickx/clipboard-image.nvim" |
-| ui       | "s1n7ax/nvim-window-picker" |
 | AI       | "David-Kunz/gen.nvim"|
 | Others   | "itchyny/calendar.vim" |
 | Others   | "folke/neoconf.nvim" |
