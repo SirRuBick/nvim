@@ -29,15 +29,6 @@ return {
       {
         "joechrisellis/lsp-format-modifications.nvim",
       },
-      {
-        "nvimdev/lspsaga.nvim",
-        dependencies = {
-          "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-          require("nvshan.plugins.lsp.lspsaga")
-        end,
-      },
     },
     config = require("nvshan.plugins.lsp.nvim-lsp"),
   },
@@ -72,4 +63,27 @@ return {
       require("nvshan.plugins.lsp.nvim-navbuddy")
     end,
   },
+  {
+    "nvimdev/lspsaga.nvim",
+    cond = false,
+    event = "LspAttach",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvshan.plugins.lsp.lspsaga")
+    end,
+  },
+  {
+    "hedyhli/outline.nvim",
+    event = "LspAttach",
+    opts = {},
+  },
+  {
+    "kosayoda/nvim-lightbulb",
+    event = "LspAttach",
+    opts = {
+      autocmd = { enabled = true },
+    },
+  }
 }

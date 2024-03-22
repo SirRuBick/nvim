@@ -47,7 +47,6 @@ I am still adding things in as I lean more about nvim.<br>
 | test     | "nvim-neotest/neotest" |
 | markdown | "ekickx/clipboard-image.nvim" |
 | ui       | "s1n7ax/nvim-window-picker" |
-| ui       | "kosayoda/nvim-lightbulb" |
 | AI       | "David-Kunz/gen.nvim"|
 | Others   | "itchyny/calendar.vim" |
 | Others   | "folke/neoconf.nvim" |
@@ -179,6 +178,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `leader` + `ps` | N | Restore session from current directory | persistence.nvim |
 | `leader` + `pl` | N | Restore last session                   | persistence.nvim |
 | `leader` + `pd` | N | Stop Persistence                       | persistence.nvim |
+
 #### Telescope
 | Mappings     | Action                                                    |
 | ------------ | --------------------------------------------------------- |
@@ -231,6 +231,29 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `<C-x>`        | Open selected node in a horizontal split                  |
 | `t`            | Open telescope                                            |
 | `?`            | Open mappings help window                                 |
+
+#### Outline
+| Mappings     | Action                                                    |
+| ------------ | --------------------------------------------------------- |
+| Esc / q      | Close outline                                             |
+| Enter        | Go to symbol location in code                             |
+| o            | Go to symbol location in code without losing focus        |
+| Shift+Enter  | Go to symbol location in code and close outline           |
+| Ctrl+g       | Update outline window to focus on code location           |
+| K            | Toggles the current symbol preview                        |
+| Ctrl+Space   | Hover current symbol (provider action)                    |
+| r            | Rename symbol                                             |
+| a            | Code actions                                              |
+| h            | Fold symbol or parent symbol                              |
+| Tab          | Toggle fold under cursor                                  |
+| Shift+Tab    | Toggle all folds                                          |
+| l            | Unfold symbol                                             |
+| W            | Fold all symbols                                          |
+| E            | Unfold all symbols                                        |
+| R            | Reset all folding                                         |
+| Ctrl+k       | Go up and peek location                                   |
+| Ctrl+j       | Go down and peek location                                 |
+| ?            | Show current keymaps in a floating window                 |
 
 </details>
 
