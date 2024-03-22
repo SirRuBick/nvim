@@ -45,9 +45,6 @@ I am still adding things in as I lean more about nvim.<br>
 | editing  | "mbbill/undotree" |
 | editing  | "echasnovski/mini.align" |
 | test     | "nvim-neotest/neotest" |
-| note     | "epwalsh/obsidian.nvim" |
-| note     | "renerocksai/telekasten.nvim" |
-| note     | "vimwiki" |
 | markdown | "ekickx/clipboard-image.nvim" |
 | ui       | "s1n7ax/nvim-window-picker" |
 | ui       | "kosayoda/nvim-lightbulb" |

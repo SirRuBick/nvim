@@ -65,22 +65,6 @@ local plugins = {
       require("nvshan.plugins.ui.ibl")
     end,
   },
-  {
-    "petertriho/nvim-scrollbar",
-    -- NOTE: this plugin is disabled
-    cond = false,
-    event = { "BufNewFile", "BufReadPost" },
-    dependencies = {
-      "lewis6991/gitsigns.nvim",
-      {
-        "kevinhwang91/nvim-hlslens",
-        config = function()
-          require("scrollbar.handlers.search").setup({})
-        end,
-      },
-    },
-    opts = {},
-  },
 }
 
 return plugins
