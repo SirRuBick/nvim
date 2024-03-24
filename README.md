@@ -18,7 +18,6 @@ I am still adding things in as I lean more about nvim.<br>
 ## TODO
 - write some snippets
 - set up markdown note taking system
-- use ruff for python linter?
 - improve UI by configuring statusline and bufferline
 
 ### Learn Neovim

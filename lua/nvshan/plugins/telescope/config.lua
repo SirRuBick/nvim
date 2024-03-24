@@ -14,7 +14,6 @@ if is_available("project.nvim") then
   telescope.load_extension("projects")
 end
 
-local trouble = require("trouble.providers.telescope")
 local mappings = {
   i = {
     ["<C-n>"] = actions.cycle_history_next,
