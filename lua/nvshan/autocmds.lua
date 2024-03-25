@@ -72,3 +72,13 @@ if settings.auto_lint then
     end,
   })
 end
+
+
+-- NOTE: This is a temporary pain relief for Telescope's bug
+vim.api.nvim_create_autocmd("WinLeave", {
+  callback = function()
+    if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
+    end
+  end,
+})
