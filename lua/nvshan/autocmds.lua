@@ -34,27 +34,27 @@ vim.api.nvim_create_autocmd("VimResized", {
 	end,
 })
 
--- Distinguish active and inactive window
-vim.api.nvim_create_autocmd("WinEnter", {
-	group = vim.api.nvim_create_augroup("SetCulInActiveWindow", { clear = true }),
-	pattern = "*",
-	callback = function()
-		vim.api.nvim_command([[setlocal cursorline]])
-		-- vim.api.nvim_command([[setlocal number]])
-		-- vim.api.nvim_command([[setlocal relativenumber]])
-		-- vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
-	end,
-})
-vim.api.nvim_create_autocmd("WinLeave", {
-	group = vim.api.nvim_create_augroup("UnsetCulInActiveWindow", { clear = true }),
-	pattern = "*",
-	callback = function()
-		vim.api.nvim_command([[setlocal nocursorline]])
-		-- vim.api.nvim_command([[setlocal nonumber]])
-		-- vim.api.nvim_command([[setlocal norelativenumber]])
-		-- vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
-	end,
-})
+-- -- Distinguish active and inactive window
+-- vim.api.nvim_create_autocmd("WinEnter", {
+-- 	group = vim.api.nvim_create_augroup("SetCulInActiveWindow", { clear = true }),
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.api.nvim_command([[setlocal cursorline]])
+-- 		-- vim.api.nvim_command([[setlocal number]])
+-- 		-- vim.api.nvim_command([[setlocal relativenumber]])
+-- 		-- vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
+-- 	end,
+-- })
+-- vim.api.nvim_create_autocmd("WinLeave", {
+-- 	group = vim.api.nvim_create_augroup("UnsetCulInActiveWindow", { clear = true }),
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.api.nvim_command([[setlocal nocursorline]])
+-- 		-- vim.api.nvim_command([[setlocal nonumber]])
+-- 		-- vim.api.nvim_command([[setlocal norelativenumber]])
+-- 		-- vim.api.nvim_command([[highlight! Normal guibg=#1e222a]])
+-- 	end,
+-- })
 
 
 -- Auto Lint
