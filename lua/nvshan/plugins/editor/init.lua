@@ -2,6 +2,13 @@ local wk_icons = require("icons").whichkey
 
 local plugins = {
   {
+    "SirRuBick/joshuto.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>j", "<cmd>Joshuto<CR>", desc = "Joshuto" },
+    }
+  },
+  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     config = true,
