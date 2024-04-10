@@ -24,5 +24,5 @@ return {
     config = function()
       require("nvshan.plugins.git.neogit")
     end,
-  }
+  },
 }

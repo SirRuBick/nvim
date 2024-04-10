@@ -175,5 +175,6 @@ mappings.n["<F4>"] = map(custom_functions.compile_run):desc("Compile and run")
 mappings.n["<leader>hg"] = map(custom_functions.toggle_glow):desc("Glow")
 -- mappings.n["<C-g>"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
 mappings.n["<leader>gg"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
+mappings.n["<leader>tj"] = map(custom_functions.toggle_joshuto):desc("Joshuto")
 
 return mappings
