@@ -21,7 +21,6 @@ local plugins = {
   },
   {
     "utilyre/barbecue.nvim",
-    name = "barbecue",
     version = "*",
     event = { "BufReadPost", "BufAdd", "BufNewFile" },
     dependencies = {

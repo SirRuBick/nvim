@@ -167,6 +167,9 @@ if is_available("nvim-ufo") then
 end
 
 -- Others
+if is_available("specs.nvim") then
+  mappings.n["<leader><leader>"] = map(require("specs").show_specs):desc("Show Cursor")
+end
 if global.is_mac then
   mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
 end

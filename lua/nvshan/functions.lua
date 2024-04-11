@@ -39,6 +39,7 @@ if is_available("toggleterm.nvim") then
     local glow = Terminal:new({
       cmd = "glow -p " .. buf_name,
       direction = "float",
+      close_on_exit = false,
       hidden = true,
       on_open = function(term)
         vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
