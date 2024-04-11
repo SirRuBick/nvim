@@ -45,9 +45,13 @@ mappings.n["<A-j>"] = map(":m .+1<CR>=="):desc("move text up")
 mappings.n["<A-k>"] = map(":m .-2<CR>=="):desc("move text down")
 
 -- Moves
-mappings.n["<A-h>"] = map("0"):silent():desc("Go to line begin")
+mappings.n["<M-m>"] = map("col('.')==1?'$':'0'"):expr():desc("Jump to line start or end")
+mappings.v["<M-m>"] = map("col('.')==1?'$h':'0'"):expr():desc("Jump to line start or end")
+mappings.n["<M-n>"] = map("col('.')==match(getline('.'),'\\S')+1?'$':'^'"):expr():desc("Jump to line start or end")
+mappings.v["<M-n>"] = map("col('.')==match(getline('.'),'\\S')+1?'$h':'^'"):expr():desc("Jump to line start or end")
+mappings.n["<A-h>"] = map("^"):silent():desc("Go to line begin")
 mappings.n["<A-l>"] = map("$"):silent():desc("Go to line end")
-mappings.v["<A-h>"] = map("0"):silent():desc("Go to line begin")
+mappings.v["<A-h>"] = map("^"):silent():desc("Go to line begin")
 mappings.v["<A-l>"] = map("$"):silent():desc("Go to line end")
 mappings.i["<A-h>"] = map("<HOME>"):desc("Move to line begin")
 mappings.i["<A-l>"] = map("<END>"):desc("Move to line end")
@@ -168,7 +172,7 @@ end
 
 -- Others
 if is_available("specs.nvim") then
-  mappings.n["<leader><leader>"] = map(require("specs").show_specs):desc("Show Cursor")
+  mappings.n["<leader><leader>"] = map(require("specs").show_specs):desc("󰳽 Show Cursor")
 end
 if global.is_mac then
   mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
@@ -176,7 +180,6 @@ end
 mappings.n["<A-g>"] = map(custom_functions.go_to_stack_trace):desc("Go to stack trace")
 mappings.n["<F4>"] = map(custom_functions.compile_run):desc("Compile and run")
 mappings.n["<leader>hg"] = map(custom_functions.toggle_glow):desc("Glow")
--- mappings.n["<C-g>"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
 mappings.n["<leader>gg"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
 mappings.n["<leader>tj"] = map(custom_functions.toggle_joshuto):desc("Joshuto")
 

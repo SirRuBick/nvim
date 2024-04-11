@@ -19,9 +19,11 @@ I am still adding things in as I lean more about nvim.<br>
 - write some snippets
 - set up markdown note taking system
 - improve UI by configuring statusline and bufferline
+- refactor toggleterm code
 
 ### Learn Neovim
 - quickfix
+- jumplist/locationlist
 - dadbod
 - DAP
 - vim-visual-multi, there are some key conflicts

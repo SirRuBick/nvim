@@ -64,7 +64,7 @@ Config.on_attach = function(client, bufnr)
     lsp_mappings.n["gI"] = map(vim.lsp.buf.implementation):buffer(bufnr):desc("Implementation of current symbol")
   end
   if capabilities.referencesProvider then
-    lsp_mappings.n["<leader>r"] = map(vim.lsp.buf.references):buffer(bufnr):desc("References of current symbol")
+    lsp_mappings.n["<leader>lr"] = map(vim.lsp.buf.references):buffer(bufnr):desc("References of current symbol")
   end
   if capabilities.callHierarchyProvider then
     lsp_mappings.n["<leader>lc"] = map(vim.lsp.buf.incoming_calls):buffer(bufnr):desc("Show incoming calls")
@@ -73,8 +73,8 @@ Config.on_attach = function(client, bufnr)
   if capabilities.workspaceSymbolProvider then
     lsp_mappings.n["<leader>lS"] = map(vim.lsp.buf.workspace_symbol):buffer(bufnr):desc("List all workspace symbols")
   end
-  lsp_mappings.n["<leader>w"] = map(vim.lsp.buf.add_workspace_folder):buffer(bufnr):desc("Add workspace folder")
-  lsp_mappings.n["<leader>W"] = map(vim.lsp.buf.list_workspace_folders):buffer(bufnr):desc("List workspace folder")
+  lsp_mappings.n["<leader>lw"] = map(vim.lsp.buf.add_workspace_folder):buffer(bufnr):desc("Add workspace folder")
+  lsp_mappings.n["<leader>lW"] = map(vim.lsp.buf.list_workspace_folders):buffer(bufnr):desc("List workspace folder")
   -- from plugins
   if is_available("nvim-lint") then
     lsp_mappings.n["<leader>ll"] = map(function()
@@ -156,8 +156,8 @@ Config.on_attach = function(client, bufnr)
     if lsp_mappings.n["gI"] then
       lsp_mappings.n["gI"].rhs = "<CMD>Telescope lsp_implementations<CR>"
     end
-    if lsp_mappings.n["<leader>r"] then
-      lsp_mappings.n["<leader>r"].rhs = "<CMD>Telescope lsp_references<CR>"
+    if lsp_mappings.n["<leader>lr"] then
+      lsp_mappings.n["<leader>lr"].rhs = "<CMD>Telescope lsp_references<CR>"
     end
     if lsp_mappings.n["gT"] then
       lsp_mappings.n["gT"].rhs = "<CMD>Telescope lsp_type_definitions<CR>"
