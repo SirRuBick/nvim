@@ -22,8 +22,6 @@ I am still adding things in as I lean more about nvim.<br>
 - refactor toggleterm code
 
 ### Learn Neovim
-- quickfix
-- jumplist/locationlist
 - dadbod
 - DAP
 - vim-visual-multi, there are some key conflicts
