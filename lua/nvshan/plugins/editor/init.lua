@@ -166,8 +166,12 @@ local plugins = {
     "mg979/vim-visual-multi",
     event = { "BufReadPre", "BufNewFile" },
     init = function()
-      -- vim.g.VM_default_mappings = 0
+      vim.g.VM_default_mappings = 0
+      vim.g.VM_mouse_mappings = 0
+      vim.g.VM_theme = "iceblue"
       vim.g.VM_maps = {
+        ["Undo"] = "u",
+        ["Redo"] = "<C-r>",
         ["Select All"] = "\\a",
         ["Find Under"] = "\\c",
         ["Find Subword Under"] = "\\c",
@@ -175,12 +179,15 @@ local plugins = {
         ["Add Cursor Up"] = "\\k",
         ["Add Cursor At Pos"] = "\\m",
         ["Start Regex Search"] = "\\/",
+        ["Reselect Last"] = "\\r",
         ["Switch Mode"] = "<Tab>",
+        ["Visual All"] = "\\A",
         ["Visual Regex"] = "\\/",
-        ["Visual All"] = "\\a",
-        ["Visual Add"] = "\\n",
         ["Visual Find"] = "\\f",
         ["Visual Cursors"] = "\\c",
+        ["Visual Add"] = "\\a",
+        ["Visual Subtract"] = "\\s",
+        ["Visual Reduce"] = "\\r",
       }
     end,
   },
