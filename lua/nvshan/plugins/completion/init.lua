@@ -37,7 +37,7 @@ return {
 	},
   {
     "Exafunction/codeium.vim",
-    cond = settings.use_codium,
+    cond = settings.use_codeium,
     event = "VeryLazy",
     init = function()
       vim.g.codeium_disable_bindings = 1

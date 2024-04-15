@@ -20,7 +20,7 @@ settings.auto_lint = false
 -- use copilot
 settings.use_copilot = false
 -- use codeium
-settings.use_codeium = true
+settings.use_codeium = false
 -- use chatgpt
 settings.use_chatgpt = false
 -- nvim-tree

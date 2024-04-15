@@ -16,23 +16,17 @@ I am still adding things in as I lean more about nvim.<br>
 - [wget](https://www.gnu.org/software/wget/): required by mason.nvim
 
 ## TODO
-- write some snippets
-- set up markdown note taking system
-- improve UI by configuring statusline and bufferline
-- refactor toggleterm code
-
-### Learn Neovim
-- dadbod
-- DAP
-- vim-visual-multi, there are some key conflicts
-- nvim-spectre
-- neogit usages
-- git worktree
+-[] write some snippets
+-[] set up markdown note taking system
+-[] refactor toggleterm code
+-[] buffer key maps can be adjusted, can create shortcut for open buffer in split?
+-[] learn to use neogit
 
 ### BUGS
 - dadbob ui close should also close dbout and sql query
 - cannot find a LSP server that works for markdown
-- telescope find files stays in insert mode
+- codeium and bufferline enabled together would cause a bug that telescope find files stays in insert mode
+- treesitter text object having problem for outer class "ac"
 
 ### Plugins to explore
 | Section  | Plugins |
@@ -154,6 +148,7 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `[.`     | N    | Swap with prev parameter | Treesitter |
 | `],`     | N    | Swap with next function | Treesitter |
 | `[,`     | N    | Swap with prev function | Treesitter |
+| `['`     | N    | Goto treesitter context | Treesitter Context |
 </details>
 
 <details open><summary>Editing</summary>
