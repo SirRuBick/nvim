@@ -25,7 +25,6 @@ mappings.i["jk"] = map("<C-\\><C-n>"):desc("Exit insert mode")
 mappings.i["<C-s>"] = map("<cmd>w<CR>"):desc("Save file")
 mappings.v["<C-s>"] = map("cmd>w<CR>"):desc("Save file")
 mappings.i["<C-v>"] = map("<C-R>+"):desc("Paste from system clipboard")
-mappings.n["p"] = map("\"0p"):desc("Paste from register 0")
 
 -- navigate in insert mode
 mappings.i["<C-h>"] = map("<Left>"):desc("Move left")
@@ -115,13 +114,30 @@ mappings.n["[b"] = map("<cmd>bprevious<CR>"):desc("Prev buffer")
 mappings.n["]b"] = map("<cmd>bnext<CR>"):desc("Next buffer")
 mappings.n["[B"] = map("<cmd>bfirst<CR>"):desc("First buffer")
 mappings.n["]B"] = map("<cmd>blast<CR>"):desc("Last buffer")
-mappings.n["<leader>bb"] = map(":buffers<CR>:buffer<Space>"):desc("Switch to buffer by name")
 mappings.n["<leader>bd"] = map(":bd<CR>"):desc("Delete buffer")
 mappings.n["<leader>bn"] = map(":new<CR>"):desc("New buffer")
 mappings.n["<leader>bs"] = map("<cmd>w<CR>"):desc("Save buffer")
 mappings.n["<leader>bS"] = map("<cmd>wa<CR>"):desc("Save all buffer")
 mappings.n["<leader>bq"] = map("<cmd>q<CR>"):desc("Quit buffer")
 mappings.n["<leader>bQ"] = map("<cmd>qa<CR>"):desc("Quit all buffer")
+if is_available("bufferline.nvim") then
+  mappings.n["[b"] = map("<cmd>BufferLineCyclePrev<CR>"):desc("Prev buffer")
+  mappings.n["]b"] = map("<cmd>BufferLineCycleNext<CR>"):desc("Next buffer")
+  mappings.n["[B"] = map(function() require("bufferline").go_to(1, true) end):desc("First buffer")
+  mappings.n["]B"] = map(function() require("bufferline").go_to(-1, true) end):desc("Last buffer")
+  mappings.n["<leader>b["] = map("<cmd>BufferLineMovePrev<CR>"):desc("Move buffer backwards")
+  mappings.n["<leader>b]"] = map("<cmd>BufferLineMoveNext<CR>"):desc("Move buffer forwards")
+  mappings.n["<leader>bg"] = map("<cmd>BufferLineGroupToggle<CR>"):desc("Bufferline group toggle")
+  mappings.n["<leader>bG"] = map("<cmd>BufferLineGroupClose<CR>"):desc("Bufferline group close")
+  mappings.n["<leader>bp"] = map("<cmd>BufferLinePick<CR>"):desc("Bufferline pick")
+  mappings.n["<leader>bc"] = map("<cmd>BufferLineClose<CR>"):desc("Bufferline pick to close")
+  mappings.n["<leader>bo"] = map("<cmd>BufferlineCloseOthers<CR>"):desc("Close all other buffers")
+  mappings.n["<leader>bl"] = map("<cmd>BufferLineTogglePin<CR>"):desc("Lock(Pin) buffer")
+  for idx = 1, 9 do
+    mappings.n["<leader>b" .. idx] =
+      map(function() require("bufferline").go_to(idx, true) end):desc("Bufferline go to buffer " .. idx)
+  end
+end
 
 -- Move text up and down
 mappings.v["<A-j>"] = map(":m .+1<CR>=="):desc("move text up")

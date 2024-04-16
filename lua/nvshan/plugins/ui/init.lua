@@ -3,10 +3,11 @@ local settings = require("settings")
 local plugins = {
   {
     "akinsho/bufferline.nvim",
-    version = "*",
     event = { "BufReadPost", "BufAdd", "BufNewFile" },
     dependencies = "nvim-tree/nvim-web-devicons",
-    opts = {},
+    config = function()
+      require("nvshan.plugins.ui.bufferline")
+    end,
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -33,6 +34,7 @@ local plugins = {
   },
   {
     "folke/noice.nvim",
+    cond = false,
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",

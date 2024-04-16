@@ -19,12 +19,10 @@ I am still adding things in as I lean more about nvim.<br>
 -[] write some snippets
 -[] set up markdown note taking system
 -[] refactor toggleterm code
--[] buffer key maps can be adjusted, can create shortcut for open buffer in split?
 -[] learn to use neogit
 
 ### BUGS
 - dadbob ui close should also close dbout and sql query
-- cannot find a LSP server that works for markdown
 - codeium and bufferline enabled together would cause a bug that telescope find files stays in insert mode
 - treesitter text object having problem for outer class "ac"
 
