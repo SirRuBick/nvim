@@ -131,7 +131,7 @@ if is_available("bufferline.nvim") then
   mappings.n["<leader>bG"] = map("<cmd>BufferLineGroupClose<CR>"):desc("Bufferline group close")
   mappings.n["<leader>bp"] = map("<cmd>BufferLinePick<CR>"):desc("Bufferline pick")
   mappings.n["<leader>bc"] = map("<cmd>BufferLineClose<CR>"):desc("Bufferline pick to close")
-  mappings.n["<leader>bo"] = map("<cmd>BufferlineCloseOthers<CR>"):desc("Close all other buffers")
+  mappings.n["<leader>bo"] = map("<cmd>BufferLineCloseOthers<CR>"):desc("Close all other buffers")
   mappings.n["<leader>bl"] = map("<cmd>BufferLineTogglePin<CR>"):desc("Lock(Pin) buffer")
   for idx = 1, 9 do
     mappings.n["<leader>b" .. idx] =
