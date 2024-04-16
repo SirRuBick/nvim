@@ -210,6 +210,15 @@ local plugins = {
       terminal_mappings = true,
     },
   },
+  {
+    "ThePrimeagen/harpoon",
+    event = "VeryLazy",
+    branch = "harpoon2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {},
+  },
 }
 
 return plugins

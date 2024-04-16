@@ -177,10 +177,6 @@ mappings.n["<leader>us"] = map(ui.toggle_spell):desc("Toggle spellcheck")
 mappings.n["<leader>uS"] = map(ui.toggle_statusline):desc("Toggle status line")
 mappings.n["<leader>uT"] = map(ui.toggle_treesitter_context):desc("Toggle treesitter context")
 
--- Preview
-mappings.n["<leader>h"] = map():desc(wk_icons.h)
-mappings.n["<leader>hm"] = map("<CMD>MarkdownPreview<CR>"):desc("Preview Markdown with browser")
-
 -- nvim-ufo
 if is_available("nvim-ufo") then
   mappings.n["zp"] = map(require("ufo").peekFoldedLinesUnderCursor):desc("Peek folded lines under cursor")
@@ -194,8 +190,8 @@ if global.is_mac then
   mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
 end
 mappings.n["<A-g>"] = map(custom_functions.go_to_stack_trace):desc("Go to stack trace")
-mappings.n["<F4>"] = map(custom_functions.compile_run):desc("Compile and run")
-mappings.n["<leader>hg"] = map(custom_functions.toggle_glow):desc("Glow")
+mappings.n["<leader>cc"] = map(custom_functions.compile_run):desc("Compile and run")
+mappings.n["<leader>cg"] = map(custom_functions.toggle_glow):desc("Glow")
 mappings.n["<leader>gg"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
 mappings.n["<leader>tj"] = map(custom_functions.toggle_joshuto):desc("Joshuto")
 

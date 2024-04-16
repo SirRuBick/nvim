@@ -1,6 +1,6 @@
 # Neovim config
-This is my personal neovim config.<br>
-I am still adding things in as I lean more about nvim.<br>
+This is my personal Neovim config.<br>
+I am still adding things in as I lean more about Neovim.<br>
 
 ## Plugins
 + [Lazy.nvim](https://github.com/folke/lazy.nvim): Plugin Manager
@@ -20,6 +20,7 @@ I am still adding things in as I lean more about nvim.<br>
 -[] set up markdown note taking system
 -[] refactor toggleterm code
 -[] learn to use neogit
+-[] A lot of the plugins can be lazy loaded, as long as I change the way how keymap works currently
 
 ### BUGS
 - dadbob ui close should also close dbout and sql query
@@ -29,17 +30,13 @@ I am still adding things in as I lean more about nvim.<br>
 ### Plugins to explore
 | Section  | Plugins |
 |----------|---------|
-| editing  | "ThePrimeagen/harpoon" |
-| editing  | "chentoast/marks.nvim" |
 | editing  | "kevinhwang91/nvim-bqf" |
 | editing  | "danymat/neogen" |
 | editing  | "mbbill/undotree" |
 | editing  | "echasnovski/mini.align" |
 | test     | "nvim-neotest/neotest" |
 | markdown | "ekickx/clipboard-image.nvim" |
-| AI       | "David-Kunz/gen.nvim"|
 | Others   | "itchyny/calendar.vim" |
-| Others   | "folke/neoconf.nvim" |
 | Others   | "rest-nvim/rest.nvim" |
 | Color    | "EdenEast/nightfox.nvim" |
 
