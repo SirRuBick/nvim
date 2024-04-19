@@ -22,8 +22,6 @@ mappings.n["<leader>x"] = map():desc(wk_icons.x)
 -- Operations
 mappings.t["<C-x>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
 mappings.i["jk"] = map("<C-\\><C-n>"):desc("Exit insert mode")
-mappings.i["<C-s>"] = map("<cmd>w<CR>"):desc("Save file")
-mappings.v["<C-s>"] = map("cmd>w<CR>"):desc("Save file")
 mappings.i["<C-v>"] = map("<C-R>+"):desc("Paste from system clipboard")
 
 -- navigate in insert mode
