@@ -71,7 +71,7 @@ mappings.n["QC"] = map(":ccl <bar> lcl<CR>"):desc("Quick close quickfix or locat
 mappings.n["zc"] = map("zc"):desc("zMzv"):desc("Focus on Fold")
 
 -- Macro
-mappings.n["<C-q>"] = map("q"):desc("Macro Prefix")
+appings.n["<C-q>"] = map("q"):desc("Macro Prefix")
 
 -- Split Navigation
 mappings.n["<leader>k"] = map("<cmd>only<CR>"):silent():noremap():desc(wk_icons.k)
@@ -89,15 +89,24 @@ mappings.n["<C-Down>"] = map("<cmd>resize +2<CR>"):desc("Resize split down")
 mappings.n["<C-Left>"] = map("<cmd>vertical resize -2<CR>"):desc("Resize split left")
 mappings.n["<C-Right>"] = map("<cmd>vertical resize +2<CR>"):desc("Resize split right")
 
+mappings.n["<leader>wh"] = map("<cmd>set nosplitright<CR><CMD>vsplit<CR><CMD>set splitright<CR>"):desc("Split left")
 mappings.n["<leader>wj"] = map("<cmd>set nosplitbelow<CR><CMD>split<CR><CMD>set splitbelow<CR>"):desc("Split above")
 mappings.n["<leader>wk"] = map("<cmd>set splitbelow<CR><CMD>split<CR>"):desc("Split below")
-mappings.n["<leader>wh"] = map("<cmd>set nosplitright<CR><CMD>vsplit<CR><CMD>set splitright<CR>"):desc("Split left")
 mappings.n["<leader>wl"] = map("<cmd>set splitright<CR><CMD>vsplit<CR>"):desc("Split right")
+mappings.n["<leader>wH"] = map("<C-w>H"):desc("Move window to left")
+mappings.n["<leader>wJ"] = map("<C-w>J"):desc("Move window to bottom")
+mappings.n["<leader>wK"] = map("<C-w>K"):desc("Move window to top")
+mappings.n["<leader>wL"] = map("<C-w>L"):desc("Move window to right")
+mappings.n["<leader>w-"] = map("<C-w>-"):desc("Max height")
+mappings.n["<leader>w|"] = map("<C-w>|"):desc("Max width")
+mappings.n["<leader>w="] = map("<C-w>="):desc("Normalize windows")
 mappings.n["<leader>wq"] = map("<C-w>q"):desc("Quit window")
-mappings.n["<leader>wm"] = map("<C-w>_<C-W>|"):desc("Max window")
-mappings.n["<leader>wr"] = map("<C-w>r"):desc("Max window")
-mappings.n["<leader>wt"] = map("<cmd>tabe<CR>"):desc("New Tab")
-mappings.n["<leader>wT"] = map("<cmd>tab split<CR>"):desc("Split tab")
+mappings.n["<leader>wo"] = map("<C-w>q"):desc("Close other windows")
+mappings.n["<leader>wr"] = map("<C-w>r"):desc("Rotate window")
+mappings.n["<leader>wR"] = map("<C-w>r"):desc("Rotate window")
+mappings.n["<leader>wt"] = map("<cmd>tab split<CR>"):desc("New Tab")
+mappings.n["<leader>wT"] = map("<C-w>T"):desc("Open curr window in new tab")
+mappings.n["<leader>wm"] = map(custom_functions.toggle_maxwin):desc("Toggle max window")
 mappings.n["[t"] = map("<cmd>tabprevious<CR>"):desc("Prev tab")
 mappings.n["]t"] = map("<cmd>tabnext<CR>"):desc("Next tab")
 

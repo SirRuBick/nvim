@@ -1,6 +1,32 @@
 local M = {}
 local is_available = require("utils").is_available
 
+M.is_maximized = false
+
+function M.maximize_window()
+  if vim.fn.winnr('$') == 1 then
+    return
+  end
+  M._mx_sizes = vim.fn.winrestcmd()
+  vim.cmd('vert resize | resize')
+  M.is_maximized = true
+end
+
+function M.restore_window()
+  if M.is_maximized then
+    vim.cmd(M._mx_sizes)
+  end
+  M.is_maximized = false
+end
+
+function M.toggle_maxwin()
+  if M.is_maximized then
+    M.restore_window()
+  else
+    M.maximize_window()
+  end
+end
+
 local function split()
   vim.cmd("set splitbelow")
   vim.cmd("sp")
@@ -70,6 +96,30 @@ if is_available("toggleterm.nvim") then
       count = 99,
     })
     lazygit:toggle()
+  end
+
+  function M.toggle_lazydocker()
+    local Terminal = require("toggleterm.terminal").Terminal
+    local app = Terminal:new({
+      cmd = "lazydocker",
+      hidden = true,
+      direction = "float",
+      float_opts = {
+        border = "curved",
+        width = function()
+          return math.floor(vim.o.columns * 0.9)
+        end,
+        height = function()
+          return math.floor(vim.o.lines * 0.9)
+        end,
+      },
+      on_open = function(_)
+        vim.cmd("startinsert!")
+      end,
+      on_close = function(_) end,
+      count = 99,
+    })
+    app:toggle()
   end
 
   function M.toggle_joshuto()
