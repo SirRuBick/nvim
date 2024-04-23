@@ -25,7 +25,6 @@ I am still adding things in as I lean more about Neovim.<br>
 ### BUGS
 - dadbob ui close should also close dbout and sql query
 - codeium and bufferline enabled together would cause a bug that telescope find files stays in insert mode
-- treesitter text object having problem for outer class "ac"
 
 ### Plugins to explore
 | Section  | Plugins |
