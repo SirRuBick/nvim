@@ -22,7 +22,6 @@ mappings.n["<leader>x"] = map():desc(wk_icons.x)
 -- Operations
 mappings.t["<C-x>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
 mappings.i["jk"] = map("<C-\\><C-n>"):desc("Exit insert mode")
-mappings.i["<C-v>"] = map("<C-R>+"):desc("Paste from system clipboard")
 
 -- navigate in insert mode
 mappings.i["<C-h>"] = map("<Left>"):desc("Move left")
@@ -71,7 +70,8 @@ mappings.n["QC"] = map(":ccl <bar> lcl<CR>"):desc("Quick close quickfix or locat
 mappings.n["zc"] = map("zc"):desc("zMzv"):desc("Focus on Fold")
 
 -- Macro
-appings.n["<C-q>"] = map("q"):desc("Macro Prefix")
+mappings.n["<C-q>"] = map("q"):desc("Macro Prefix")
+mappings.n["q"] = map(""):noremap():desc("Macro Prefix")
 
 -- Split Navigation
 mappings.n["<leader>k"] = map("<cmd>only<CR>"):silent():noremap():desc(wk_icons.k)
