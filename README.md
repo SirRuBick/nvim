@@ -16,9 +16,9 @@ I am still adding things in as I lean more about Neovim.<br>
 - [wget](https://www.gnu.org/software/wget/): required by mason.nvim
 
 ## TODO
+-[] Code refactoring
 -[] write some snippets
 -[] set up markdown note taking system
--[] refactor toggleterm code
 -[] learn to use neogit
 -[] dadbob ui close should also close dbout and sql query
 -[] rmagatti/auto-session to replace persistence.nvim

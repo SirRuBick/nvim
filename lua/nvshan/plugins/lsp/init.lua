@@ -33,6 +33,11 @@ return {
     config = require("nvshan.plugins.lsp.nvim-lsp"),
   },
   {
+    "ray-x/lsp_signature.nvim",
+    event = "LspAttach",
+    opts = {},
+  },
+  {
     "mfussenegger/nvim-lint",
     event = { "BufNewFile", "BufReadPost" },
     dependencies = {

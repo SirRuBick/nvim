@@ -185,6 +185,13 @@ Config.on_attach = function(client, bufnr)
     end
   end
 
+  if is_available("lsp_signature.nvim") then
+    require("lsp_signature").on_attach({
+      bind = true,
+      handler_opts = { border = "rounded" },
+    }, bufnr)
+  end
+
   keymap_utils.load_keymaps(lsp_mappings)
 end
 
