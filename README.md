@@ -20,7 +20,6 @@ I am still adding things in as I lean more about Neovim.<br>
 -[] set up markdown note taking system
 -[] refactor toggleterm code
 -[] learn to use neogit
--[] A lot of the plugins can be lazy loaded, as long as I change the way how keymap works currently
 
 ### BUGS
 - dadbob ui close should also close dbout and sql query

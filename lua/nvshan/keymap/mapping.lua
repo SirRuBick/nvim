@@ -165,7 +165,7 @@ mappings.i["<A-]>"] = map("<C-t>"):silent():noremap():desc("indent line")
 mappings.n["<leader>z"] = map("<CMD>Lazy<CR>"):desc(wk_icons.z)
 
 -- File Explorer
--- mappings.n["<leader>e"] = map("<CMD>NvimTreeToggle<CR>"):desc(wk_icons.e)
+mappings.n["<leader>e"] = map("<CMD>NvimTreeToggle<CR>"):desc(wk_icons.e)
 
 -- UI assistance
 local ui = require("nvshan.keymap.helpers")

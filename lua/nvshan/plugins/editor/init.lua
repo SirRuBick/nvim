@@ -81,9 +81,6 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle" },
-    keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<CR>", silent = true, noremap = true, desc = wk_icons.e },
-    },
     config = function()
       require("nvshan.plugins.editor.nvim-tree")
     end,
@@ -102,12 +99,6 @@ local plugins = {
     "folke/persistence.nvim",
     event = "BufReadPre",
     opts = { options = vim.opt.sessionoptions:get() },
-    -- stylua: ignore
-    keys = {
-      { "<leader>ps", function() require("persistence").load() end,                desc = "Restore Session" },
-      { "<leader>pl", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
-      { "<leader>pd", function() require("persistence").stop() end,                desc = "Don't Save Current Session" },
-    },
   },
   {
     "folke/twilight.nvim",
