@@ -7,7 +7,7 @@ settings.leader = " "
 -- diagnositc virtual text
 settings.diagnostic_virtual_text = false
 -- colorscheme, choose from "random" or
--- catppuccin/kanagawa/onedark/gruvbox
+-- catppuccin/kanagawa/onedark/gruvbox/nightfox
 settings.colorscheme = "random"
 -- background clolor, "dark" or "light"
 settings.background = "dark"
