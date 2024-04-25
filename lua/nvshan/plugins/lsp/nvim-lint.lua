@@ -1,7 +1,7 @@
 -- setup nvim-lint
 local lint = require("lint")
 lint.linters_by_ft = {
-  python = { "flake8" },
+  python = { "flake8", "mypy" },
 }
 
 -- customize flake8 linter
@@ -13,7 +13,7 @@ local status_ok, mason_tool = pcall(require, "mason-tool-installer")
 if status_ok then
   mason_tool.setup {
     ensure_installed = {
-      "flake8",
+      "flake8", "mypy"
     },
   }
 end

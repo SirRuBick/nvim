@@ -45,9 +45,8 @@ return {
     end,
   },
   {
+    -- lazy loaded by lsp-config
     "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile", "BufWritePre" },
-    cmd = { "ConformInfo" },
     config = function()
       require("nvshan.plugins.lsp.conform")
     end,

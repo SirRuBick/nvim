@@ -1,12 +1,21 @@
+-- define custom formatter
+local formatters = {}
+
+formatters.black = {
+  args = {
+    "--stdin-filename",
+    "$FILENAME",
+    "--quiet",
+    "--line-length=120",
+    "-",
+  },
+}
+
+-- set up conform
 require("conform").setup({
   -- Map of filetype to formatters
   formatters_by_ft = {
     lua = { "stylua" },
-    -- Conform will run multiple formatters sequentially
-    -- go = { "goimports", "gofmt" },
-    -- Use a sub-list to run only the first available formatter
-    -- javascript = { { "prettierd", "prettier" } },
-    -- You can use a function here to determine the formatters dynamically
     python = function(bufnr)
       if require("conform").get_formatter_info("ruff_format", bufnr).available then
         return { "ruff_format" }
@@ -14,12 +23,14 @@ require("conform").setup({
         return { "isort", "black" }
       end
     end,
+    c = { "clang-format" },
+    cpp = { "clang-format" },
     -- Use the "*" filetype to run formatters on all filetypes.
-    ["*"] = { "codespell" },
+    -- ["*"] = { "codespell" },
     -- Use the "_" filetype to run formatters on filetypes that don't
     -- have other formatters configured.
-    ["_"] = { "trim_whitespace" },
+    -- ["_"] = { "trim_whitespace" },
   },
   -- custom formatters or overwrite default ones
-  formatters = require("nvshan.plugins.lsp.formatters"),
+  formatters = formatters,
 })

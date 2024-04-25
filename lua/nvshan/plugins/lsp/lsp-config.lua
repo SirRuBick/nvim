@@ -177,7 +177,11 @@ Config.on_attach = function(client, bufnr)
     local conform = require("conform")
     local buf_table = conform.list_formatters_for_buffer(bufnr)
     if buf_table then
-      lsp_mappings.n["<leader>lf"] = map(conform.format):buffer(bufnr):desc("Format buffer with conform")
+      lsp_mappings.n["<leader>lf"] = map(function()
+          conform.format({ async = true, lsp_fallback = true })
+        end)
+        :buffer(bufnr)
+        :desc("Format buffer with conform")
     end
   end
 
