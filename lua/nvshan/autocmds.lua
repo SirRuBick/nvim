@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd("VimResized", {
 
 
 -- Auto Lint
-if settings.auto_lint then
+if is_available("nvim-lint") and settings.auto_lint then
   vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     group = vim.api.nvim_create_augroup("AutoLint", { clear = true }),
     pattern = "*",
@@ -67,7 +67,7 @@ if settings.auto_lint then
       if status_ok then
         lint.try_lint()
       else
-        vim.notify("Lint is not available", "warn", { title = "AutoLint" })
+        vim.notify("Lint is not available", vim.log.levels.WARN, { title = "AutoLint" })
       end
     end,
   })
