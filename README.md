@@ -20,10 +20,8 @@ I am still adding things in as I lean more about Neovim.<br>
 -[] set up markdown note taking system
 -[] refactor toggleterm code
 -[] learn to use neogit
-
-### BUGS
-- dadbob ui close should also close dbout and sql query
-- codeium and bufferline enabled together would cause a bug that telescope find files stays in insert mode
+-[] dadbob ui close should also close dbout and sql query
+-[] rmagatti/auto-session to replace persistence.nvim
 
 ### Plugins to explore
 | Section  | Plugins |
