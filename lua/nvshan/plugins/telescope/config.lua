@@ -14,6 +14,10 @@ if is_available("project.nvim") then
   telescope.load_extension("projects")
 end
 
+if is_available("telescope-undo.nvim") then
+  telescope.load_extension("undo")
+end
+
 local mappings = {
   i = {
     ["<C-n>"] = actions.cycle_history_next,
@@ -87,6 +91,10 @@ telescope.setup({
     fzy_native = {
       override_generic_sorter = true,
       override_file_sorter = true,
+    },
+    undo = {
+      side_by_side = true,
+      layout_strategy = "vertical",
     },
   },
 })

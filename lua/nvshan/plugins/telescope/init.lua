@@ -8,6 +8,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-media-files.nvim",
       "nvim-telescope/telescope-fzy-native.nvim",
+      "debugloop/telescope-undo.nvim",
     },
     config = function()
       require("nvshan.plugins.telescope.config")
