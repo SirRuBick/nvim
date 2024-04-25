@@ -22,6 +22,7 @@ I am still adding things in as I lean more about Neovim.<br>
 -[] learn to use neogit
 -[] dadbob ui close should also close dbout and sql query
 -[] rmagatti/auto-session to replace persistence.nvim
+-[] Can you random between sub-colorschemes like nordfox?
 
 ### Plugins to explore
 | Section  | Plugins |
