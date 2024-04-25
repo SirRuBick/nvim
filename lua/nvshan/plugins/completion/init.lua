@@ -11,6 +11,7 @@ return {
       "hrsh7th/cmp-buffer",
       "andersevenrud/cmp-tmux",
       "hrsh7th/cmp-path",
+      "f3fora/cmp-spell",
       "saadparwaiz1/cmp_luasnip",
       {
         "L3MON4D3/LuaSnip",

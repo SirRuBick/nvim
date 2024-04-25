@@ -89,15 +89,16 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = cmp.config.sources({
-    { name = "copilot", priority = 1000 },
-    { name = "codeium", priority = 1000 },
-    { name = "nvim_lsp", priority = 900 },
-    { name = "luasnip", priority = 750 },
-    { name = "tmux", priority = 500 },
-    { name = "treesitter", priority = 500 },
-    { name = "buffer", priority = 500 },
+    { name = "nvim_lsp", priority = 1000 },
+    { name = "luasnip", priority = 900 },
+    { name = "copilot", priority = 900 },
+    { name = "codeium", priority = 900 },
+    { name = "buffer", priority = 800 },
+    { name = "tmux", priority = 700 },
+    { name = "treesitter", priority = 700 },
     -- { name = "cmdline",    priority = 300 },
-    { name = "path", priority = 250 },
+    { name = "path", priority = 300 },
+    { name = "spell", priority = 200 },
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -118,6 +119,7 @@ cmp.setup({
           buffer = "[BUF]",
           cmdline = "[CMD]",
           path = "[PTH]",
+          spell = "[SPL]",
         }, {
           __index = function()
             return "[UKN]" -- builtin/unknown source names
