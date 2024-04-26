@@ -182,6 +182,7 @@ local data = {
     spell = "󰓆",
     tmux = "",
     treesitter = "",
+    emoji = "󰱫",
     undefined = "",
   },
   dap = {

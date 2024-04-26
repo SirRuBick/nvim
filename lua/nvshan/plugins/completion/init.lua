@@ -12,6 +12,7 @@ return {
       "andersevenrud/cmp-tmux",
       "hrsh7th/cmp-path",
       "f3fora/cmp-spell",
+      "hrsh7th/cmp-emoji",
       "saadparwaiz1/cmp_luasnip",
       {
         "L3MON4D3/LuaSnip",

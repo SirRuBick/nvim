@@ -17,16 +17,6 @@ for filetype, file_snippets in pairs(load_table_from_dir(snippets_directory)) do
   end
 end
 
-local check_backspace = function()
-  local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-end
-
-local function has_words_before()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
 cmp.setup({
   enabled = function()
     if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" then
@@ -52,53 +42,65 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-e>"] = cmp.mapping({ i = cmp.mapping.abort(), c = cmp.mapping.close() }),
-    ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-    ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    ["<C-y>"] = cmp.config.disable,
-    ["<CR>"] = cmp.mapping(function(fallback)
-      if cmp.visible() and cmp.get_active_entry() then
-        cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-      else
-        fallback()
-      end
-    end, { "i", "c" }),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Replace, select = false }),
+    ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Relace, select = false }),
+    ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Relace, select = false }),
+    ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Replace, select = false }),
+    ["<CR>"] = cmp.mapping({
+      i = function(fallback)
+        if cmp.visible() then
+          if cmp.get_active_entry() then
+            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+          elseif luasnip.expandable() then
+            luasnip.expand()
+          else
+            fallback()
+          end
+        else
+          fallback()
+        end
+      end,
+      s = cmp.mapping.confirm({ select = true }),
+      c = function(fallback)
+        if cmp.visible() and cmp.get_active_entry() then
+          cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+        else
+          fallback()
+        end
+      end,
+    }),
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
+      if luasnip.locally_jumpable(1) then
+        luasnip.jump(1)
+      elseif cmp.visible() then
         cmp.select_next_item()
-      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-      -- that way you will only jump inside the snippet region
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
       else
         fallback()
       end
     end, { "i", "s" }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
+      if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
+      elseif cmp.visible() then
+        cmp.select_prev_item()
       else
         fallback()
       end
     end, { "i", "s" }),
   }),
   sources = cmp.config.sources({
-    { name = "nvim_lsp", priority = 1000 },
-    { name = "luasnip", priority = 900 },
-    { name = "copilot", priority = 900 },
-    { name = "codeium", priority = 900 },
-    { name = "buffer", priority = 800 },
-    { name = "tmux", priority = 700 },
-    { name = "treesitter", priority = 700 },
-    -- { name = "cmdline",    priority = 300 },
-    { name = "path", priority = 300 },
-    { name = "spell", priority = 200 },
+    { name = "nvim_lsp", priority = 900 },
+    { name = "luasnip", priority = 800 },
+    { name = "copilot", priority = 700 },
+    { name = "codeium", priority = 700 },
+    { name = "buffer", priority = 600 },
+    { name = "treesitter", priority = 500 },
+    { name = "path", priority = 400 },
+    { name = "spell", priority = 300 },
+    { name = "emoji", priority = 200 },
+    { name = "tmux", priority = 100 },
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -110,16 +112,16 @@ cmp.setup({
 
       before = function(entry, vim_item)
         vim_item.menu = setmetatable({
-          copilot = "[CPT]",
-          codeium = "[CDM]",
           nvim_lsp = "[LSP]",
           luasnip = "[SNP]",
-          tmux = "[TMX]",
-          treesitter = "[TST]",
+          copilot = "[CPT]",
+          codeium = "[CDM]",
           buffer = "[BUF]",
-          cmdline = "[CMD]",
+          treesitter = "[TST]",
           path = "[PTH]",
           spell = "[SPL]",
+          emoji = "[EMJ]",
+          tmux = "[TMX]",
         }, {
           __index = function()
             return "[UKN]" -- builtin/unknown source names
@@ -133,6 +135,15 @@ cmp.setup({
     ghost_text = true,
   },
 })
+
+-- Set configuration for specific filetype.
+-- cmp.setup.filetype("gitcommit", {
+--   sources = cmp.config.sources({
+--     { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+--   }, {
+--     { name = "buffer" },
+--   }),
+-- })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ "/", "?" }, {

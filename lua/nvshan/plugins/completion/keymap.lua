@@ -20,4 +20,10 @@ if is_available("codeium.vim") then
 	mappings.n["<leader>cc"] = map(function() return vim.fn['codeium#Chat']() end):expr():silent():desc("Codeium Chat")
 end
 
+if is_available("LuaSnip") then
+  mappings.i["<M-}>"] = map(function() return require("luasnip").jump(1) end):expr():desc("LuaSnip Next")
+  mappings.i["<M-{>"] = map(function() return require("luasnip").jump(-1) end):expr():desc("LuaSnip Prev")
+  mappings.i["<C-e>"] = map(function() return require("luasnip").choice_active() end):expr():desc("LuaSnip Choice")
+end
+
 return mappings

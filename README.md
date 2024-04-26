@@ -17,8 +17,7 @@ I am still adding things in as I lean more about Neovim.<br>
 
 ## TODO
 -[] Code refactoring
--[] write some snippets
--[] set up markdown note taking system
+-[] set up markdown note taking system, learn about obsidian
 -[] learn to use neogit
 -[] dadbob ui close should also close dbout and sql query
 -[] rmagatti/auto-session to replace persistence.nvim
@@ -35,7 +34,6 @@ I am still adding things in as I lean more about Neovim.<br>
 | markdown | "ekickx/clipboard-image.nvim" |
 | Others   | "itchyny/calendar.vim" |
 | Others   | "rest-nvim/rest.nvim" |
-| Color    | "EdenEast/nightfox.nvim" |
 
 ## Keymaps
 Some of the shortcuts I use frequently are listed here. <br>
