@@ -16,19 +16,20 @@ I am still adding things in as I lean more about Neovim.<br>
 - [wget](https://www.gnu.org/software/wget/): required by mason.nvim
 
 ## TODO
--[] Code refactoring
--[] set up markdown note taking system, learn about obsidian
--[] learn to use neogit
--[] dadbob ui close should also close dbout and sql query
--[] rmagatti/auto-session to replace persistence.nvim
--[] Can you random between sub-colorschemes like nordfox?
+- [ ] Code refactoring
+- [ ] set up markdown note taking system, learn about obsidian
+- [ ] more luasnips
+- [ ] learn to use neogit
+- [ ] dadbob ui close should also close dbout and sql query
+- [ ] rmagatti/auto-session to replace persistence.nvim
+- [ ] Can you random between sub-colorschemes like nordfox?
+- [ ] outline doesn't seem useful with NavBuddy
 
 ### Plugins to explore
 | Section  | Plugins |
 |----------|---------|
 | editing  | "kevinhwang91/nvim-bqf" |
 | editing  | "danymat/neogen" |
-| editing  | "mbbill/undotree" |
 | editing  | "echasnovski/mini.align" |
 | test     | "nvim-neotest/neotest" |
 | markdown | "ekickx/clipboard-image.nvim" |

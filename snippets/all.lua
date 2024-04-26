@@ -19,14 +19,14 @@ local conds = require("luasnip.extras.expand_conditions")
 local events = require("luasnip.util.events")
 
 return {
-	{
-		s("ternary", {
-			-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
-			i(1, "cond"),
-			t(" ? "),
-			i(2, "then"),
-			t(" : "),
-			i(3, "else"),
-		}),
-	},
+  {
+    s("ternary", {
+      -- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
+      i(1, "cond"),
+      t(" ? "),
+      i(2, "then"),
+      t(" : "),
+      i(3, "else"),
+    }),
+  },
 }
