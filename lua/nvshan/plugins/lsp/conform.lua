@@ -2,13 +2,15 @@
 local formatters = {}
 
 formatters.black = {
-  args = {
-    "--stdin-filename",
-    "$FILENAME",
-    "--quiet",
+  prepand_args = {
     "--line-length=120",
-    "-",
   },
+}
+
+formatters.isort = {
+  prepend_args = {
+    "--line-length=119",
+  }
 }
 
 -- set up conform
@@ -20,7 +22,7 @@ require("conform").setup({
       if require("conform").get_formatter_info("ruff_format", bufnr).available then
         return { "ruff_format" }
       else
-        return { "isort", "black" }
+        return { "black", "isort" }
       end
     end,
     c = { "clang-format" },
