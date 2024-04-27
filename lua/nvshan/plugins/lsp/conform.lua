@@ -25,6 +25,7 @@ require("conform").setup({
     end,
     c = { "clang-format" },
     cpp = { "clang-format" },
+    sh = { "shfmt" },
     -- Use the "*" filetype to run formatters on all filetypes.
     -- ["*"] = { "codespell" },
     -- Use the "_" filetype to run formatters on filetypes that don't

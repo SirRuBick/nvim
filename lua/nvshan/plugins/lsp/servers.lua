@@ -7,6 +7,9 @@
 -- @Date:   2023
 --
 return {
+  -- Bash
+  bashls = {},
+
   -- CMAKE
   cmake = {},
 

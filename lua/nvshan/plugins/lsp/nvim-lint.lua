@@ -13,7 +13,7 @@ local status_ok, mason_tool = pcall(require, "mason-tool-installer")
 if status_ok then
   mason_tool.setup {
     ensure_installed = {
-      "flake8", "mypy"
+      "flake8", "mypy", "shfmt", "stylua",
     },
   }
 end
