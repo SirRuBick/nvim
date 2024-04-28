@@ -35,7 +35,7 @@ if is_available("harpoon") then
     require("harpoon"):list():next()
   end):desc("Go to prev")
   mappings.n["<leader>hh"] = map(function()
-    require("harpoon").ui:toggle_quick_menu(harpoon:list())
+    require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
   end):desc("Open UI")
   for idx = 1, 9 do
     mappings.n["<leader>h" .. idx] = map(function()
@@ -44,16 +44,14 @@ if is_available("harpoon") then
   end
 end
 
-if is_available("persistence.nvim") then
-  mappings.n["<leader>ps"] = map(function()
-    require("persistence").load()
-  end):desc("Restore Session")
-  mappings.n["<leader>pl"] = map(function()
-    require("persistence").load({ last = true })
-  end):desc("Restore Last Session")
-  mappings.n["<leader>pd"] = map(function()
-    require("persistence").stop()
-  end):desc("Don't Save Current Session")
+if is_available("persisted.nvim") then
+  mappings.n["<leader>st"] = map("<CMD>SessionToggle<CR>"):desc("Toggle session UI")
+  mappings.n["<leader>sa"] = map("<CMD>SessionStart<CR>"):desc("Start recording session")
+  mappings.n["<leader>sp"] = map("<CMD>SessionStop<CR>"):desc("Stop session")
+  mappings.n["<leader>ss"] = map("<CMD>SessionSave<CR>"):desc("Save session")
+  mappings.n["<leader>sl"] = map("<CMD>SessionLoad<CR>"):desc("Load session")
+  mappings.n["<leader>sr"] = map("<CMD>SessionLoadLast<CR>"):desc("Load recent session")
+  mappings.n["<leader>sd"] = map("<CMD>SessionDelete<CR>"):desc("Delete session")
 end
 
 return mappings

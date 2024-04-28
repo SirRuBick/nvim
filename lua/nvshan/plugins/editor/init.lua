@@ -95,9 +95,9 @@ local plugins = {
     end,
   },
   {
-    "folke/persistence.nvim",
-    event = "BufReadPre",
-    opts = { options = vim.opt.sessionoptions:get() },
+    "olimorris/persisted.nvim",
+    cmd = { "SessionToggle", "SessionStart", "SessionStop", "SessionLoad", "SessionLoadLast", "SessionLoadFromFile", "SessionDelete" },
+    config = true,
   },
   {
     "folke/twilight.nvim",

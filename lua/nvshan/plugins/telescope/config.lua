@@ -18,6 +18,10 @@ if is_available("telescope-undo.nvim") then
   telescope.load_extension("undo")
 end
 
+if is_available("persisted.nvim") then
+  telescope.load_extension("persisted")
+end
+
 local mappings = {
   i = {
     ["<C-n>"] = actions.cycle_history_next,
@@ -96,5 +100,8 @@ telescope.setup({
       side_by_side = true,
       layout_strategy = "vertical",
     },
+    persisted = {
+      layout_config = { width = 0.6, height = 0.6 }
+    }
   },
 })

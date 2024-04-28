@@ -12,29 +12,27 @@ I am still adding things in as I lean more about Neovim.<br>
 + [ripgrep](https://github.com/BurntSushi/ripgrep)
 + [glow](https://github.com/charmbracelet/glow): required by Glow
 + [nodejs](https://github.com/nodejs): required by github Copliot
-- [codespell](https://github.com/codespell-project/codespell): required by conform.nvim
 - [wget](https://www.gnu.org/software/wget/): required by mason.nvim
 
 ## TODO
 - [ ] Code refactoring
-- [ ] set up markdown note taking system, learn about obsidian
 - [ ] more luasnips
+- [ ] learn about obsidian
 - [ ] learn to use neogit
 - [ ] dadbob ui close should also close dbout and sql query
-- [ ] rmagatti/auto-session to replace persistence.nvim
 - [ ] Can you random between sub-colorschemes like nordfox?
-- [ ] outline doesn't seem useful with NavBuddy
+- [ ] perhaps I don't need so much keymap for persisted
 
 ### Plugins to explore
-| Section  | Plugins |
-|----------|---------|
-| editing  | "kevinhwang91/nvim-bqf" |
-| editing  | "danymat/neogen" |
-| editing  | "echasnovski/mini.align" |
-| test     | "nvim-neotest/neotest" |
-| markdown | "ekickx/clipboard-image.nvim" |
-| Others   | "itchyny/calendar.vim" |
-| Others   | "rest-nvim/rest.nvim" |
+| Section  | Plugins | Notes |
+|----------|---------|-------|
+| editing  | "kevinhwang91/nvim-bqf" | better qf, possible to replace trouble? |
+| editing  | "danymat/neogen" | comment generator |
+| editing  | "echasnovski/mini.align" | align test |
+| test     | "nvim-neotest/neotest" | test code block |
+| markdown | "ekickx/clipboard-image.nvim" | paste image to markdown |
+| Others   | "itchyny/calendar.vim" | |
+| Others   | "rest-nvim/rest.nvim" | |
 
 ## Keymaps
 Some of the shortcuts I use frequently are listed here. <br>
