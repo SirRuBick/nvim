@@ -45,7 +45,7 @@ lualine.setup({
     lualine_a = { "mode" },
     lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = { "hostname", "filename" },
-    lualine_x = { codeium_status, lint_progress },
+    lualine_x = { "location" },
     lualine_y = { "encoding", "fileformat", "filetype" },
     lualine_z = { "location", "progress" },
   },

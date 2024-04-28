@@ -10,7 +10,7 @@ formatters.black = {
 formatters.isort = {
   prepend_args = {
     "--line-length=119",
-  }
+  },
 }
 
 -- set up conform
@@ -27,7 +27,7 @@ require("conform").setup({
     end,
     c = { "clang-format" },
     cpp = { "clang-format" },
-    sh = { "shfmt" },
+    sh = { "shellcheck" },
     -- Use the "*" filetype to run formatters on all filetypes.
     -- ["*"] = { "codespell" },
     -- Use the "_" filetype to run formatters on filetypes that don't

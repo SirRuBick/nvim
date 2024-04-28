@@ -2,6 +2,7 @@
 local lint = require("lint")
 lint.linters_by_ft = {
   python = { "flake8", "mypy" },
+  sh = { "shellcheck" },
 }
 
 -- customize flake8
@@ -18,16 +19,3 @@ mypy.args = {
   "--warn-redundant-casts",
   "--warn-unused-configs",
 }
-
--- setup linters
-local status_ok, mason_tool = pcall(require, "mason-tool-installer")
-if status_ok then
-  mason_tool.setup({
-    ensure_installed = {
-      "flake8",
-      "mypy",
-      "shfmt",
-      "stylua",
-    },
-  })
-end
