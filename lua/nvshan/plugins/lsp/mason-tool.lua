@@ -20,6 +20,10 @@ if lint_ok then
   end
 end
 
+for i, v in ipairs(to_install) do
+  print(v)
+end
+
 mason_tool.setup({
   ensure_installed = to_install,
   run_on_start = true,

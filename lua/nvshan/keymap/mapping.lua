@@ -162,7 +162,7 @@ mappings.i["<A-[>"] = map("<C-d>"):silent():noremap():desc("unindent line")
 mappings.i["<A-]>"] = map("<C-t>"):silent():noremap():desc("indent line")
 
 -- Lazy
-mappings.n["<leader>z"] = map("<CMD>Lazy<CR>"):desc(wk_icons.z)
+mappings.n["<leader>z"] = map(function() require("lazy").show() end):desc(wk_icons.z)
 
 -- File Explorer
 mappings.n["<leader>e"] = map("<CMD>NvimTreeToggle<CR>"):desc(wk_icons.e)
@@ -186,12 +186,12 @@ mappings.n["<leader>uT"] = map(ui.toggle_treesitter_context):desc("Toggle treesi
 
 -- nvim-ufo
 if is_available("nvim-ufo") then
-  mappings.n["zp"] = map(require("ufo").peekFoldedLinesUnderCursor):desc("Peek folded lines under cursor")
+  mappings.n["zp"] = map(function() require("ufo").peekFoldedLinesUnderCursor() end):desc("Peek folded lines under cursor")
 end
 
 -- Others
 if is_available("specs.nvim") then
-  mappings.n["<leader><leader>"] = map(require("specs").show_specs):desc("󰳽 Show Cursor")
+  mappings.n["<leader><leader>"] = map(function() require("specs").show_specs() end):desc("󰳽 Show Cursor")
 end
 if global.is_mac then
   mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")

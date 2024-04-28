@@ -39,22 +39,8 @@ return {
     opts = {},
   },
   {
-    -- TODO: Need to think about the dependencies here
-    -- NOTE: must load this before conform and nvim-lint
-    -- BUG: it is not auto installed when lazy loaded
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    lazy = false,
-    -- event = "LspAttach",
-    config = function()
-      require("nvshan.plugins.lsp.mason-tool")
-    end,
-  },
-  {
     -- lazy loaded by lsp-config
     "mfussenegger/nvim-lint",
-    dependencies = {
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
     priority = 10,
     config = function()
       require("nvshan.plugins.lsp.nvim-lint")
@@ -63,9 +49,6 @@ return {
   {
     -- lazy loaded by lsp-config
     "stevearc/conform.nvim",
-    dependencies = {
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
     config = function()
       require("nvshan.plugins.lsp.conform")
     end,

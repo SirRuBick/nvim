@@ -46,6 +46,7 @@ local plugins = {
   },
   {
     "rcarriga/nvim-notify",
+    -- NOTE: Disable lazy load for notifying random colorscheme at the start
     lazy = false,
     config = function()
       require("nvshan.plugins.ui.notify")
@@ -61,7 +62,7 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    event = { "BufReadPost", "BufAdd", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("nvshan.plugins.ui.ibl")
     end,

@@ -22,6 +22,12 @@ return {
           "rafamadriz/friendly-snippets",
         },
       },
+      {
+        "Exafunction/codeium.nvim",
+        cond = settings.use_codeium,
+        cmd = "Codeium",
+        opts = {},
+      },
     },
     config = function()
       require("nvshan.plugins.completion.cmp")
@@ -31,16 +37,9 @@ return {
     "github/copilot.vim",
     cond = settings.use_copilot,
     cmd = "Copilot",
-    event = "VeryLazy",
+    event = "InsertEnter",
     init = function()
       vim.g.copilot_no_tab_map = true
     end,
-  },
-  {
-    "Exafunction/codeium.nvim",
-    cond = settings.use_codeium,
-    cmd = "Codeium",
-    event = "VeryLazy",
-    opts = {},
   },
 }

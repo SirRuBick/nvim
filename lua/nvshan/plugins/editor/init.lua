@@ -15,7 +15,7 @@ local plugins = {
   },
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {},
     keys = {
       {
@@ -90,7 +90,6 @@ local plugins = {
   },
   {
     "ahmedkhalf/project.nvim",
-    event = "VeryLazy",
     config = function()
       require("nvshan.plugins.editor.project")
     end,
@@ -184,7 +183,6 @@ local plugins = {
   },
   {
     "akinsho/toggleterm.nvim",
-    event = "VeryLazy",
     cmd = {
       "ToggleTerm",
       "ToggleTermToggleAll",
@@ -200,10 +198,12 @@ local plugins = {
       insert_mappings = true,
       terminal_mappings = true,
     },
+    keys = {
+      { "<C-\\>", mode = "n", desc = "Toggle terminal" },
+    },
   },
   {
     "ThePrimeagen/harpoon",
-    event = "VeryLazy",
     branch = "harpoon2",
     dependencies = {
       "nvim-lua/plenary.nvim",

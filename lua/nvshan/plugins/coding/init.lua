@@ -8,11 +8,18 @@ return {
   },
   {
     "numToStr/Comment.nvim",
-    event = { "CursorHold", "CursorHoldI" },
     dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
     config = function()
       require("nvshan.plugins.coding.Comment")
     end,
+    keys = {
+      { "gcc", mode = "n", desc = "Comment toggle current line" },
+      { "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
+      { "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
+      { "gbc", mode = "n", desc = "Comment toggle current block" },
+      { "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
+      { "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
+    },
   },
   {
     "windwp/nvim-autopairs",
@@ -30,7 +37,7 @@ return {
   },
   {
     "RRethy/vim-illuminate",
-    event = { "CursorHold", "CursorHoldI" },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("nvshan.plugins.coding.illuminate")
     end,

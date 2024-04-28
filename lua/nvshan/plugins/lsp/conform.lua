@@ -37,3 +37,28 @@ require("conform").setup({
   -- custom formatters or overwrite default ones
   formatters = formatters,
 })
+
+local registry = require("mason-registry")
+local all_formatters = require("conform").list_all_formatters()
+local ensure_installed = {}
+
+for i, v in pairs(all_formatters) do
+  table.insert(ensure_installed, v.name)
+end
+
+-- Ensure packages are installed and up to date
+registry.refresh(function()
+  for _, name in pairs(ensure_installed) do
+    local package = registry.get_package(name)
+    if not registry.is_installed(name) then
+      package:install()
+      vim.notify(name .. " is installed")
+    else
+      -- package:check_new_version(function(success, result_or_err)
+      --   if success then
+      --     package:install({ version = result_or_err.latest_version })
+      --   end
+      -- end)
+    end
+  end
+end)
