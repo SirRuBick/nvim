@@ -154,6 +154,7 @@ local plugins = {
   },
   {
     "mg979/vim-visual-multi",
+    tag = "v0.5.7",
     event = { "BufReadPre", "BufNewFile" },
     init = function()
       vim.g.VM_default_mappings = 0
