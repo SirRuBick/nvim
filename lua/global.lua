@@ -13,5 +13,4 @@ global.cache_dir = global.home .. global.os_path_sep .. ".cache" .. global.os_pa
 global.modules_dir = global.vim_path .. global.os_path_sep .. "modules"
 global.data_dir = vim.fn.stdpath("data")
 
-
 return global

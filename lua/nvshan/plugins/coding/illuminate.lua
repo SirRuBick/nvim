@@ -30,4 +30,3 @@ require("illuminate").configure({
   -- The `under_cursor` option is disabled when this cutoff is hit
   large_file_cutoff = 10000,
 })
-

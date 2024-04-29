@@ -4,11 +4,11 @@ local is_available = require("utils").is_available
 M.is_maximized = false
 
 function M.maximize_window()
-  if vim.fn.winnr('$') == 1 then
+  if vim.fn.winnr("$") == 1 then
     return
   end
   M._mx_sizes = vim.fn.winrestcmd()
-  vim.cmd('vert resize | resize')
+  vim.cmd("vert resize | resize")
   M.is_maximized = true
 end
 

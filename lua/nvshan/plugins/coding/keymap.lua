@@ -22,10 +22,18 @@ if is_available("trouble.nvim") then
 end
 
 if is_available("vim-illuminate") then
-  mappings.n["<leader>ui"] = map(function() require("illuminate").toggle_buf() end):desc("Illuminate Toggle in local buffer")
-  mappings.n["<leader>uI"] = map(function() require("illuminate").toggle() end):desc("Illuminate Toggle globally")
-  mappings.n["[r"] = map(function() require("illuminate").goto_prev_reference() end):desc("Jump to previous reference")
-  mappings.n["]r"] = map(function() require("illuminate").goto_next_reference() end):desc("Jump to next reference")
+  mappings.n["<leader>ui"] = map(function()
+    require("illuminate").toggle_buf()
+  end):desc("Illuminate Toggle in local buffer")
+  mappings.n["<leader>uI"] = map(function()
+    require("illuminate").toggle()
+  end):desc("Illuminate Toggle globally")
+  mappings.n["[r"] = map(function()
+    require("illuminate").goto_prev_reference()
+  end):desc("Jump to previous reference")
+  mappings.n["]r"] = map(function()
+    require("illuminate").goto_next_reference()
+  end):desc("Jump to next reference")
 end
 
 return mappings

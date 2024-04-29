@@ -116,11 +116,11 @@ end
 --- Initialize key map table
 function utils.init_mapping()
   local maps = {}
-  for _, mode in ipairs { "", "n", "v", "x", "s", "o", "!", "i", "l", "c", "t" } do
+  for _, mode in ipairs({ "", "n", "v", "x", "s", "o", "!", "i", "l", "c", "t" }) do
     maps[mode] = {}
   end
-  if vim.fn.has "nvim-0.10.0" == 1 then
-    for _, abbr_mode in ipairs { "ia", "ca", "!a" } do
+  if vim.fn.has("nvim-0.10.0") == 1 then
+    for _, abbr_mode in ipairs({ "ia", "ca", "!a" }) do
       maps[abbr_mode] = {}
     end
   end
@@ -152,6 +152,5 @@ function utils.merge_keymap(maps, pluginmodule)
   end
   return maps
 end
-
 
 return utils

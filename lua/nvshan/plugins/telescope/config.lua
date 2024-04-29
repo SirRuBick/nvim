@@ -101,7 +101,7 @@ telescope.setup({
       layout_strategy = "vertical",
     },
     persisted = {
-      layout_config = { width = 0.6, height = 0.6 }
-    }
+      layout_config = { width = 0.6, height = 0.6 },
+    },
   },
 })

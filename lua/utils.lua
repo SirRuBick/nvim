@@ -12,7 +12,7 @@ local os_sep = require("global").os_path_sep
 ---@param path string
 ---@return string
 function Utils.get_filename(path)
-  return path:match "^(.+)%.lua$"
+  return path:match("^(.+)%.lua$")
 end
 
 --- Concat strings with os separator
@@ -51,7 +51,7 @@ function Utils.register_which_key(mode, keymap, opts)
   registration[keymap] = opts
   local status_ok, which_key = pcall(require, "which-key")
   if not status_ok then
-    vim.api.nvim_err_writeln "which is not ready to register key bindings"
+    vim.api.nvim_err_writeln("which is not ready to register key bindings")
   end
   which_key.register(registration, { mode = mode })
 end
@@ -96,13 +96,13 @@ function Utils.load_table_from_dir(absolute_path)
     if not name then
       break
     end
-    if name:match ".lua$" then
+    if name:match(".lua$") then
       local filetype = Utils.get_filename(name)
       local status_ok, loaded_snippets = pcall(dofile, Utils.join_path(absolute_path, name))
       if status_ok then
         merged_table[filetype] = loaded_snippets
       else
-        vim.notify("Failed to load module for " .. filetype, "error")
+        vim.notify("Failed to load module for " .. filetype, vim.log.levels.ERROR)
       end
     end
   end

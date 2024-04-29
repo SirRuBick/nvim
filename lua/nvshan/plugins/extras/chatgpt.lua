@@ -6,7 +6,7 @@ WELCOME_MESSAGE = [[
 ]]
 
 require("chatgpt").setup({
-  api_key_cmd = nil,  -- expose through env vairable OPENAI_API_KEY
+  api_key_cmd = nil, -- expose through env vairable OPENAI_API_KEY
   yank_register = "+",
   edit_with_instructions = {
     diff = false,

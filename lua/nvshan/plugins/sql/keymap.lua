@@ -5,7 +5,6 @@ local map = keymap_utils.map
 local db_conf_path = require("settings").db_ui_save_location
 local os_sep = require("global").os_path_sep
 
-
 if not is_available("vim-dadbod") then
   vim.notify("Failed to load dadbod", vim.log.levels.ERROR)
   return {}

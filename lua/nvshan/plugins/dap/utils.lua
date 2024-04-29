@@ -14,4 +14,3 @@ function Utils.input_file_path()
 end
 
 return Utils
-

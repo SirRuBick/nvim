@@ -5,5 +5,5 @@ return {
     config = function()
       require("nvshan.plugins.alpha.config")
     end,
-  }
+  },
 }

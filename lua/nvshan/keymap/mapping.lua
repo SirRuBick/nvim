@@ -130,8 +130,12 @@ mappings.n["<leader>bQ"] = map("<cmd>qa<CR>"):desc("Quit all buffer")
 if is_available("bufferline.nvim") then
   mappings.n["[b"] = map("<cmd>BufferLineCyclePrev<CR>"):desc("Prev buffer")
   mappings.n["]b"] = map("<cmd>BufferLineCycleNext<CR>"):desc("Next buffer")
-  mappings.n["[B"] = map(function() require("bufferline").go_to(1, true) end):desc("First buffer")
-  mappings.n["]B"] = map(function() require("bufferline").go_to(-1, true) end):desc("Last buffer")
+  mappings.n["[B"] = map(function()
+    require("bufferline").go_to(1, true)
+  end):desc("First buffer")
+  mappings.n["]B"] = map(function()
+    require("bufferline").go_to(-1, true)
+  end):desc("Last buffer")
   mappings.n["<leader>b["] = map("<cmd>BufferLineMovePrev<CR>"):desc("Move buffer backwards")
   mappings.n["<leader>b]"] = map("<cmd>BufferLineMoveNext<CR>"):desc("Move buffer forwards")
   mappings.n["<leader>bg"] = map("<cmd>BufferLineGroupToggle<CR>"):desc("Bufferline group toggle")
@@ -141,8 +145,9 @@ if is_available("bufferline.nvim") then
   mappings.n["<leader>bo"] = map("<cmd>BufferLineCloseOthers<CR>"):desc("Close all other buffers")
   mappings.n["<leader>bl"] = map("<cmd>BufferLineTogglePin<CR>"):desc("Lock(Pin) buffer")
   for idx = 1, 9 do
-    mappings.n["<leader>b" .. idx] =
-      map(function() require("bufferline").go_to(idx, true) end):desc("Bufferline go to buffer " .. idx)
+    mappings.n["<leader>b" .. idx] = map(function()
+      require("bufferline").go_to(idx, true)
+    end):desc("Bufferline go to buffer " .. idx)
   end
 end
 
@@ -162,7 +167,9 @@ mappings.i["<A-[>"] = map("<C-d>"):silent():noremap():desc("unindent line")
 mappings.i["<A-]>"] = map("<C-t>"):silent():noremap():desc("indent line")
 
 -- Lazy
-mappings.n["<leader>z"] = map(function() require("lazy").show() end):desc(wk_icons.z)
+mappings.n["<leader>z"] = map(function()
+  require("lazy").show()
+end):desc(wk_icons.z)
 
 -- File Explorer
 mappings.n["<leader>e"] = map("<CMD>NvimTreeToggle<CR>"):desc(wk_icons.e)
@@ -186,12 +193,16 @@ mappings.n["<leader>uT"] = map(ui.toggle_treesitter_context):desc("Toggle treesi
 
 -- nvim-ufo
 if is_available("nvim-ufo") then
-  mappings.n["zp"] = map(function() require("ufo").peekFoldedLinesUnderCursor() end):desc("Peek folded lines under cursor")
+  mappings.n["zp"] = map(function()
+    require("ufo").peekFoldedLinesUnderCursor()
+  end):desc("Peek folded lines under cursor")
 end
 
 -- Others
 if is_available("specs.nvim") then
-  mappings.n["<leader><leader>"] = map(function() require("specs").show_specs() end):desc("󰳽 Show Cursor")
+  mappings.n["<leader><leader>"] = map(function()
+    require("specs").show_specs()
+  end):desc("󰳽 Show Cursor")
 end
 if global.is_mac then
   mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")

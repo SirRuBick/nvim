@@ -6,7 +6,7 @@ if status_ok then
       enabled = true, -- when not enabled, neodev will not change any settings to the LSP server
       -- these settings will be used for your Neovim config directory
       runtime = true, -- runtime path
-      types = true,   -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+      types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
       plugins = true, -- installed opt or start plugins in packpath
       -- you can also specify the list of plugins to make available as a workspace library
       -- plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
@@ -26,9 +26,8 @@ if status_ok then
   })
 end
 
-
 -- setup lsp
-local lsp = require "nvshan.plugins.lsp.lsp-config"
+local lsp = require("nvshan.plugins.lsp.lsp-config")
 
 local status_ok, servers = pcall(require, "nvshan.plugins.lsp.servers")
 if not status_ok then
@@ -36,24 +35,18 @@ if not status_ok then
   return
 end
 
-
 local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-local capabilities = vim.tbl_deep_extend(
-  "force",
-  {},
-  lsp.capabilities() or {},
-  has_cmp and cmp_nvim_lsp.default_capabilities() or {}
-)
+local capabilities = vim.tbl_deep_extend("force", {}, lsp.capabilities() or {}, has_cmp and cmp_nvim_lsp.default_capabilities() or {})
 
 local handlers = {
   -- The first entry (without a key) will be the default handler
   -- and will be called for each installed server that doesn't have
   -- a dedicated handler.
   function(server_name) --default handler
-    require("lspconfig")[server_name].setup {
+    require("lspconfig")[server_name].setup({
       on_attach = lsp.on_attach,
       capabilities = capabilities,
-    }
+    })
   end,
 }
 

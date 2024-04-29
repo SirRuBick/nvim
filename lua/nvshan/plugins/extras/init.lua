@@ -15,7 +15,7 @@ return {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
+      "nvim-telescope/telescope.nvim",
     },
     config = function()
       require("nvshan.plugins.extras.chatgpt")
@@ -25,5 +25,5 @@ return {
     "Eandrju/cellular-automaton.nvim",
     cmd = "CellularAutomaton",
     opts = {},
-  }
+  },
 }

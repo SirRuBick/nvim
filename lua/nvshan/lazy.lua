@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
-    lazypath
+    lazypath,
   })
   if vim.api.nvim_get_vvar("shell_error") ~= 0 then
     vim.api.nvim_err_writeln("Error cloning lazy.nvim repository...\n\n" .. output)
@@ -22,11 +22,10 @@ if not vim.tbl_contains(vim.opt.rtp:get(), lazypath) then
   vim.opt.rtp:prepend(lazypath)
 end
 
-
 local lazyconfig = {
   root = rootpath, -- directory where plugins will be installed
   defaults = {
-    lazy = true,   -- should plugins be lazy-loaded?
+    lazy = true, -- should plugins be lazy-loaded?
     version = nil,
     -- default `cond` you can use to globally disable a lot of plugins
     -- when running inside vscode for example
@@ -46,9 +45,9 @@ local lazyconfig = {
     },
     reset_packpath = true, -- reset the package path to improve startup time
     rtp = {
-      reset = true,        -- reset the runtime path to $VIMRUNTIME and your config directory
+      reset = true, -- reset the runtime path to $VIMRUNTIME and your config directory
       ---@type string[]
-      paths = {},          -- add any custom paths here that you want to includes in the rtp
+      paths = {}, -- add any custom paths here that you want to includes in the rtp
       ---@type string[] list any plugins you want to disable here
       disabled_plugins = {
         -- "gzip",

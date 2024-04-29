@@ -54,6 +54,4 @@ opts.python.configurations = {
   },
 }
 
-
 return opts
-

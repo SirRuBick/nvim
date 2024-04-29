@@ -34,6 +34,5 @@ return {
     config = function()
       require("nvshan.plugins.dap.dap")
     end,
-  }
+  },
 }
-
