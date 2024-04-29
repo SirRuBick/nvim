@@ -8,7 +8,8 @@ settings.leader = " "
 settings.diagnostic_virtual_text = false
 -- colorscheme, choose from "random" or
 -- catppuccin/kanagawa/onedark/gruvbox/nightfox
-settings.colorscheme = "random"
+-- alternative sub-themes are not supported in random, but can be set directly
+settings.colorscheme = "nordfox"
 -- background clolor, "dark" or "light"
 settings.background = "dark"
 -- trasparent

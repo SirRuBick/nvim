@@ -23,6 +23,11 @@ function C.random_colorscheme(available_colorschemes)
 end
 
 function C.set_colorscheme()
+  -- Try to set as default first
+  if pcall(vim.cmd.colorscheme, default) then
+    return
+  end
+
   local available_colorschemes = C.get_available_colorschemes()
   local colorscheme = available_colorschemes[1]
   if default == "random" then
