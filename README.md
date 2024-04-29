@@ -16,7 +16,7 @@ I am still adding things in as I lean more about Neovim.<br>
 
 ## TODO
 - [ ] Code refactoring
-- [ ] more luasnips
+- [ ] more luasnips, nice examples on github page for comments
 - [ ] learn about obsidian
 - [ ] learn to use neogit
 - [ ] dadbob ui close should also close dbout and sql query
