@@ -61,11 +61,28 @@ local plugins = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    cond = not settings.indent_animation,
     main = "ibl",
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("nvshan.plugins.ui.ibl")
     end,
+  },
+  {
+    "echasnovski/mini.indentscope",
+    cond = settings.indent_animation,
+    version = "*",
+    event = { "BufReadPost", "BufNewFile" },
+    config = {
+      mappings = {
+        -- Textobjects
+        object_scope = "ip",
+        object_scope_with_border = "ap",
+        -- Motions (jump to respective border line; if not present - body line)
+        goto_top = "[p",
+        goto_bottom = "]p",
+      },
+    },
   },
 }
 

@@ -28,7 +28,7 @@ I am still adding things in as I lean more about Neovim.<br>
 |----------|---------|-------|
 | editing  | "kevinhwang91/nvim-bqf" | better qf, possible to replace trouble? |
 | editing  | "danymat/neogen" | comment generator |
-| editing  | "echasnovski/mini.align" | align test |
+| editing  | "echasnovski/mini.align" | align text |
 | test     | "nvim-neotest/neotest" | test code block |
 | markdown | "ekickx/clipboard-image.nvim" | paste image to markdown |
 | Others   | "itchyny/calendar.vim" | |
@@ -125,6 +125,8 @@ In the following shortcuts, `<leader>` represents `space`.<br>
 | `]o`     | N    | Jump to next location | Vim |
 | `[O`     | N    | Jump to first location | Vim |
 | `]O`     | N    | Jump to last location | Vim |
+| `[p`     | N    | Jump to indent top | mini.indentscope |
+| `]p`     | N    | Jump to indent bottom | mini.indentscope |
 | `[q`     | N    | Jump to prev quickfix | Vim |
 | `]q`     | N    | Jump to next quickfix | Vim |
 | `[Q`     | N    | Jump to first quickfix | Vim |

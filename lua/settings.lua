@@ -38,5 +38,7 @@ settings.obsidian = {
   enable = false,
   vault_path = "~/vaults"
 }
+-- ident choice
+settings.indent_animation = true
 
 return settings
