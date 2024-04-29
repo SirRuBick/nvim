@@ -45,21 +45,21 @@ bufferline.setup({
         separator = true, -- use a "true" to enable the default, or set your own character
       },
     },
-    groups = {
-      options = {
-        toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
-      },
-      items = {
-        {
-          name = "Tests",
-          icon = "", -- Optional
-          auto_close = true,
-          matcher = function(buf) -- Mandatory
-            return buf.name:match("test%_") or buf.name:match("%_spec")
-          end,
-        },
-      },
-    },
+    -- groups = {
+    --   options = {
+    --     toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+    --   },
+    --   items = {
+    --     {
+    --       name = "Tests",
+    --       icon = "", -- Optional
+    --       auto_close = true,
+    --       matcher = function(buf) -- Mandatory
+    --         return buf.name:match("test%_") or buf.name:match("%_spec")
+    --       end,
+    --     },
+    --   },
+    -- },
     custom_areas = {
       right = function()
         local result = {}
