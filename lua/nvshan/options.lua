@@ -41,7 +41,7 @@ option.hidden = true -- required by toggle term
 option.backup = false
 option.swapfile = false
 option.mouse = nil -- disable mouse
-option.clipboard = "unnamedplus" -- allows neovim to access system clipboard
+option.clipboard = "unnamed,unnamedplus" -- allows neovim to access system clipboard
 option.undofile = true -- enable persistent undo
 option.updatetime = 300 -- faster completion (default 4000ms)
 option.timeoutlen = 300
@@ -69,7 +69,20 @@ global.maplocalleader = ""
 global.highlighturl_enabled = true
 global.icons_enabled = true
 
-if global_settings.is_wsl then
+if global_settings.is_mac then
+  global.clipboard = {
+    name = "MacClipboard",
+    copy = {
+      ["+"] = "pbcopy",
+      ["*"] = "pbcopy",
+    },
+    paste = {
+      ["+"] = "pbpaste",
+      ["*"] = "pbpaste",
+    },
+    cache_enabled = 0,
+  }
+elseif global_settings.is_wsl then
   global.clipboard = {
     name = "WslClipboard",
     copy = {
@@ -81,5 +94,18 @@ if global_settings.is_wsl then
       ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
     },
     cache_enabled = 0,
+  }
+elseif global_settings.is_tmux then
+  global.clipboard = {
+    name = "TmuxClipboard",
+    copy = {
+      ["+"] = { "tmux", "load-buffer", "-" },
+      ["*"] = { "tmux", "load-buffer", "-" },
+    },
+    paste = {
+      ["+"] = { "tmux", "save-buffer", "-" },
+      ["*"] = { "tmux", "save-buffer", "-" },
+    },
+    cache_enabled = 1,
   }
 end
