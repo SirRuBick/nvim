@@ -15,6 +15,7 @@ Config.on_attach = function(client, bufnr)
   local lsp_mappings = keymap_utils.init_mapping()
 
   lsp_mappings.n["<leader>l"] = map():buffer(bufnr):desc(wk_icons.l)
+  lsp_mappings.v["<leader>l"] = map():buffer(bufnr):desc(wk_icons.l)
 
   if is_available("mason-lspconfig.nvim") then
     lsp_mappings.n["<leader>lz"] = map("<cmd>LspInfo<CR>"):buffer(bufnr):desc("LSP information")

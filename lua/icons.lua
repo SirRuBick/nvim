@@ -222,6 +222,7 @@ icons.whichkey = {
   k = "󰻿 Keep Split Only",
   l = " LSP",
   m = "󰚩 LLM",
+  n = "󰏬 Notes (Obsidian)",
   q = "󰆼 SQL",
   s = "󱂬 Session",
   t = " Terminal",

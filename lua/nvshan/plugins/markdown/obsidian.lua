@@ -1,8 +1,15 @@
 local obsidian = require("obsidian")
-local vault_path = require("settings").obsidian.vault_path
+local obsidian_settings = require("settings").obsidian
+local join_path = require("utils").join_path
+
+local workspaces = {}
+for _, wp in ipairs(obsidian_settings.workspaces) do
+  table.insert(workspaces, { name = wp, path = join_path(obsidian_settings.vault_path, wp) })
+end
 
 obsidian.setup({
-  dir = vault_path,
+  -- dir = obsidian_settings.vault_path,
+  workspaces = workspaces,
 
   daily_notes = {
     -- Optional, if you keep daily notes in a separate directory.
@@ -27,19 +34,12 @@ obsidian.setup({
   -- way then set 'mappings = {}'.
   mappings = {
     -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-    ["gf"] = {
-      action = function()
-        return require("obsidian").util.gf_passthrough()
-      end,
-      opts = { noremap = false, expr = true, buffer = true },
-    },
-    -- Toggle check-boxes.
-    ["<leader>ch"] = {
-      action = function()
-        return require("obsidian").util.toggle_checkbox()
-      end,
-      opts = { buffer = true },
-    },
+    -- ["gf"] = {
+    --   action = function()
+    --     return require("obsidian").util.gf_passthrough()
+    --   end,
+    --   opts = { noremap = false, expr = true, buffer = true },
+    -- },
   },
 
   -- Where to put new notes. Valid options are
@@ -47,24 +47,19 @@ obsidian.setup({
   --  * "notes_subdir" - put new notes in the default notes subdirectory.
   new_notes_location = "notes_subdir",
 
-  -- Optional, for templates (see below).
+  -- Templates
   templates = {
     subdir = "templates",
-    date_format = "%Y-%m-%d",
+    date_format = "%Y-%m-%d-%a",
     time_format = "%H:%M",
     -- A map for custom variables, the key should be the variable and the value a function
     substitutions = {},
   },
 
-  -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
-  -- URL it will be ignored but you can customize this behavior here.
-  ---@param url string
-  follow_url_func = function(url)
-    -- Open the URL in the default web browser.
-    vim.fn.jobstart({ "open", url }) -- Mac OS
-    -- vim.fn.jobstart({"xdg-open", url})  -- linux
-  end,
+  -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
+  open_app_foreground = true,
 
+  ---@diagnostic disable: missing-fields
   picker = {
     -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
     name = "telescope.nvim",
@@ -72,9 +67,27 @@ obsidian.setup({
     -- Not all pickers support all mappings.
     mappings = {
       -- Create a new note from your query.
-      new = "<C-x>",
+      -- new = "<C-x>",
       -- Insert a link to the selected note.
-      insert_link = "<C-l>",
+      -- insert_link = "<C-l>",
     },
+  },
+
+  -- Specify how to handle attachments.
+  attachments = {
+    -- The default folder to place images in via `:ObsidianPasteImg`.
+    -- If this is a relative path it will be interpreted as relative to the vault root.
+    -- You can always override this per image by passing a full path to the command instead of just a filename.
+    img_folder = obsidian_settings.img_folder,
+    -- A function that determines the text to insert in the note when pasting an image.
+    -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
+    -- This is the default implementation.
+    ---@param client obsidian.Client
+    ---@param path obsidian.Path the absolute path to the image file
+    ---@return string
+    img_text_func = function(client, path)
+      path = client:vault_relative_path(path) or path
+      return string.format("![%s](%s)", path.name, path)
+    end,
   },
 })

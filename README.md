@@ -1,6 +1,6 @@
 # Neovim config
 This is my personal Neovim config.<br>
-I am still adding things in as I lean more about Neovim.<br>
+I am still adding things in as I learn more about Neovim.<br>
 
 ## Plugins
 + [Lazy.nvim](https://github.com/folke/lazy.nvim): Plugin Manager
@@ -13,15 +13,15 @@ I am still adding things in as I lean more about Neovim.<br>
 + [glow](https://github.com/charmbracelet/glow): required by Glow
 + [nodejs](https://github.com/nodejs): required by github Copliot
 - [wget](https://www.gnu.org/software/wget/): required by mason.nvim
+- wsl-open(wsl) or pngpaste(mac) or xclip/wl-clipboard: Obsidian
 
 ## TODO
 - [ ] Code refactoring
 - [ ] more luasnips, nice examples on github page for comments
-- [ ] learn about obsidian
-- [ ] learn to use neogit
 - [ ] dadbob ui close should also close dbout and sql query
 - [ ] Can you random between sub-colorschemes like nordfox?
 - [ ] perhaps I don't need so much keymap for persisted
+- [ ] update doc
 
 ### Plugins to explore
 | Section  | Plugins | Notes |
