@@ -22,6 +22,8 @@ I am still adding things in as I learn more about Neovim.<br>
 - [ ] Can you random between sub-colorschemes like nordfox?
 - [ ] perhaps I don't need so much keymap for persisted
 - [ ] update doc
+## Notes
+- lsp-signature can be disabled, noice has features to cover it
 
 ### Plugins to explore
 | Section  | Plugins | Notes |
@@ -29,10 +31,13 @@ I am still adding things in as I learn more about Neovim.<br>
 | editing  | "kevinhwang91/nvim-bqf" | better qf, possible to replace trouble? |
 | editing  | "danymat/neogen" | comment generator |
 | editing  | "echasnovski/mini.align" | align text |
+| editing  | "junegunn/vim-easy-align" | align text |
+| tools    | "rest-nvim/rest.nvim" | replace of postman |
+| ui       | "karb94/neoscroll.nvim" | smooth scroll |
 | test     | "nvim-neotest/neotest" | test code block |
-| markdown | "ekickx/clipboard-image.nvim" | paste image to markdown |
-| Others   | "itchyny/calendar.vim" | |
-| Others   | "rest-nvim/rest.nvim" | |
+| lang     | "ekickx/clipboard-image.nvim" | paste image to markdown |
+| lang     | "chrisbra/csv.vim" | csv file |
+| others   | "itchyny/calendar.vim" | |
 
 ## Keymaps
 Some of the shortcuts I use frequently are listed here. <br>

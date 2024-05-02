@@ -26,4 +26,19 @@ return {
     cmd = "CellularAutomaton",
     opts = {},
   },
+  {
+    "LunarVim/bigfile.nvim",
+    event = "VeryLazy",
+    opts = {
+      filesize = 2, -- size of the file in MiB, the plugin round file sizes to the closest MiB
+      pattern = { "*" },
+      features = { -- features to disable
+        "illuminate",
+        "lsp",
+        "treesitter",
+        "syntax",
+        "filetype",
+      },
+    },
+  },
 }
