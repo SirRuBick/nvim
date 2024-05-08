@@ -207,7 +207,16 @@ end
 if global.is_mac then
   mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
 end
-mappings.n["<A-g>"] = map(custom_functions.go_to_stack_trace):desc("Go to stack trace")
+
+mappings.n["gl"] = map(function()
+    if vim.bo.filetype == "toggleterm" then
+      vim.notify("under toggleterm")
+      custom_functions.go_to_stack_trace()
+    else
+    vim.notify("not under toggleterm", vim.log.levels.INFO)
+      vim.cmd("gd")
+    end
+  end):desc("Go to debug line")
 mappings.n["<leader>cc"] = map(custom_functions.compile_run):desc("Compile and run")
 mappings.n["<leader>cg"] = map(custom_functions.toggle_glow):desc("Glow")
 mappings.n["<leader>gg"] = map(custom_functions.toggle_lazygit):desc("Lazygit")
