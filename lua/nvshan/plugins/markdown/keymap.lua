@@ -3,8 +3,9 @@ local keymap_utils = require("nvshan.keymap.utils")
 local mappings = keymap_utils.init_mapping()
 local map = keymap_utils.map
 local wk_icons = require("icons").whichkey
+local is_obsidian_enabled = require("settings").obsidian.enable
 
-if not is_available("obsidian.nvim") then
+if is_obsidian_enabled and not is_available("obsidian.nvim") then
   vim.notify("Failed to load obsidian", vim.log.levels.ERROR)
   return {}
 end
