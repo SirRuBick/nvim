@@ -34,11 +34,6 @@ return {
     end,
   },
   {
-    "ray-x/lsp_signature.nvim",
-    event = "LspAttach",
-    opts = {},
-  },
-  {
     -- lazy loaded by lsp-config
     "mfussenegger/nvim-lint",
     priority = 10,

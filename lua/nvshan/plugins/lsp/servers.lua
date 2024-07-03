@@ -47,6 +47,12 @@ return {
     },
   },
 
+  -- RUST
+  -- more configurations: https://github.com/rust-lang/rust-analyzer/blob/4981f00bb6a9f677b5a139e3749c4942175d6751/docs/user/generated_config.adoc
+  rust_analyzer = {
+    diagnostics = { enabled = true },
+  },
+
   -- PYTHON
   pyright = {
     cmd = { "pyright-langserver", "--stdio" },

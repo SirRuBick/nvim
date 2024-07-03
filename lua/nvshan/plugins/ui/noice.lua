@@ -1,5 +1,5 @@
 require("noice").setup({
   lsp = {
-    signature = { enabled = false },
+    signature = { enabled = true },
   },
 })
