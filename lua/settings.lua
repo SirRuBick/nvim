@@ -13,7 +13,7 @@ settings.colorscheme = "nordfox"
 -- background clolor, "dark" or "light"
 settings.background = "dark"
 -- trasparent
-settings.transparent = false
+settings.transparent = true
 -- plugin file
 settings.pluginmodule = "nvshan.plugins"
 -- auto lint
@@ -36,7 +36,7 @@ settings.db_ui_save_location = join_path(global.data_dir, "dadbod")
 settings.snippets_directory = join_path(global.vim_path, "snippets")
 -- Obsidian
 settings.obsidian = {
-  enable = false,
+  enable = true,
   vault_path = "~/vaults",
   img_forder = "~/vaults/imgs",
   workspaces = { "personal", "work" },
