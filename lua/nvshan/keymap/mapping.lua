@@ -84,10 +84,10 @@ mappings.t["<C-j>"] = map("<C-\\><C-n>:wincmd j<CR>"):silent():noremap():desc("M
 mappings.t["<C-k>"] = map("<C-\\><C-n>:wincmd k<CR>"):silent():noremap():desc("Move to above split")
 mappings.t["<C-l>"] = map("<C-\\><C-n>:wincmd l<CR>"):silent():noremap():desc("Move to right split")
 
-mappings.n["<C-K>"] = map("<cmd>resize -2<CR>"):desc("Resize split up")
-mappings.n["<C-J>"] = map("<cmd>resize +2<CR>"):desc("Resize split down")
-mappings.n["<C-H>"] = map("<cmd>vertical resize -2<CR>"):desc("Resize split left")
-mappings.n["<C-L>"] = map("<cmd>vertical resize +2<CR>"):desc("Resize split right")
+mappings.n["<M-Up>"] = map("<cmd>resize -2<CR>"):desc("Resize split up")
+mappings.n["<M-Down>"] = map("<cmd>resize +2<CR>"):desc("Resize split down")
+mappings.n["<M-Left>"] = map("<cmd>vertical resize -2<CR>"):desc("Resize split left")
+mappings.n["<M-Right>"] = map("<cmd>vertical resize +2<CR>"):desc("Resize split right")
 
 mappings.n["<leader>wh"] = map("<cmd>set nosplitright<CR><CMD>vsplit<CR><CMD>set splitright<CR>"):desc("Split left")
 mappings.n["<leader>wj"] = map("<cmd>set nosplitbelow<CR><CMD>split<CR><CMD>set splitbelow<CR>"):desc("Split above")

@@ -8,8 +8,8 @@ for _, wp in ipairs(obsidian_settings.workspaces) do
 end
 
 obsidian.setup({
-  -- dir = obsidian_settings.vault_path,
-  workspaces = workspaces,
+  dir = obsidian_settings.vault_path,
+  -- workspaces = workspaces,
 
   daily_notes = {
     -- Optional, if you keep daily notes in a separate directory.
