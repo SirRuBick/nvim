@@ -47,7 +47,8 @@ local plugins = {
   {
     "rcarriga/nvim-notify",
     -- NOTE: Disable lazy load for notifying random colorscheme at the start
-    lazy = false,
+    -- lazy = false,
+    event = "VeryLazy",
     config = function()
       require("nvshan.plugins.ui.notify")
     end,
