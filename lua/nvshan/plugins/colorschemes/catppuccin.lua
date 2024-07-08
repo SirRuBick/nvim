@@ -3,7 +3,7 @@ local is_transparent = require("settings").transparent
 local overrides = function(colors)
   if is_transparent then
     return {
-      -- NOTE: vnim-tree floating window doesn't like none bg,
+      -- NOTE: nvim-tree floating window doesn't like none bg,
       -- it's making the window bg even darker
       NormalFloat = { fg = colors.none, bg = colors.none },
       FloatBorder = { fg = colors.none, bg = colors.none },

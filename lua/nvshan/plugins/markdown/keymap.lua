@@ -3,9 +3,10 @@ local keymap_utils = require("nvshan.keymap.utils")
 local mappings = keymap_utils.init_mapping()
 local map = keymap_utils.map
 local wk_icons = require("icons").whichkey
-local is_obsidian_enabled = require("settings").obsidian.enable
+local obsidian_settings = require("settings").obsidian
+local utils = require("utils")
 
-if is_obsidian_enabled and not is_available("obsidian.nvim") then
+if obsidian_settings.enable and not is_available("obsidian.nvim") then
   vim.notify("Failed to load obsidian", vim.log.levels.ERROR)
   return {}
 end
@@ -24,6 +25,7 @@ mappings.n["<leader>no"] = map(function()
     vim.cmd("ObsdianToday " .. offset)
   end)
 end):desc("Daily with offset")
+mappings.n["<leader>ne"] = map("<CMD>e" .. utils.join_path(obsidian_settings.vault_path, obsidian_settings.entry_file) .. "<CR>"):desc("Open Entry Note")
 mappings.n["<leader>ng"] = map("<CMD>ObsidianOpen<CR>"):desc("Go to Obsidian App")
 mappings.n["<leader>nn"] = map("<CMD>ObsidianNew<CR>"):desc("New Note")
 mappings.n["<leader>nd"] = map("<CMD>ObsidianDailies<CR>"):desc("Find Daily Notes")
