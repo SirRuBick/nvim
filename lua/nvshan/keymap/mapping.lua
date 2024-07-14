@@ -70,8 +70,9 @@ mappings.n["QC"] = map(":ccl <bar> lcl<CR>"):desc("Quick close quickfix or locat
 mappings.n["zc"] = map("zc"):desc("zMzv"):desc("Focus on Fold")
 
 -- Macro
-mappings.n["<C-q>"] = map("q"):desc("Macro Prefix")
-mappings.n["q"] = map(""):noremap():desc("Macro Prefix")
+mappings.n[",q"] = map("q"):noremap():desc("Record Macro")
+mappings.n[",r"] = map("@"):noremap():desc("Excute Macro")
+mappings.n["q"] = map(""):noremap():desc("Disable Default Macro Prefix")
 
 -- Split Navigation
 mappings.n["<leader>k"] = map("<cmd>only<CR>"):silent():noremap():desc(wk_icons.k)
