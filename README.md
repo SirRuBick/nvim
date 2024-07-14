@@ -24,6 +24,7 @@ I am still adding things in as I learn more about Neovim.<br>
 - [ ] update doc
 - [ ] clipboard under tmux
 - [ ] learn neogit
+- [] vim visual multi is not working anymore
 
 ### Plugins to explore
 | Section  | Plugins | Notes |
