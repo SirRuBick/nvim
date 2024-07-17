@@ -20,7 +20,7 @@ mappings.n["<leader>w"] = map():desc(wk_icons.w)
 mappings.n["<leader>x"] = map():desc(wk_icons.x)
 
 -- Operations
-mappings.t["<C-x>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
+mappings.t["<C-g>"] = map("<C-\\><C-n>"):silent():desc("Exit terminal mode")
 mappings.i["jk"] = map("<C-\\><C-n>"):desc("Exit insert mode")
 
 -- navigate in insert mode
@@ -80,10 +80,10 @@ mappings.n["<C-h>"] = map("<C-w>h"):silent():noremap():desc("Move to left split"
 mappings.n["<C-j>"] = map("<C-w>j"):silent():noremap():desc("Move to below split")
 mappings.n["<C-k>"] = map("<C-w>k"):silent():noremap():desc("Move to above split")
 mappings.n["<C-l>"] = map("<C-w>l"):silent():noremap():desc("Move to right split")
-mappings.t["<C-h>"] = map("<C-\\><C-n>:wincmd h<CR>"):silent():noremap():desc("Move to left split")
-mappings.t["<C-j>"] = map("<C-\\><C-n>:wincmd j<CR>"):silent():noremap():desc("Move to below split")
-mappings.t["<C-k>"] = map("<C-\\><C-n>:wincmd k<CR>"):silent():noremap():desc("Move to above split")
-mappings.t["<C-l>"] = map("<C-\\><C-n>:wincmd l<CR>"):silent():noremap():desc("Move to right split")
+-- mappings.t["<C-h>"] = map("<C-\\><C-n>:wincmd h<CR>"):silent():noremap():desc("Move to left split")
+-- mappings.t["<C-j>"] = map("<C-\\><C-n>:wincmd j<CR>"):silent():noremap():desc("Move to below split")
+-- mappings.t["<C-k>"] = map("<C-\\><C-n>:wincmd k<CR>"):silent():noremap():desc("Move to above split")
+-- mappings.t["<C-l>"] = map("<C-\\><C-n>:wincmd l<CR>"):silent():noremap():desc("Move to right split")
 
 mappings.n["<M-Up>"] = map("<cmd>resize -2<CR>"):desc("Resize split up")
 mappings.n["<M-Down>"] = map("<cmd>resize +2<CR>"):desc("Resize split down")
