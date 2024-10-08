@@ -3,13 +3,13 @@ local formatters = {}
 
 formatters.black = {
   prepand_args = {
-    "--line-length=120",
+    "--line-length=119",
   },
 }
 
 formatters.isort = {
   prepend_args = {
-    "--line-length=119",
+    "--line-length=119", "--profile", "black"
   },
 }
 
