@@ -37,6 +37,7 @@ option.autoindent = true
 option.shiftround = true
 option.smartindent = true
 -- operations
+option.autoread = true
 option.hidden = true -- required by toggle term
 option.backup = false
 option.swapfile = false

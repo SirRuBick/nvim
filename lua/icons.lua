@@ -224,6 +224,7 @@ icons.whichkey = {
   m = "󰚩 LLM",
   n = "󰏬 Notes (Obsidian)",
   q = "󰆼 SQL",
+  r = " Reload Buffer",
   s = "󱂬 Session",
   t = " Terminal",
   u = " UI",
