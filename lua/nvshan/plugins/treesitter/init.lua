@@ -16,7 +16,6 @@ return {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        commit = "ec1c5bdb3d87ac971749fa6c7dbc2b14884f1f6a",
       },
       "nvim-treesitter/nvim-treesitter-context",
       "HiPhish/nvim-ts-rainbow2",
