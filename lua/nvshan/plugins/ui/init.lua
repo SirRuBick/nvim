@@ -54,13 +54,6 @@ local plugins = {
     end,
   },
   {
-    "edluffy/specs.nvim",
-    event = "CursorMoved",
-    config = function()
-      require("nvshan.plugins.ui.specs")
-    end,
-  },
-  {
     "lukas-reineke/indent-blankline.nvim",
     cond = not settings.indent_animation,
     main = "ibl",

@@ -16,6 +16,7 @@ I am still adding things in as I learn more about Neovim.<br>
 - wsl-open(wsl) or pngpaste(mac) or xclip/wl-clipboard: Obsidian
 
 ## TODO
+- [ ] c++ settings. look into https://github.com/p00f/clangd_extensions.nvim
 - [ ] Code refactoring
 - [ ] more luasnips, nice examples on github page for comments
 - [ ] dadbob ui close should also close dbout and sql query
