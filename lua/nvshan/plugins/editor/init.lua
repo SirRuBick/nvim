@@ -4,7 +4,9 @@ local plugins = {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    config = true,
+    config = function()
+      require("nvshan.plugins.editor.which-key")
+    end,
   },
   {
     "rhysd/accelerated-jk",
