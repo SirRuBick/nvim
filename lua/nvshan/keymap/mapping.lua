@@ -200,6 +200,9 @@ if is_available("nvim-ufo") then
 end
 
 -- Others
+if is_available("barbecue.nvim") then
+  mappings.n["[e"] = map(function() require("barbecue.ui").navigate(-2) end):desc("Previous barbecue")
+end
 if is_available("specs.nvim") then
   mappings.n["<leader><leader>"] = map(function()
     require("specs").show_specs()

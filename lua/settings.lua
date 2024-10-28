@@ -38,6 +38,7 @@ settings.snippets_directory = join_path(global.vim_path, "snippets")
 settings.obsidian = {
   enable = true,
   vault_path = "~/vaults",
+  entry_file = "entry.md",
   img_forder = "~/vaults/imgs",
   workspaces = { "personal", "work" },
 }

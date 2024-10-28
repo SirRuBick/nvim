@@ -16,6 +16,7 @@ I am still adding things in as I learn more about Neovim.<br>
 - wsl-open(wsl) or pngpaste(mac) or xclip/wl-clipboard: Obsidian
 
 ## TODO
+- [ ] autocompletion key conflict with Snippets jumps, you cannot finish a completion when editing within snippets
 - [ ] Code refactoring
 - [ ] more luasnips, nice examples on github page for comments
 - [ ] dadbob ui close should also close dbout and sql query
@@ -24,7 +25,8 @@ I am still adding things in as I learn more about Neovim.<br>
 - [ ] update doc
 - [ ] clipboard under tmux
 - [ ] learn neogit
-- [] vim visual multi is not working anymore
+- [ ] vim visual multi is not working anymore
+- [ ] lsp-format-modifications is not configured, conflict with conform?
 
 ### Plugins to explore
 | Section  | Plugins | Notes |
