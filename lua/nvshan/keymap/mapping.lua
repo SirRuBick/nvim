@@ -69,9 +69,13 @@ mappings.n["QC"] = map(":ccl <bar> lcl<CR>"):desc("Quick close quickfix or locat
 -- Folding
 mappings.n["zc"] = map("zc"):desc("zMzv"):desc("Focus on Fold")
 
--- Macro
-mappings.n[",q"] = map("q"):noremap():desc("Record Macro")
-mappings.n[",r"] = map("@"):noremap():desc("Excute Macro")
+-- Search
+mappings.n["n"] = map("nzz"):silent():desc("Next Search Result")
+mappings.n["N"] = map("Nzz"):silent():desc("Prev Search Result")
+
+-- Macro TODO: Test
+mappings.n["'q"] = map("q"):noremap():desc("Record Macro")
+mappings.n["'r"] = map("@"):noremap():desc("Excute Macro")
 mappings.n["q"] = map(""):noremap():desc("Disable Default Macro Prefix")
 
 -- Split Navigation
@@ -202,11 +206,6 @@ end
 -- Others
 if is_available("barbecue.nvim") then
   mappings.n["[e"] = map(function() require("barbecue.ui").navigate(-2) end):desc("Previous barbecue")
-end
-if is_available("specs.nvim") then
-  mappings.n["<leader><leader>"] = map(function()
-    require("specs").show_specs()
-  end):desc("󰳽 Show Cursor")
 end
 if global.is_mac then
   mappings.n["<leader>?"] = map("<CMD>silent !open dict://<cword><CR>"):desc("Open current word in dictionary")
