@@ -96,7 +96,7 @@ function Utils.load_table_from_dir(absolute_path)
     if not name then
       break
     end
-    if name:match(".lua$") then
+    if name:match(".lua$") and name ~= "init.lua" then
       local filetype = Utils.get_filename(name)
       local status_ok, loaded_snippets = pcall(dofile, Utils.join_path(absolute_path, name))
       if status_ok then
@@ -107,6 +107,46 @@ function Utils.load_table_from_dir(absolute_path)
     end
   end
   return merged_table
+end
+
+--- Scan a directory and save result to a table
+--- @param directory any
+---@return table
+function Utils.scandir(directory)
+  local i, t, popen = 0, {}, io.popen
+  local pfile = popen('ls -a "' .. directory .. '"')
+  if pfile == nil then return {} end
+  for filename in pfile:lines() do
+    i = i + 1
+    t[i] = filename
+  end
+  pfile:close()
+  return t
+end
+
+function Utils.telescope_find_file()
+  local pickers = require("telescope.pickers")
+  local finders = require("telescope.finders")
+  local conf = require("telescope.config").values
+  local actions = require("telescope.actions")
+  local action_state = require("telescope.actions.state")
+  return coroutine.create(function(coro)
+    local opts = {}
+    pickers
+      .new(opts, {
+        prompt_title = "Path to executable",
+        finder = finders.new_oneshot_job({ "fd", "--no-ignore", "--type", "x" }, {}),
+        sorter = conf.generic_sorter(opts),
+        attach_mappings = function(buffer_number)
+          actions.select_default:replace(function()
+            actions.close(buffer_number)
+            coroutine.resume(coro, action_state.get_selected_entry()[1])
+          end)
+          return true
+        end,
+      })
+      :find()
+  end)
 end
 
 return Utils

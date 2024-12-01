@@ -11,6 +11,12 @@ return {
       "DapStepInto",
       "DapStepOut",
       "DapTerminate",
+      "DapDisconnect",
+      "DapLoadLaunchJSON",
+      "DapRestartFrame",
+      "DapNew",
+      "DapEval",
+      "",
     },
     dependencies = {
       -- "nvim-telescope/telescope-dap.nvim",
@@ -26,6 +32,7 @@ return {
       },
       {
         "rcarriga/nvim-dap-ui",
+        dependencies = { "nvim-neotest/nvim-nio" },
         config = function()
           require("nvshan.plugins.dap.dap-ui")
         end,
