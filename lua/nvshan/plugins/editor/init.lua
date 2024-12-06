@@ -153,34 +153,35 @@ local plugins = {
     },
   },
   {
-    "mg979/vim-visual-multi",
-    tag = "v0.5.7",
+    "jake-stewart/multicursor.nvim",
+    branch = "1.0",
+    opts = {},
     event = { "BufReadPre", "BufNewFile" },
-    init = function()
-      vim.g.VM_default_mappings = 0
-      vim.g.VM_mouse_mappings = 0
-      vim.g.VM_theme = "iceblue"
-      vim.g.VM_maps = {
-        ["Undo"] = "u",
-        ["Redo"] = "<C-r>",
-        ["Select All"] = "\\a",
-        ["Find Under"] = "\\c",
-        ["Find Subword Under"] = "\\c",
-        ["Add Cursor Down"] = "\\j",
-        ["Add Cursor Up"] = "\\k",
-        ["Add Cursor At Pos"] = "\\m",
-        ["Start Regex Search"] = "\\/",
-        ["Reselect Last"] = "\\r",
-        ["Switch Mode"] = "<Tab>",
-        ["Visual All"] = "\\A",
-        ["Visual Regex"] = "\\/",
-        ["Visual Find"] = "\\f",
-        ["Visual Cursors"] = "\\c",
-        ["Visual Add"] = "\\a",
-        ["Visual Subtract"] = "\\s",
-        ["Visual Reduce"] = "\\r",
-      }
-    end,
+    -- init = function()
+    --   vim.g.VM_default_mappings = 0
+    --   vim.g.VM_mouse_mappings = 0
+    --   vim.g.VM_theme = "iceblue"
+    --   vim.g.VM_maps = {
+    --     ["Undo"] = "u",
+    --     ["Redo"] = "<C-r>",
+    --     ["Select All"] = "\\a",
+    --     ["Find Under"] = "\\c",
+    --     ["Find Subword Under"] = "\\c",
+    --     ["Add Cursor Down"] = "\\j",
+    --     ["Add Cursor Up"] = "\\k",
+    --     ["Add Cursor At Pos"] = "\\m",
+    --     ["Start Regex Search"] = "\\/",
+    --     ["Reselect Last"] = "\\r",
+    --     ["Switch Mode"] = "<Tab>",
+    --     ["Visual All"] = "\\A",
+    --     ["Visual Regex"] = "\\/",
+    --     ["Visual Find"] = "\\f",
+    --     ["Visual Cursors"] = "\\c",
+    --     ["Visual Add"] = "\\a",
+    --     ["Visual Subtract"] = "\\s",
+    --     ["Visual Reduce"] = "\\r",
+    --   }
+    -- end,
   },
   {
     "akinsho/toggleterm.nvim",
