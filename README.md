@@ -25,7 +25,6 @@ I am still adding things in as I learn more about Neovim.<br>
 - [ ] perhaps I don't need so much keymap for persisted
 - [ ] update doc
 - [ ] learn neogit
-- [ ] vim visual multi is not working anymore
 - [ ] use none-ls to replace conform + nvim-lint
 
 ### Plugins to explore
