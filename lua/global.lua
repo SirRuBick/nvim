@@ -6,6 +6,7 @@ global.is_linux = os_name == "Linux"
 global.is_windows = os_name == "Windows_NT"
 global.is_wsl = vim.fn.has("wsl") == 1
 global.is_tmux = os.getenv("TMUX") ~= nil
+global.is_zellij = os.getenv("ZELLIJ") ~= nil
 global.vim_path = vim.fn.stdpath("config")
 global.os_path_sep = global.is_windows and "\\" or "/"
 global.home = global.is_windows and os.getenv("USERPROFILE") or os.getenv("HOME")

@@ -1,4 +1,5 @@
 local wk_icons = require("icons").whichkey
+local global = require("global")
 
 local plugins = {
   {
@@ -63,6 +64,7 @@ local plugins = {
   {
     "christoomey/vim-tmux-navigator",
     event = "VeryLazy",
+    cond = global.is_tmux,
     init = function()
       vim.g.tmux_navigator_no_mappings = 1
       vim.g.tmux_navigator_save_on_switch = 2
@@ -77,6 +79,25 @@ local plugins = {
       "TmuxNavigateNext",
       "TmuxNavigateLast",
     },
+  },
+  {
+    "swaits/zellij-nav.nvim",
+    cond = global.is_zellij,
+    event = "VeryLazy",
+    keys = {
+      { "<c-h>", "<cmd>ZellijNavigateLeftTab<cr>", { silent = true, desc = "navigate left or tab" } },
+      { "<c-j>", "<cmd>ZellijNavigateDown<cr>", { silent = true, desc = "navigate down" } },
+      { "<c-k>", "<cmd>ZellijNavigateUp<cr>", { silent = true, desc = "navigate up" } },
+      { "<c-l>", "<cmd>ZellijNavigateRightTab<cr>", { silent = true, desc = "navigate right or tab" } },
+    },
+    config = function()
+      require("zellij-nav").setup()
+      -- NOTE: Ensures that when exiting NeoVim, Zellij returns to normal mode
+      -- vim.api.nvim_create_autocmd("VimLeave", {
+      --   pattern = "*",
+      --   command = "silent !zellij action switch-mode normal",
+      -- })
+    end,
   },
   {
     "nvim-tree/nvim-tree.lua",
@@ -96,7 +117,15 @@ local plugins = {
   },
   {
     "olimorris/persisted.nvim",
-    cmd = { "SessionToggle", "SessionStart", "SessionStop", "SessionLoad", "SessionLoadLast", "SessionLoadFromFile", "SessionDelete" },
+    cmd = {
+      "SessionToggle",
+      "SessionStart",
+      "SessionStop",
+      "SessionLoad",
+      "SessionLoadLast",
+      "SessionLoadFromFile",
+      "SessionDelete",
+    },
     config = true,
   },
   {
