@@ -17,7 +17,7 @@ configs.setup({
     "csv",
     "cuda",
     "diff",
-    "dockerfile",
+    -- "dockerfile",
     "http",
     "html",
     "java",

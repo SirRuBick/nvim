@@ -22,11 +22,6 @@ return {
     end,
   },
   {
-    "Eandrju/cellular-automaton.nvim",
-    cmd = "CellularAutomaton",
-    opts = {},
-  },
-  {
     "LunarVim/bigfile.nvim",
     event = "VeryLazy",
     opts = {

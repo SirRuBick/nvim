@@ -67,7 +67,7 @@ local plugins = {
     cond = settings.indent_animation,
     version = "*",
     event = { "BufReadPost", "BufNewFile" },
-    config = {
+    opts = {
       mappings = {
         -- Textobjects
         object_scope = "ip",
