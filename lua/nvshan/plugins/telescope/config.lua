@@ -35,10 +35,10 @@ local mappings = {
 }
 
 if is_available("trouble.nvim") then
-  local trouble = require("trouble.providers.telescope")
+  local trouble = require("trouble.sources.telescope")
   mappings = vim.tbl_deep_extend("force", mappings, {
-    i = { ["<c-t>"] = trouble.open_with_trouble },
-    n = { ["<c-t>"] = trouble.open_with_trouble },
+    i = { ["<c-t>"] = trouble.open },
+    n = { ["<c-t>"] = trouble.open },
   })
 end
 

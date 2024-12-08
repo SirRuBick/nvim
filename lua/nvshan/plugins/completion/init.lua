@@ -3,6 +3,7 @@ local settings = require("settings")
 return {
   {
     "hrsh7th/nvim-cmp",
+    commit = "ca4d333",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "onsails/lspkind.nvim",

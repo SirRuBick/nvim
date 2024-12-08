@@ -16,9 +16,7 @@ I am still adding things in as I learn more about Neovim.<br>
 - wsl-open(wsl) or pngpaste(mac) or xclip/wl-clipboard: Obsidian
 
 ## TODO
-- [ ] which-key updates
-- [ ] autocompletion key conflict with Snippets jumps, you cannot finish a completion when editing within snippets
-- [ ] Code refactoring
+- [ ] autocompletion key (tab) conflict with Snippets jumps, you cannot finish a completion when editing within snippets
 - [ ] more luasnips, nice examples on github page for comments
 - [ ] dadbob ui close should also close dbout and sql query
 - [ ] Can you random between sub-colorschemes like nordfox?
